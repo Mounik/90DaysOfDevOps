@@ -1,61 +1,51 @@
----
-title: '#90DaysOfDevOps - Variables & Constants in Go - Day 11'
-published: false
-description: 90DaysOfDevOps - Variables & Constants in Go
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048862
----
+Avant de nous plonger dans les sujets d'aujourd'hui, je tiens à remercier chaleureusement [Techworld with Nana](https://www.youtube.com/watch?v=yyUHQIec83I) pour ce voyage concis et fantastique à travers les fondamentaux de Go.
 
-Before we get into the topics for today I want to give a massive shout out to [Techworld with Nana](https://www.youtube.com/watch?v=yyUHQIec83I) and this fantastic concise journey through the fundamentals of Go.
+Le [Jour 8](day08.md), nous avons configuré notre environnement, le [Jour 9](day09.md), nous avons parcouru le code Hello #90DaysOfDevOps, et le [Jour 10](day10.md), nous avons examiné notre espace de travail Go et sommes allés un peu plus loin dans la compilation et l'exécution du code.
 
-On [Day8](day08.md) we set our environment up, on [Day9](day09.md) we walked through the Hello #90DaysOfDevOps code and on [Day10](day10.md) we looked at our Go workspace and went a little deeper into compiling and running the code.
+Aujourd'hui, nous allons examiner les variables, les constantes et les types de données tout en écrivant un nouveau programme.
 
-Today we are going to take a look into Variables, Constants and Data Types whilst writing a new program.
+## Variables et Constantes en Go
 
-## Variables & Constants in Go
+Commençons par planifier notre application. Je pense qu'il serait judicieux de travailler sur un programme qui nous indique combien de jours nous avons passés dans notre défi #90DaysOfDevOps.
 
-Let's start by planning our application, I think it would be a good idea to work on a program that tells us how many days we have remained in our #90DaysOfDevOps challenge.
+La première chose à considérer ici est que, puisque nous construisons notre application et que nous accueillons nos participants et que nous donnons un retour à l'utilisateur sur le nombre de jours qu'ils ont complétés, nous pourrions utiliser le terme #90DaysOfDevOps plusieurs fois dans le programme. C'est un excellent cas d'utilisation pour faire de #90DaysOfDevOps une variable dans notre programme.
 
-The first thing to consider here is that as we are building our app and we are welcoming our attendees and we are giving the user feedback on the number of days they have completed we might use the term #90DaysOfDevOps many times throughout the program. This is a great use case to make #90DaysOfDevOps a variable within our program.
+- Les variables sont utilisées pour stocker des valeurs.
+- Comme une petite boîte avec nos informations ou valeurs sauvegardées.
+- Nous pouvons ensuite utiliser cette variable dans tout le programme, ce qui présente également l'avantage que si ce défi ou cette variable change, nous n'avons à changer cela qu'à un seul endroit. Cela signifie que nous pourrions traduire cela à d'autres défis que nous avons dans la communauté en changeant simplement cette valeur de variable.
 
-- Variables are used to store values.
-- Like a little box with our saved information or values.
-- We can then use this variable across the program which also benefits that if this challenge or variable changes then we only have to change this in one place. This means we could translate this to other challenges we have in the community by just changing that one variable value.
+Pour déclarer cela dans notre programme Go, nous définissons une valeur en utilisant un **mot-clé** pour les variables. Cela vivra dans notre bloc de code `func main` que vous verrez plus tard. Vous pouvez en savoir plus sur les [Mots-clés](https://go.dev/ref/spec#Keywords) ici.
 
-To declare this in our Go Program we define a value by using a **keyword** for variables. This will live within our `func main` block of code that you will see later. You can find more about [Keywords](https://go.dev/ref/spec#Keywords) here.
+N'oubliez pas de vous assurer que vos noms de variables sont descriptifs. Si vous déclarez une variable, vous devez l'utiliser, sinon vous obtiendrez une erreur. Cela permet d'éviter un code potentiellement mort, un code qui n'est jamais utilisé. Il en va de même pour les packages non utilisés.
 
-Remember to make sure that your variable names are descriptive. If you declare a variable you must use it or you will get an error, this is to avoid possible dead code, code that is never used. This is the same for packages not used.
-
-```
+```go
 var challenge = "#90DaysOfDevOps"
 ```
 
-With the above set and used as we will see in the next code snippet you can see from the output below that we have used a variable.
+Avec ce qui précède défini et utilisé comme nous le verrons dans le prochain extrait de code, vous pouvez voir à partir de la sortie ci-dessous que nous avons utilisé une variable.
 
-```
+```go
 package main
 
 import "fmt"
 
 func main() {
     var challenge = "#90DaysOfDevOps"
-    fmt.Println("Welcome to", challenge, "")
+    fmt.Println("Bienvenue à", challenge, "")
 }
 ```
 
-You can find the above code snippet in [day11_example1.go](Go/day11_example1.go)
+Vous pouvez trouver l'extrait de code ci-dessus dans [day11_example1.go](Go/day11_example1.go).
 
-You will then see from the below that we built our code with the above example and we got the output shown below.
+Vous verrez ensuite à partir de ce qui suit que nous avons construit notre code avec l'exemple ci-dessus et que nous avons obtenu la sortie montrée ci-dessous.
 
 ![](Images/Day11_Go1.png)
 
-We also know that our challenge is 90 days at least for this challenge, but next, maybe it's 100 so we want to define a variable to help us here as well. However, for our program, we want to define this as a constant. Constants are like variables, except that their value cannot be changed within code (we can still create a new app later on down the line with this code and change this constant but this 90 will not change while we are running our application)
+Nous savons également que notre défi dure 90 jours, au moins pour ce défi, mais ensuite, peut-être que ce sera 100, donc nous voulons définir une variable pour nous aider ici aussi. Cependant, pour notre programme, nous voulons définir cela comme une constante. Les constantes sont comme des variables, sauf que leur valeur ne peut pas être modifiée dans le code (nous pouvons toujours créer une nouvelle application plus tard avec ce code et changer cette constante, mais ce 90 ne changera pas pendant que nous exécutons notre application).
 
-Adding the `const` to our code and adding another line of code to print this.
+Ajoutons le `const` à notre code et ajoutons une autre ligne de code pour imprimer ceci.
 
-```
+```go
 package main
 
 import "fmt"
@@ -64,22 +54,22 @@ func main() {
     var challenge = "#90DaysOfDevOps"
     const daystotal = 90
 
-    fmt.Println("Welcome to", challenge, "")
-    fmt.Println("This is a", daystotal, "challenge")
+    fmt.Println("Bienvenue à", challenge, "")
+    fmt.Println("Ceci est un défi de", daystotal, "jours")
 }
 ```
 
-You can find the above code snippet in [day11_example2.go](Go/day11_example2.go)
+Vous pouvez trouver l'extrait de code ci-dessus dans [day11_example2.go](Go/day11_example2.go).
 
-If we then go through that `go build` process again and run you will see below the outcome.
+Si nous passons ensuite par ce processus `go build` et que nous exécutons, vous verrez ci-dessous le résultat.
 
 ![](Images/Day11_Go2.png)
 
-Finally, and this won't be the end of our program we will come back to this in [Day12](day12.md) to add more functionality. We now want to add another variable for the number of days we have completed the challenge.
+Enfin, et ce ne sera pas la fin de notre programme, nous reviendrons sur cela le [Jour 12](day12.md) pour ajouter plus de fonctionnalités. Nous voulons maintenant ajouter une autre variable pour le nombre de jours que nous avons complétés dans le défi.
 
-Below I added the `dayscomplete` variable with the number of days completed.
+Ci-dessous, j'ai ajouté la variable `dayscomplete` avec le nombre de jours complétés.
 
-```
+```go
 package main
 
 import "fmt"
@@ -89,88 +79,89 @@ func main() {
     const daystotal = 90
     var dayscomplete = 11
 
-    fmt.Println("Welcome to", challenge, "")
-    fmt.Println("This is a", daystotal, "challenge and you have completed", dayscomplete, "days")
-    fmt.Println("Great work")
+    fmt.Println("Bienvenue à", challenge, "")
+    fmt.Println("Ceci est un défi de", daystotal, "jours et vous avez complété", dayscomplete, "jours")
+    fmt.Println("Bon travail")
 }
 ```
 
-You can find the above code snippet in [day11_example3.go](Go/day11_example3.go)
+Vous pouvez trouver l'extrait de code ci-dessus dans [day11_example3.go](Go/day11_example3.go).
 
-Let's run through that `go build` process again or you could just use `go run`
+Passons par ce processus `go build` à nouveau ou vous pourriez simplement utiliser `go run`.
 
 ![](Images/Day11_Go3.png)
 
-Here are some other examples that I have used to make the code easier to read and edit. We have up till now been using `Println` but we can simplify this by using `Printf` by using `%v` which means we define our variables in order at the end of the line of code. we also use `\n` for a line break.
+Voici quelques autres exemples que j'ai utilisés pour rendre le code plus facile à lire et à éditer. Jusqu'à présent, nous avons utilisé `Println`, mais nous pouvons simplifier cela en utilisant `Printf` en utilisant `%v`, ce qui signifie que nous définissons nos variables dans l'ordre à la fin de la ligne de code. Nous utilisons également `\n` pour un saut de ligne.
 
-I am using `%v` as this uses a default value but there are other options that can be found here in the [fmt package documentation](https://pkg.go.dev/fmt) you can find the code example [day11_example4.go](Go/day11_example4.go)
+J'utilise `%v` car cela utilise une valeur par défaut, mais il existe d'autres options que vous pouvez trouver ici dans la [documentation du package fmt](https://pkg.go.dev/fmt). Vous pouvez trouver l'exemple de code [day11_example4.go](Go/day11_example4.go).
 
-Variables may also be defined in a simpler format in your code. Instead of defining that it is a `var` and the `type` you can code this as follows to get the same functionality but a nice cleaner and simpler look for your code. This will only work for variables though and not constants.
+Les variables peuvent également être définies dans un format plus simple dans votre code. Au lieu de définir qu'il s'agit d'un `var` et du `type`, vous pouvez coder ceci comme suit pour obtenir la même fonctionnalité mais avec un aspect plus propre et plus simple pour votre code. Cela ne fonctionnera que pour les variables et non pour les constantes.
 
-```
+```go
 func main() {
     challenge := "#90DaysOfDevOps"
     const daystotal = 90
 ```
 
-## Data Types
+## Types de Données
 
-In the above examples, we have not defined the type of variables, this is because we can give it a value here and Go is smart enough to know what that type is or at least can infer what it is based on the value you have stored. However, if we want a user to input this will require a specific type.
+Dans les exemples ci-dessus, nous n'avons pas défini le type de variables, car nous pouvons leur donner une valeur ici et Go est assez intelligent pour savoir quel est ce type ou au moins peut l'inférer en fonction de la valeur que vous avez stockée. Cependant, si nous voulons qu'un utilisateur entre cela, cela nécessitera un type spécique.
 
-We have used Strings and Integers in our code so far. Integers for the number of days and strings are for the name of the challenge.
+Nous avons utilisé des chaînes de caractères et des entiers dans notre code jusqu'à présent. Des entiers pour le nombre de jours et des chaînes de caractères pour le nom du défi.
 
-It is also important to note that each data type can do different things and behaves differently. For example, integers can multiply where strings do not.
+Il est également important de noter que chaque type de données peut faire des choses différentes et se comporte différemment. Par exemple, les entiers peuvent se multiplier où les chaînes de caractères ne le peuvent pas.
 
-There are four categories
+Il existe quatre catégories :
 
-- **Basic type**: Numbers, strings, and booleans come under this category.
-- **Aggregate type**: Array and structs come under this category.
-- **Reference type**: Pointers, slices, maps, functions, and channels come under this category.
-- **Interface type**
+- **Type de base** : Les nombres, les chaînes de caractères et les booléens entrent dans cette catégorie.
+- **Type agrégé** : Les tableaux et les structures entrent dans cette catégorie.
+- **Type de référence** : Les pointeurs, les tranches, les cartes, les fonctions et les canaux entrent dans cette catégorie.
+- **Type d'interface**
 
-The data type is an important concept in programming. Data type specifies the size and type of variable values.
+Le type de données est un concept important en programmation. Le type de données spécifie la taille et le type des valeurs de variable.
 
-Go is statically typed, meaning that once a variable type is defined, it can only store data of that type.
+Go est typé statiquement, ce qui signifie qu'une fois qu'un type de variable est défini, il ne peut stocker que des données de ce type.
 
-Go has three basic data types:
+Go a trois types de données de base :
 
-- **bool**: represents a boolean value and is either true or false
-- **Numeric**: represents integer types, floating-point values, and complex types
-- **string**: represents a string value
+- **bool** : représente une valeur booléenne et est soit vraie soit fausse
+- **Numérique** : représente les types d'entiers, les valeurs à virgule flottante et les types complexes
+- **string** : représente une valeur de chaîne de caractères
 
-I found this resource super detailed on data types [Golang by example](https://golangbyexample.com/all-data-types-in-golang-with-examples/)
+J'ai trouvé cette ressource super détaillée sur les types de données [Golang by example](https://golangbyexample.com/all-data-types-in-golang-with-examples/).
 
-I would also suggest [Techworld with Nana](https://www.youtube.com/watch?v=yyUHQIec83I&t=2023s) at this point covers in detail a lot about the data types in Go.
+Je suggérerais également [Techworld with Nana](https://www.youtube.com/watch?v=yyUHQIec83I&t=2023s) à ce stade couvre en détail de nombreux aspects des types de données en Go.
 
-If we need to define a type in our variable we can do this like so:
+Si nous devons définir un type dans notre variable, nous pouvons le faire comme suit :
 
-```
+```go
 var TwitterHandle string
 var DaysCompleted uint
 ```
 
-Because Go implies variables where a value is given we can print out those values with the following:
+Parce que Go implique des variables où une valeur est donnée, nous pouvons imprimer ces valeurs avec ce qui suit :
 
+```go
+fmt.Printf("challenge est %T, daystotal est %T, dayscomplete est %T\n", conference, daystotal, dayscomplete)
 ```
-fmt.Printf("challenge is %T, daystotal is %T, dayscomplete is %T\n", conference, daystotal, dayscomplete)
-```
 
-There are many different types of integer and float types the links above will cover these in detail.
+Il existe de nombreux types différents d'entiers et de types de flottants ; les liens ci-dessus couvriront cela en détail.
 
-- **int** = whole numbers
-- **unint** = positive whole numbers
-- **floating point types** = numbers that contain a decimal component
+- **int** = nombres entiers
+- **unint** = nombres entiers positifs
+- **types à virgule flottante** = nombres qui contiennent une composante décimale
 
-## Resources
+## Ressources
 
-- [StackOverflow 2021 Developer Survey](https://insights.stackoverflow.com/survey/2021)
-- [Why we are choosing Golang to learn](https://www.youtube.com/watch?v=7pLqIIAqZD4&t=9s)
-- [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s)
-- [Techworld with Nana - Golang full course - 3 hours 24 mins](https://www.youtube.com/watch?v=yyUHQIec83I)
-- [**NOT FREE** Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins](https://www.pluralsight.com/courses/go-fundamentals)
-- [FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s)
-- [Hitesh Choudhary - Complete playlist](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N)
+- [Enquête StackOverflow 2021 sur les développeurs](https://insights.stackoverflow.com/survey/2021)
+- [Pourquoi nous choisissons Golang pour apprendre](https://www.youtube.com/watch?v=7pLqIIAqZD4&t)
+- [Jake Wright - Apprenez Go en 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t)
+- [Techworld With Nana - Cours complet sur Golang - 3 heures 24 minutes](https://www.youtube.com/watch?v=yyUHQIec83I)
+- [Techworld With Nana - Apprenez Go en construisant une application TodoList](https://www.youtube.com/watch?v=XCZWyN9ZbEQ)
+- [**PAS GRATUIT** Nigel Poulton Pluralsight - Fondamentaux de Go - 3 heures 26 minutes](https://www.pluralsight.com/courses/go-fundamentals)
+- [FreeCodeCamp - Apprenez la programmation Go - Tutoriel Golang pour débutants](https://www.youtube.com/watch?v=YS4e4q9oBaU&t)
+- [Hitesh Choudhary - Liste de lecture complète](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N)
 
-Next up we are going to start adding some user input functionality to our program so that we are asked how many days have been completed.
+Ensuite, nous allons commencer à ajouter une fonctionnalité d'entrée utilisateur à notre programme afin que l'on nous demande combien de jours ont été complétés.
 
-See you on [Day 12](day12.md).
+À bientôt sur [Jour 12](day12.md).
