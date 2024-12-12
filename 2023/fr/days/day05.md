@@ -1,64 +1,56 @@
 ## Open Source Security 
 
-Les logiciels et solutions Open-Source ont été massivements adopté ces dernières années par les entreprises. Cela est dû notamment à l'approche communautaire et collaborative des projets.
+Open-source software has become widely used over the past few years due to its collaborative and community/public nature. 
 
-L'appelation Open-Source fait référence à des logiciels/application dans le domaine publique qui peuvent être utilisé, modifié et partagé gratuitement.
+The term Open Source refers to software in the public domain that people can freely use, modify, and share. 
 
-La raison principale de cette adoption massive de solution Open Source vient du fait que ces solutions sont souvent utilisé en complément de solutions propriétaire, ce qui permet d'accélerer le time-to-market des entreprise. L'utilisation de solutions Open Source accélère le développement des applications et aide les entreprises à pousser leurs produits sur le marché plus rapidement.
+The main reason for this surge of adoption and interest in Open Source is the speed of augmenting proprietary code developed in-house and this in turn can accelerate time to market. Meaning that leveraging OSS can speed up application development and help get your commercial product to market faster.
 
+### What is Open-Source Security? 
 
-### Qu'est-ce que la sécurité Open Source ?
+Open-source security refers to the practice of ensuring the safety and security of computer systems and networks that use open-source software. As we said above Open-source software is software that is freely available to use, modify, and distribute, and it is typically developed by a community of volunteers however there is a huge uptake from big software vendors that also contribute back to open-source, you only need to look at the Kubernetes repository to see which vendors are heavily invested there. 
 
-La sécurité Open Source fait référence aux pratiques de sécurité mise en place pour sécuriser un système d'information qui utilise des logiciel open source.
+Because open-source software is freely available, it can be widely used and studied, which can help to improve its security. However, it is important to ensure that open-source software is used responsibly and that any vulnerabilities are addressed in a timely manner to maintain its security.
 
-Comme mentionné précédemment, les solutions open-source sont libre d'être utilisé, modifié et distribué gratuitement. Ces solutions sont souvent développer par une communauté de volontaire. Néanmoins, il y a de plus en plus de gros éditeur de logiciel qui contribuent à des projet open-source. Il n'y à qu'a regarder le repository Kubernetes pour se rendre compte des éditeurs qui ont décidé d'investir dans le projet.
+### Understanding OSS supply chain security
+I would normally document my findings based on a longer form video into a paragraph here but as this is 10mins I thought it made sense to link the resource here [Understanding Open-Source Supply Chain Security] (https://www.youtube.com/watch?v=pARGj6j0-ZY)
 
-Comme les solutions Open Source sont gratuite, elles sont facilement utilisé et étudié, permettant ainsi d'améliorer leur sécurité. Néanmoins, il est important de s'assurer que ces solutions sont utilisées de manière responsable et que les vulnérabilitées qui peuvent être trouvé sont communiqué rapidement pour maintenir un haut niveau de sécurité.
+Be it a commercial product leveraging OSS or an OSS project using packages or other OSS code we must have an awareness from top to bottom and provide better visibility between projects. 
 
+### 3 As of OSS Security 
 
-### Comprendre la supply chain de la sécurité des solutions Open Source
+Another resource I found useful here from IBM, will be linked below in the resources section. 
 
-J'ai l'habitude de documenter mes trouvailles dans de petits paragraphes lorsque les sources vidéos sont assez longue. Néanmoins, cette vidéo là ne dure que 10 minutes, du coup, il est probablement plus simple que je vous fournisse le lien de la vidéo directement. [Understanding Open-Source Supply Chain Security](https://www.youtube.com/watch?v=pARGj6j0-ZY)
+- **Assess** - Look at the project health, how active is the repository, how responsive are the maintainers? If these show a bad sign, then you are not going to be happy about the security of the project. 
 
-Que l'on soit une entreprise éditeur de logiciel qui utilise des solutions Open Source avec parcimonie, un projet communautaire qui utilise des packages Open Source ou autre, nous devons être conscient des enjeux de sécurité et proposer une meilleure visibilité entre les projets.
+At this stage, we can also check the security model, code reviews, data validations, and test coverage for security. How does the project handle CVEs? 
 
+What dependencies does this project have? Explore the health of these in turn as you need to be sure the whole stack is good. 
 
-### Les 3 As de la sécurité des outils Open Sources
+- **Adopt** - If you are going to take this on within your software or as a standalone app within your own stack, who is going to manage and maintain it? Set some policies on who internally will overlook the project and support the community. 
 
-Une autre source que j'ai trouvé intéressant d'aborder ici nous viens d'IBM, le lien sera disponible dans la section ressource.
+- **Act** - Security is the responsibility of everyone, not just the maintainers, as a user you should also act and assist with the project. 
 
-- **Assess** - Evaluer la santé du projet, si le repository est plutot actif, quel est le temps de réponse de la communauté qui maintiens le projet ? Si vous souhaitez utiliser une solution open source dont ces signaux sont mauvais, vous n'allez probablement pas être très content de la sécurité du projet.
+### Log4j Vulnerability
 
-On peut également jeter un oeil au modèle de sécurité mise en place sur le projet, comment sont fait les reviews du code, les validations des données, les tests spécialisé pour la sécurité, et surtout, où se situe le projet par rapport aux CVE déjà sortie ?
+In early 2022 we had a vulnerability that seemed to massively hit the headlines (Log4j (CVE-2021-44228) RCE Vulnerability)
 
-Quelles sont les dépendances du projet ? Vous devriez également regarder la santé générale des dépendants pour être sûr que l'intégralité de la stack de présente pas de risque de sécurité.
+Log4j is a very common library for logging within Java. The vulnerability would in turn affect millions of java-based applications.  
 
-- **Adopt** - Si vous souhaitez utiliser une solution open source à l'intérieur de votre projet, ou comme une application Stand Alone, vous devez décider rapidement qui va manager l'application et la maintenir au sein de votre organisation ? Mettre en place une vrai gouvernance.
+A malicious actor could use this vulnerability within the application to gain access to a system. 
 
-- **Act** - La sécurité est la responsabilité de tous, pas seulement la communauté de la solution. En tant qu'utilisateur, il est important de communiquer et de donner du feedback du projet.
+Two big things I mentioned, 
 
+- **millions** of applications will have this package being used.  
+- **malicious actors** could leverage this to gain access or plant malware into an environment. 
 
-### Vulnérabilité Log4j
+The reason I am raising this is that security never stops, the growth of Open-Source adoption has increased this attack vector on applications, and this is why there needs to be an overall effort on security from day 0. 
 
-En 2022, une important vulnérabilité à été mise en lumière (Log4j (CVE-2021-44228) RCE Vulnerability)
-
-Log4j est une librairie assez commune de logging Java. Cette vulnérabilité a affecté des millions d'application basé sur du java.
-
-Une personne malveillante pouvait utiliser cette vulnérabilité dans une application pour gagner accès à un système.
-
-2 choses importantes que j'ai mentionné:
-
-- Des **millions** d'application utilisent ce package.
-- Des **acteurs malveillants** peuvent utiliser cette vulnérabilité pour avoir accès à un système ou pour déployer un malware dans un environnement.
-
-Pourquoi je mentionne cet exemple ? La sécurité d'un système ne s'arrête jamais. La croissance de l'adoption d'outil open source à augmenter les vecteurs d'attaques sur des applications et c'est pourquoi nous devons tous faire un effort concernant la sécurité.
-
-
-## Ressources 
+## Resources 
 
 - [Open Source Security Foundation](https://openssf.org/)
 - [Snyk - State of open source security 2022](https://snyk.io/reports/open-source-security/)
 - [IBM - The 3 A's of Open Source Security](https://www.youtube.com/watch?v=baZH6CX6Zno)
 - [Log4j (CVE-2021-44228) RCE Vulnerability Explained](https://www.youtube.com/watch?v=0-abhd-CLwQ)
 
-Rendez vous au [Day 6](day06.md).
+See you on [Day 6](day06.md).

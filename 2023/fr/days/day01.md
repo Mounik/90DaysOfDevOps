@@ -1,74 +1,65 @@
-## Retour sur l'édition 2022 et lancement de l'édition 2023
+## 2022 Reflection & Welcome 2023
 
-Bonjour à tous et bienvenue dans l'édition 2023 du #90DaysOfDevOps (90 jours de DevOps). Le but de ce premier jour est de faire un récapitulatif sur l'édition 2022, notamment sur les statistiques, les retours et les idées que nous avons eus pendant l'année.
+Hey everyone and welcome to the 2023 edition of #90DaysOfDevOps in this Day 1 post the plan is to reflect on the 2022 edition and some statistics, feedback, and ideas that we have had during the year. 
 
 ### 2022 Recap 
 
-Tout d'abord, WOW ! La mission que j'ai imaginée durant la soirée du nouvel an 2021 était de passer les 90 premiers jours de 2022 à apprendre, documenter et écrire quelques notes après avoir regardé des gens beaucoup plus intelligents que moi sur Youtube. 
+First, WOW! To think that the mission I thought up on New Year’s Eve 2021 was to spend the first 90 days of 2022 learning and documenting that learning, basically writing some notes after watching some much smarter people than me on YouTube. 
 
-Avance rapide d'un an, nous avons aujourd'hui des chiffres incroyables sur le dépôt. Je l'ai déjà mentionné sur le repository, je le redis et je le redirai toujours: tout contenu vaut le coup d'être fait si ça aide au moins une personne. Le nombre d'étoiles (notation) et de forks du repository sont incroyable !
+Fast forward a year, and we have some amazing numbers on the repository, I think I mentioned at least somewhere in the repository, but I know I have mentioned elsewhere many times any content is worth doing if it helps even just one person, to have the numbers that we have here from stars to forks is incredible. 
 
+![](./../../images/day01-1.jpg)
 
-![](images/day01-1.jpg)
+Also, nearly **500** watchers of the repository! 
 
-Egalement, presque **500** contributeurs sur le repository !
+First, I want to thank everyone for sharing the repository with the community. Hearing that Microsoft and other massive tech vendors have shared this with their teams is humbling. 
 
-Premièrement, je voudrai remercier tout ceux qui ont partagé le repository avec leur communauté. Apprendre que Microsoft et d'autre grosse entreprise de la tech ont partagés le projet avec leurs équipes est vraiment gratifiant.
+Secondly, I would like to thank the contributors. This started out as a place to take notes and learn in public, and it wasn't until a few days in that saw people correcting my poor spelling and grammar. (I am sure the same will happen this year) But the biggest and most amazing thing was the community that started to translate the repository into their native language! How amazing to think this was happening and helping non-native English speakers learn more about the powers of DevOps. 
 
-Deuxièmement, je voudrai remercier les contributeurs. Tout à commencé par créer un endroit pour prendre des notes et apprendre en public, il n'a fallu attendre que quelques jours pour voir des gens corriger ma mauvaise traduction et grammaire. (Je suis sûr que la même chose va arriver cette année.) Mais la chose la plus folle qui soit arrivé a été de voir la communauté commencer à traduire le repository dans leur langue maternelle. C'est vraiment incroyable de voir ça arriver et d'aider des gens qui ne parlent pas du tout anglais, apprendre les pouvoirs du DevOps.
+![](./../../images/day01-2.png)
 
+If you would like to find the amazing contributors on the repository, then you can head to the [Contributors](https://github.com/MichaelCade/90DaysOfDevOps/blob/main/Contributors.md)
 
-![](images/day01-2.png)
+### Continuous Learning 
 
-Si vous voulez trouver les contributeurs du dépôt, c'est par [ici](https://github.com/MichaelCade/90DaysOfDevOps/blob/main/Contributors.md)
+I mentioned and mentioned a lot that we are never done learning, if you think you are then you picked the wrong industry as things are changing all the time and at a rapid pace. 
 
+It is for that reason we must keep learning, learning for some is a challenge and for those people, I urge you to find a medium that you enjoy. I have always enjoyed documenting something I learn to like this and then getting hands-on. The premise of this project is exactly that, it is about a foundational knowledge of some of the key areas of DevOps and the tooling that achieves this, you are not going to be a graduated DevOps engineer by following along but you are going to have a better understanding of terminology and getting hands-on with some technologies that maybe you do not see on a day-to-day basis. 
 
+I also want to add that everyone is constantly evolving and learning, it doesn't matter if you are the CTO of a software company or a Systems Administrator wanting to learn more about automation, everyone is learning, and that little imposter syndrome feeling is normal. My advice is to run towards it vs running away from it and you will absolutely reap the rewards, also learn what you enjoy this makes learning more enjoyable. 
 
-### Apprentissage continu 
+### Security focused 
 
-J'ai toujours dis, et je continuerai toujours de dire, que nous ne cessons jamais d'apprendre. Si vous pensez que vous connaissez déjà tout, vous vous êtes trompé de domaine. En effet, les choses changent tous les jours et à un rythme phénoménale. 
+For those that have been following along, you will have known that the biggest area we missed out on in the 2022 edition was security aptly named DevSecOps and how we integrate security into that infinite DevOps cycle to ensure we are always thinking about security. 
 
-C'est pour cette raison que nous devons continuer d'apprendre. Pour certains, apprendre est un challenge. Pour ces personnes là, j'espère que vous trouverez un support pédagogique que vous aimerez. J'ai toujours aimé documenté les choses que j'apprends et ainsi, pouvoir les maitriser et mettre la main à la pâte lors de mise en pratique concrète. C'est exactement la genèse de ce projet. C'est partagé les bases fondamentales du DevOps et les outils qui y sont associés. Vous n'allez pas être diplomé d'un diplome d'ingénieur DevOps en suivant le projet, mais vous allez avoir une meilleure compréhension des terminologies et surtout, vous allez pouvoir utiliser, pratiquer des technologies que vous n'auriez probablement pas pu voir dans votre vie de tous les jours.
+In this edition, we will be diving headfirst into the security processes and principles as it obtains to DevSecOps heavily in this version and getting to some more topics that we missed in the first round. 
 
-Tout le monde évolue et apprends. Ca n'a pas d'importance que vous soyez CTO d'une entreprise éditrice de logiciel ou un administrateur systeme qui veut en apprendre plus sur l'automatisation. Tout le monde apprend et ce petit syndrome de l'imposteur que vous ressentez au fond de vous est tout à fait normal. Mon conseil est le suivant: acceptez le challenge plutôt que de le fuir. Ca vaut vraiment le coup. Plus vous apprendrez et plus vous prendrez de plaisir à apprendre. 
+### A little help from my friends 
 
+The 2022 edition was the equivalent of writing a blog post each day. We were well over 100k words and if we were to spin this into an eBook which was an option and instructions can be found in the repository if you so wish but you would find over 700 pages of A4 paper in total. The book idea is not dead and buried and I am working on a smaller version behind the scenes that might be a nice giveaway at a conference near you along with our amazing stickers. 
 
-### Concentré sur la sécurité
+Another gap for me and maybe this was the authenticity of the project as I was just starting to learn and documenting that learning journey in some of these areas. This time around I have asked some friends in the community to help. 
 
-Pour ceux qui ont suivi le projet depuis le début, vous avez pu vous rendre compte que la partie qui manquait le plus sur l'édition 2022 était la partie sécurité. La sécurité appliqué au DevOps est notamment appelé DevSecOp. Le but étant d'intégré la sécurité dans le cycle infini du DevOps et ainsi, s'assurer que nous pensons à la sécurité de notre système d'information à chaque étape de développement. 
+There are two reasons for this: 
 
-Dans cette édition, nous allons plongé dans les principes et les process de la sécurité lié au DevSecOps. Ainsi, nous en apprendrons encore plus sur les sujets que nous n'avons pas abordé dans la première édition.
+1. I think it is important to get different perspectives across topics and also, we are all going to learn best if we hear from subject matter experts in those specific topic areas. 
 
+2. Some of the friends that will be helping here will have the opportunity to grow their brand and potentially even speak at events about their topics and the over the project. 
 
-### Un petit coup de main de mes amis
+You can find the 2023 authors on the opening 2023.md page with links to their bios and contact details. 
 
-En terme d'écriture, l'édition 2022 a été l'équivalent décrire un article de blog (blog post) par jour. Nous avons écrit plus de 100k mots, et si on devait en écrire un livre (qui est d'ailleurs une option, les instructions peuvent être trouvé dans le dépôt si vous voulez le faire) il ferait plus de 700 pages en format A4.
-L'idée du livre n'est pas enterré puisque je travaille en "sous marin" sur une version plus petite qui pourrai faire office de giveaway lors de conférence ou de salon.
+I think it is also time to be very clear about the project. Nobody is being paid to write, nobody is being paid to talk about the project. I was approached about sponsorship several times, but the premise of this project is for it to remain impartial, free and for the community. Yes, we have used some projects and products throughout but none of the companies have sponsored or had a say in what has been written. 
 
-L'autre gap pour moi était l'authenticité du projet. Lors de la création du projet, je venais à peine de commencer à apprendre et documenter cette aventure. Cette fois ci, j'ai décidé de demander de l'aide à des amis et à la communauté.
+Finally, my employer Veeam Software, I am extremely lucky to have a company that enables me to be part of the community and document my learnings without interference. I don't work a traditional 9-5 and I am sure many people reading this do not either, but I am free to create content like this project. 
 
-Il y a 2 raison à ça:
+### Resources 
 
-1. Je pense que c'est important d'avoir plusieurs point de vu sur chacun des sujets abordés. Nous allons tous mieux apprendre sur des sujets dont les articles sont écrits par des experts du domaine.
+Throughout the project and the previous 2022 edition you will find the resources section, this is a list of content that I or my fellow authors have been through and if you want to learn more than you are reading here go and grab this content. 
 
-2. Certains des amis qui m'aideront auront l'opportunité de faire grandir leur image de marque et potentiellement d'intervenir dans des évènements a propos de leur domaines de compétences.
+You can find the 2022 edition [here](https://github.com/MichaelCade/90DaysOfDevOps/blob/main/2022.md)
 
-Vous trouverez les auteurs (et les liens de leur profil) de cette édition 2023 dans le fichier 2023.md.
+But also some community members have been busy at work transforming and creating a new look and feel through [GitHub Pages](https://www.90daysofdevops.com/#/)
 
+On the [2023 page](https://www.90daysofdevops.com/#/2023) you will also find ways to interact and join the community. 
 
-Il est venu le temps d'être clair à propos de ce projet. Personne n'est payé, ni pour écrire, ni pour parler du projet. J'ai été approché par des sponsors de nombreuses fois, mais le but premier du projet est de rester impartial, gratuit, pour la communauté et par la communauté. Oui, nous avons utilisé des projets et des solutions technique tout au long du projet, mais aucune entreprise n'a sponsorisé ou n'a son mot à dire sur la rédaction du projet.
-
-Pour finir, mon employeur, Veeam Software. Je suis extrèmement chanceux de faire partie d'une entreprise qui me permet de faire partie de cette communauté et de documenté ce que j'apprends sans interférences. Je n'ai pas un poste traditionnel qui me permet de faire 9h - 17h (et je suis sur que les nombreuses personnes qui lirons le projet non plus) mais je suis libre de créer et de trouver le temps pour créer des projets comme celui ci.
-
-
-### Ressources 
-
-Tout au long du projet (comme lors de l'édition 2022), vous pourrez trouver la section ressource. Cette section contient une liste de contenu sur lesquelles, les auteurs et moi, nous sommes appuyés pour documenter le projet. Si vous voulez en apprendre plus, n'hésitez pas à fouiller cette section. 
-
-Vous pouvez trouver l'édition 2022 [ici](https://github.com/MichaelCade/90DaysOfDevOps/blob/main/2022.md)
-
-Mais également, certains membres de la communauté ont transformé et donné un nouveau look au projet : [GitHub Pages](https://www.90daysofdevops.com/#/)
-
-Sur la [page de l'édition 2023](https://www.90daysofdevops.com/#/2023) vous trouverez de quoi intéragir avec les membres de la communauté.
-
-Il est maintenant temps de rentrer dans le vif du sujet. Rendez vous au [jour 2](day02.md).
+With that said let's get into things with [Day 2](day02.md).

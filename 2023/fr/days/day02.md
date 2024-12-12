@@ -1,81 +1,72 @@
-## Vue d'ensemble: DevSecOps
+## The Big Picture: DevSecOps
 
-Bienvenue dans la 2e journée de cette édition 2023. Dans le premier module de ces 6 prochains jours, nous allons aborder les bases fondamentales de ce qu'est le DevSecOps.
+Welcome to Day 2 of the 2023 edition here in this first module of the next 6 days we are going look at the foundational overview around DevSecOps. 
 
-### Qu'est ce que le DevSecOps? 
+### What is DevSecOps? 
 
-DevSecOps est une approche du développement logiciel dont le but est de réunir les équipes de développement, de sécurité et les équipes opérationnelles autour du développement et de la sécurisation d'une application.
-
-L'approche est basée sur l'intégration, la livraison et le déploiement continu dont le but est de délivrer des mise à jours et des nouvelles fonctionnalités plus rapidement. 
-
-Dans l'approche DevSecOps, la sécurisation se fait dès le développement de l'application, et non après coup. Concrètement, les tests de sécurité, la surveillance (monitoring) et les autres mesures de sécurisation sont développés dès le début du cycle de vie du développement logiciel, plutôt qu'ajouté après.
-
-DevSecOps oeuvre pour améliorer la collaboration et la communication entre les équipes de développement, de sécurité et les équipes opérationnelles afin de créer des processus de développement logiciel plus efficace.
+DevSecOps is a software development approach that aims to bring together development, security, and operations teams to build and maintain secure software applications. It is based on the principles of continuous integration, continuous delivery, and continuous deployment, which aim to deliver software updates and features more quickly and frequently. In DevSecOps, security is an integral part of the software development process, rather than an afterthought. This means that security testing, monitoring, and other security measures are built into the software development life cycle (SDLC) from the beginning, rather than being added later. DevSecOps aims to improve collaboration and communication between development, security, and operations teams, to create a more efficient and effective software development process.
 
 ### DevSecOps vs DevOps 
 
-J'utilise le terme "vs" ici de manière anecdotique. Le but n'étant pas de confronter les 2 termes, mais bien d'en comprendre les différences. Si vous vous rappelez bien de l'édition 2022, l'objectif du DevOps était d'améliorer la vitesse de traitement et de test, la fiabilité et la qualité générale des logiciels déployés.
+I use the "vs" lightly here again but if we think back to the 2022 edition and the goal of DevOps is to improve the speed, reliability, and quality of software releases.
 
-DevSecOps est une extension de la philosophie DevOps. Le but est d'intégrer les bonnes pratiques en terme de sécurité lors du processus de dévelopement d'un logiciel. Ainsi, la sécurité du logiciel est intégralement partie prenante du développement d'un logiciel depuis le début plutôt qu'à la fin. Cela va aider à réduire les risques de vulnérabilités et à les rendre plus facile à identifier et à patcher. 
+DevSecOps is an extension of the DevOps philosophy that emphasizes the integration of security practices into the software development process. The goal of DevSecOps is to build security measures into the software development process so that security is an integral part of the software from the start, rather than an afterthought. This helps to reduce the risk of security vulnerabilities being introduced into the software and makes it easier to identify and fix any issues that do arise.
 
-Le DevOps se concentre sur l'amélioration de la communication entre les équipes de développements et les équipes opérationnelles afin d'améliorer la rapidité de traitement, la fiabilité, et la qualité des logiciels délivré. Le DevSecOps quant à lui, se concentre sur l'intégration des bonnes pratiques de sécurité dans le processus de développement d'une application afin de réduire les risques de vulnérabilité et pour améliorer la sécurité du logiciel et des sytèmes d'informations en général. 
+DevOps focuses on improving collaboration and communication between developers and operations staff to improve the speed, reliability, and quality of software releases, while DevSecOps focuses on integrating security practices into the software development process to reduce the risk of security vulnerabilities and improve the overall security of the software.
 
-### Automatisation de la sécurité
+### Automated Security 
 
-L'automatisation de la sécurité fait référence a l'utilisation de différentes technologies, différents outil, pour lancer des tâches de sécurité sans intervention humaine.
-Il existe différent moyen de sécurisé une application ou son SI, par exemple, l'utilisation d'un outil de monitoring de réseau pour détecter des menaces et les bloquer (IPS/IDS) ou l'utilisation d'outil basé sur des intelligence articielle pour analyser des paterns d'attaque pour identifier des activités inhabituelles. Les outils d'automatisation des sytèmes de sécurité ont été conçu pour faire en sorte que la sécurité d'une application, d'un SI ou autre se fasse de manière efficace et pour réduire les charges de travail redondantes des ingénieur spécialisé en cybersécurité.
+Automated security refers to the use of technology to perform security tasks without the need for human intervention. This can include things like security software that monitors a network for threats and takes action to block them, or systems that use artificial intelligence to analyse security footage and identify unusual activity. Automated security systems are designed to make security processes more efficient and effective, and to help reduce the workload on security personnel.
 
-La plus value qu'apporte le DevSecOps est la possibilité d'automatisé un grand nombre de tâches lorsqu'on développe et qu'on délivre une application. Lorsqu'on ajoute la partie sécurité dès le début du cycle de développement, il faut prendre en compte l'automatisation de cette partie sécurité.
+A key component of all things DevSecOps is the ability to automate a lot of the tasks at hand when creating and delivering software, when we add security from the start it means we also need to consider the automation aspect of security. 
 
 ### Security at Scale (Containers and Microservices)
 
-La création et le déploiement de microservice et de container ont changé les manière de travailler de la plus part des entreprises, notamment grace à la grande scalabilité et dynamique que peuvent offrir ces nouveaux services.
+We know that the scale and dynamic infrastructure that has been enabled by containerisation and microservices have changed the way that most organisations do business. 
 
-C'est également pour cette raison que nous devons introduire l'automatisation des tâches de sécurité dans les principes fondamentaux du DevOps. Nous devons nous assurer que la sécurité des containers et des microservices est conforme aux guidelines de sécurité mise en place dans les entreprises. 
+This is also why we must bring that automated security into our DevOps principles to ensure that specific container security guidelines are met. 
 
-Pour être un peu plus précis, grâce aux technologies cloud-native, les entreprises ne peuvent plus se permettre de garder une politique de sécurité statique. Les modèles de sécurité des entreprises se doivent d'être aussi dynamique que les charges de travail et de comment elles tournent.
+What I mean by this is with cloud-native technologies we cannot only have static security policies and posture; our security model also must be dynamic with the workload in hand and how that is running. 
 
-Les équipes DevOps se doivent d'inclure des tâches automatique de gestion de la sécurité pour protéger l'environnement et les données dans son ensemble (Système d'information de manière générale) 
+DevOps teams will need to include automated security to protect the overall environment and data, as well as continuous integration and continuous delivery processes. 
 
-La liste suivante est tiré du post [RedHat](https://www.redhat.com/en/topics/devops/what-is-devsecops)
+The below list is taken from a [RedHat blog post](https://www.redhat.com/en/topics/devops/what-is-devsecops)
 
-- Standardiser et automatiser l'environnement: chaque service doit avoir le moins de privilèges possible afin de minimiser les connections et les accès non autorisé.
+- Standardise and automate the environment: Each service should have the least privilege possible to minimize unauthorized connections and access.
 
-- Centraliser les identités utilisateur et les RBAC: Des RBAC consciencieusement controlés et une centralisation de l'authentification sont des mécanismes essentiels pour sécuriser les microservices.
+- Centralise user identity and access control capabilities: Tight access control and centralised authentication mechanisms are essential for securing microservices since authentication is initiated at multiple points.
 
-- Isoler les container, les microservices et le réseaux associé les uns des autres: Ce qui inclu également les donnés "chaudes", lesdonnées "froides" et les données en circulation. Toutes données représentent une grosses valeurs pour les attaquants.
+- Isolate containers running microservices from each other and the network: This includes both in-transit and at-rest data since both can represent high-value targets for attackers.
 
-- Chiffrer les données entre les apps et les services: Un orchestrateur de container (kub) avec une intégration de fonctionnalitées de sécurités aide a minimiser les chances d'accès non autorisé. 
+- Encrypt data between apps and services: A container orchestration platform with integrated security features helps minimize the chance of unauthorized access.
 
-- Créer des API Gateways sécurisé: Sécurisé les API augmente la visibilité sur les autorisations et le routing. En réduisant l'exposition des API, les entreprises et organisation peuvent réduire les surfaces d'attaques.
+- Introduce secure API gateways: Secure APIs increase authorization and routing visibility. By reducing exposed APIs, organizations can reduce surfaces of attacks.
 
-### La sécurité au centre de tout
+### Security is HOT right now
 
-Peu importe de votre parcours dans l'IT, vous ne pouvez pas être passé à coté du faite que la sécurité est un sujet très important dans toutes l'industries récemment. C'est notamment dû a l'apparition de breches de sécurité dans des grandes entreprises ou l'utilisation de mauvaises habitudes en matières de sécurités. De mon point de vu, la création et le développement de logiciels et d'application est beaucoup plus réalisable et accessible aujourd'hui qu'avant. Mais lors de la création d'application, l'exposition aux vulnérabilité est nettement en hausse. Ceci permets à de mauvaises personnes de voler des données, lancer des ransomware et causer la fermeture d'entreprises. Nous avons déjà beaucoup discuté de ce qu'est le DevSecOps, mais je crois fortement qu'explorer les vecteurs d'attaques et de comprendre pourquoi nous devons protéger notre cycle de développement est inavitable pour éviter les attaques informatiques, ou du moins, réduire les surfaces d'attaques.
-
+One thing you will have seen regardless of your background is that security is hot all over the industry, this is partly to do with security breaches appearing in global news and big brands being affected by security vulnerabilities or following potential bad practices allowing bad actors into the networks of these companies. It is fair to say or at least from my perspective the creation of software is much more achievable and obtainable now than it ever has. But in creating software it is increasingly exposed with vulnerabilities and the like which allows the bad actors to cause havoc and sometimes hold data to ransom or shut down businesses causing mayhem. We have discussed so far what is DevSecOps but I think it is also worthwhile exploring the cybersecurity side of the attack vector and why we protect our software supply chain to help avoid these cyber-attacks. 
 
 ### Cybersecurity vs DevSecOps
 
-Il est important de noter les différences entre cybersécurité et DevSecOps afin de comprendre pourquoi la sécurité doit être intégré dans les process, les principes et la méthodologie DevOps.
+As the heading goes it is not really a vs but more of a difference between the two topics. But I think it is important to raise this as really this will explain why Security must be part of that DevOps process, principles, and methodology. 
 
-La cybersécurité consiste à protéger le système d'information (données, systèmes, réseaux) d'attaquant malveillant, de voleur et de dommages physique ou virtuel. Il est important d'identifié et de comprendre les vulnérabilités, de mettre en place des mesures de sécurités, et de déployer des services de monitoring.
+Cybersecurity is the practice of protecting computer systems and networks from digital attacks, theft, and damage. It involves identifying and addressing vulnerabilities, implementing security measures, and monitoring systems for threats.
 
-De l'autre côté, le DevSecOps et une combinaison des pratiques de développements, de sécurité et d'opérations. C'est une philosophie dont le but est d'intégré la sécurité lors du développement d'une application plutôt que de l'intégrer après-coup. Cela implique la collaboration entre les équipes de développement, de sécurité et les équipes opérationnelle durant le cycle de développement des systèmes d'informations.
+DevSecOps, on the other hand, is a combination of development, security, and operations practices. It is a philosophy that aims to integrate security into the development process, rather than treating it as a separate step. This involves collaboration between development, security, and operations teams throughout the entire software development lifecycle (SDLC).
 
-Voici les différences notables entre la cybersécurité et la philosophie DevSecOps: 
+Some key differences between cybersecurity and DevSecOps include:
 
-**Focus**: Les équipes de cybersécurité sont principalement concentré sur la protection du systèmes d'information des menaces, alors que le DevSecOps se concentre sur l'intégration de la sécurité dans les process de développements.
+**Focus**: Cybersecurity is primarily focused on protecting systems from external threats, while DevSecOps focuses on integrating security into the development process.
 
-**Scope**: La cybersécurité couvre une grande diversité de sujets, notamment la sécurité des réseaux, des données, des applications et bien plus encore. Le DevSecOps, de l'autre côté, se concentre sur l'amélioration de la sécurité dans le développement et le déploiement des applications.
+**Scope**: Cybersecurity covers a wider range of topics, including network security, data security, application security, and more. DevSecOps, on the other hand, is specifically focused on improving the security of software development and deployment.
 
-**Approach**: Les équipes de cybersécurité implémentent des mesures de sécurités après que les processus de développement soient finis. L'approche DevSecOps est d'intégré la partie sécurisation dès le début des processus de développement.
+**Approach**: Cybersecurity typically involves implementing security measures after the development process is complete, while DevSecOps involves integrating security into the development process from the start.
 
-**Collaboration**: La cybersécurité implique souvent la collaboration entre les équipes IT et les équipes sécurité, alors que le DevSecOps implique la communication entre les équipes de développement, de sécurité, et les équipes opérationnelles.
+**Collaboration**: Cybersecurity often involves collaboration between IT and security teams, while DevSecOps involves collaboration between development, security, and operations teams.
 
+## Resources 
 
-## Ressources 
-
-Durant tous le projet, vous verrez apparaitre une liste de ressource qui vous permettrons de creuser un peu plus dans les différents sujets abordé.
+Over the course of the 90 Days, we will have a daily resources list that will bring relevant content that will help continue the topics and where you can go to find out more. 
 
 - [TechWorld with Nana - What is DevSecOps? DevSecOps explained in 8 Mins](https://www.youtube.com/watch?v=nrhxNNH5lt0&list=PLsKoqAvws1pvg7qL7u28_OWfXwqkI3dQ1&index=1&t=19s)
 
@@ -91,4 +82,4 @@ Durant tous le projet, vous verrez apparaitre une liste de ressource qui vous pe
 
 - [Cloud Advocate - DevSecOps Pipeline CI Process - Real world example!](https://www.youtube.com/watch?v=ipe08lFQZU8&list=PLsKoqAvws1pvg7qL7u28_OWfXwqkI3dQ1&index=7&t=204s)
 
-J'espère que cette journée à attiser votre curiosité sur les sujets abordé et que les ressources précédemment listé vous aiderons à creuser un peu plus dans les différents topics. Lors de la [Day 3](day03.md) nous essaierons de comprendre comment un attaquant peut réfléchir et ainsi comprendre pourquoi et comment nous pouvons protéger nos SI et application dès le début.
+Hopefully this gave you a taster for what you can expect for this module and some of the resources above will help provide more depth on the topic, In the post on [Day 3](day03.md) we will be taking a look at what an attacker thinks like which is why we have to protect from the start.

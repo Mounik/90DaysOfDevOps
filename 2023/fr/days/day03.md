@@ -1,79 +1,77 @@
-## Penser comme un attaquant
+## Think Like an Attacker
 
-Hier, nous avons abordé en détail ce qu'est le DevSecOps. Aujourd'hui, nous allons parler des caractéristiques d'un attaquant. Pour comprendre un attaquant, nous devons penser comme un attaquant.
+Yesterday we covered what is DevSecOps, in this post we are going to look at some of the characteristics of an attacker. For us to think about the attacker we must think like an attacker. 
 
+### Characteristics of an Attacker
 
-### Les caractéristiques d'un attaquant
-
-Pour commencer, toutes les entreprises et tous les software sont des vecteurs d'attaque pour un hacker. Il n'existe pas d'endroit 100% sûr. Tout ce qui est possible de faire, c'est de rendre un réseau, une SI, une entreprise, moins "attirante" aux hackers.
+First and foremost, all businesses and software is an attack vectors to an attacker, there is no safe place we can only make places safer and less attractive for people to attack. 
 
 ![](images/day03-2.jpg)
 ***[image from this source](https://www.trainerize.me/articles/outrun-bear/)***
 
-En partant de ce principe, les attaquants sont des menaces constantes. 
+With that in mind, attackers are a constant threat! 
 
-Ces personnes malveillantes vont identifier les vulnérabilités d'un système en lançant des attaques dans un ordre spécific afin d'avoir accès au SI et extraire des data, ou lancer un ransomware, bref, pour remplir la mission qu'ils se sont attribué.
+Attackers will identify gaps in security by running attacks in a specific order to gain access, pull data and be successful in their mission. 
 
-Les hackers peuvent être chanceux, mais ils travaillent toujours sur des attaques ciblé spécifiques.
+Attackers can be lucky, but they will absolutely work on targeted attacks. 
 
-Ils peuvent trouver des brêches rapidement, ou non. Toutes les attaques seront différentes.
+Compromises can be slow and persistent or fast to get to a breach. Not all attacks are going to be the same. 
 
-### Leur motivation
+### Motivations of an Attacker
 
-Dans notre rôle d'ingénieur DevOps, nous allons provisionner des infrastructures, des softwares, ou autre. Nous allons probablement déployer tout ça sur différents environnements, différents cloud, différents types de virtualisation et de containerisation.
+As a DevOps team, you are going to be provisioning infrastructure, and software and protecting these environments likely spanning multiple clouds, virtualisation, and containerisation on platforms. 
 
-Nous devons nous poser les bonnes questions:
+We must consider the following: 
 
-- **Comment** peuvent ils nous attaquer ?
-- **Pourquoi** nous attaqueraient ils ?
-- **Qu'avons** nous qui puissent avoir de la valeur pour un attaquant ?
+- **How** would they attack us? 
+- **Why** would they attack us? 
+- **What** do we have that is valuable to an attacker? 
 
-Les motivations d'attaques sont différentes selon les attaquants. Ca peut également être pour s'amuser... Je pense que nous sommes tous passé par là à un moment donné de notre vie, à l'école par exemple, en allant un peu trop loin dans la découverte du réseau de notre fac ou lycée par exemple.
+The motivations of an attacker will also be different depending on the attacker. I mean it could just be for fun... We have probably all been there, in school and just gone a little too deep into the network looking for more information. Who has a story to tell? 
 
-Mais nous avons pu voir dans les récentes attaques que celles-ci ont plutôt des objectifs pécunier ou politiques.
+But as we have seen in the media, attacks are more aligned to monetary, fraud or even political attacks on businesses and organisations. 
 
-Par exemple, nous avons vu des workspace Kubernetes être utilisé par des attaquants pour se servir de la puissance de calcul disponible afin de miner de la crypto monnaie.
+In the Kubernetes space, we have even seen attackers leveraging and using the computing power of an environment to mine cryptocurrency. 
 
-Dans le coeur des attaquants, leur objectif principal est la **DATA**.
+At the heart of this attack is likely going to be **DATA** 
 
-Les données d'une entreprises sont extrèmement profitable sur le marché noir. C'est pourquoi nous mettons beaucoup d'effort à protéger nos données et s'assurer qu'elles soient sécurisées et chiffrées. 
-
+A company’s data is likely going to be extremely valuable to the company but also potentially out in the wild. It is why we put so much emphasis on protecting this data, ensuring that the data is secure and encrypted. 
 
 ### Attack Maps 
 
-Dans le cadre d'une attaque planifié, les attaquants vont devoir mettre en place un plan en identifiant quels sont les services et les types de données ciblées.
+We now have a motive and some of the characteristics of an attacker or a group of attackers, if this is a planned attack then you are going to need a plan, you are going to need to identify what services and data you are targeting.
 
-Un "schéma d'attaque" (attack map) est une représentation visuel d'une attaque sur un réseau donné. Ce schéma montre les différentes étapes d'une attaques, les outils et techniques utilisé par un attaquants, ainsi que les différents point d'entrées et de sortis d'un réseau. Un schéma d'attaque peut être utilisé pour analyser les détails d'une attaque précédentes, identifier les vulnérabilités d'un réseau et planifier et construire les défenses contre de futures attaques. Elle peut également être utilisé pour communiquer des informations à des personnes non habitué à du langage techniques, comme des directeurs exécutifs, des managers, ou des équipes de juristes.
+An **attack** map is a visual representation of an attack on a computer network. It shows the various stages of the attack, the tools and techniques used by the attacker, and the points of entry and exit into the network. Attack maps can be used to analyse the details of past attacks, identify vulnerabilities in a network, and plan defences against future attacks. They can also be used to communicate information about an attack to non-technical stakeholders, such as executives or legal teams.
 
-Vous pouvez voir dans la description ci-dessous qu'une schéma visuel d'attaque doit être créé par toutes les équipes. (red team et blue team. Sujet que nous couvrirons plus tard.)
+You can see from the above description that an Attack Map should be created on both sides or both teams (teams-wise this is something I am going to cover in a later post)
 
-Si vous souhaitiez construire un schéma d'attaque de votre réseau privé, il serait important de noter les points suivants:
+If you were to create an Attack Map of your home network or your business some of the things, you would want to capture would be: 
 
-- Construire un schéma de vos applications en y incluant les fluxs de communications et les technologies utilisées.
+- Capture a graphical representation of your app including all communication flows and technologies being used. 
 
-- Les listes des vulnératilitées et des surfaces d'attaques potentielles.
+- A list of potential vulnerabilities and areas of attack.
 
-- Prendre conscience et schématiser la confidentialité, l'intégrité et la disponibilité des données pour chaque connections/intéraction avec des applications.
+- Consider confidentiality, integrity and availability for each connection/interaction within the app. 
 
-- Schématiser l'intégralité des attaques et vulnérabilités possible.
+- Map the attacks/vulnerabilities
 
-Un schéma d'attaque doit ressembler à ça:
+An attack map might look something like this with a key explaining what each number represents. 
 
 ![](images/day03-1.png)
 
-En étudiant ce schéma, nous pouvons nous attendre à une attaque par déni de service (DOS) ou une attaque man-in-the-middle afin d'accéder au Bucket S3 pour éviter l'application de sauvegarder les données ou pour forcer l'application à sauvegarder de mauvaises données.
+From this map we might consider there to be a denial of service or some malicious insider attack and access to S3 bucket to prevent the application saving data or causing it to save bad data. 
 
-Ce schéma n'est jamais définitif. Pour la même raison que votre application va constamment évoluer en fonction des feedback, ce schéma d'attaque doit constamment évoluer  et être testé. Chaque test doit fournir des feedbacks afin de solidifier les défenses d'une application ou d'un système d'information. Nous pourrions appeler ça "Réponse Continue" dans la boucle des feedback liées à la sécurité.
+This map then is never final, in the same way that your application continuously moves forward through feedback, this attack map also needs to be tested against, which provides feedback which in turn means the security posture is strengthened against these attacks. You could call this "Continuous Response" in the Security Feedback loop. 
 
-Pour améliorer la sécurité, nous devons suivre 3 modèles différents:
+At a bare minimum, we should be following a good, better, best model to better the security posture. 
 
-- **Good** - Construire l'application selon un modèle "security by design" afin de réduire les attaques potentielles. 
+- **Good** - Identify security design constraints and controls that need to be built into the software to reduce an attack. 
 
-- **Better** - Prioriser et construire des outils de sécurité pour les problèmes identifié lors du cycle de développement.
+- **Better** - Prioritise and build security in for issues found later in the software cycle. 
 
-- **Best** - Construire et automatiser des scripts lors des déploiement pour détecter des soucis, faire des test unitaire, faire des tests de sécurité et des "Black Box" tests.
+- **Best** - Build automation into script deployment to detect issues, unit testing, security testing, black box testing
 
-La sécurité peut être une contrainte lors de la conception d'un design.
+Security is a design constraint - albeit an inconvenient one.
 
 ## Resources 
 
@@ -93,4 +91,4 @@ La sécurité peut être une contrainte lors de la conception d'un design.
 
 - [Cloud Advocate - DevSecOps Pipeline CI Process - Real world example!](https://www.youtube.com/watch?v=ipe08lFQZU8&list=PLsKoqAvws1pvg7qL7u28_OWfXwqkI3dQ1&index=7&t=204s)
 
-On se retrouver lors du [jour 4](day04.md) 
+See you on [Day 4](day04.md) 
