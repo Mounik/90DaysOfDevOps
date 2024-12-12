@@ -1,14 +1,3 @@
----
-title: '#90DaysOfDevOps - Responsabilités d\'un Ingénieur DevOps - Jour 2'
-published: false
-description: 90DaysOfDevOps - Responsabilités d\'un Ingénieur DevOps
-tags: 'devops, 90daysofdevops, apprentissage'
-cover_image: null
-canonical_url: null
-id: 1048699
-date: '2022-04-17T21:15:34Z'
----
-
 ## Responsabilités d'un Ingénieur DevOps
 
 Espérons que vous arrivez ici après avoir parcouru les ressources publié sur [Jour 1 de #90DaysOfDevOps](day01.md).

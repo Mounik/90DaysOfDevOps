@@ -1,13 +1,3 @@
----
-title: '#90DaysOfDevOps - Axé sur l\'Application - Jour 3'
-published: false
-description: 90DaysOfDevOps - Axé sur l'Application
-tags: 'devops, 90daysofdevops, apprentissage'
-cover_image: null
-canonical_url: null
-id: 1048825
----
-
 ## Cycle de Vie DevOps - Axé sur l'Application
 
 Au cours des prochaines semaines, nous allons certainement rencontrer ces titres (Développement Continu, Tests, Déploiement, Surveillance) encore et encore. Si vous vous dirigez vers le rôle d'ingénieur DevOps, la répétabilité sera quelque chose à laquelle vous vous habituerez, mais l'amélioration constante à chaque fois est ce qui rend les choses intéressantes.

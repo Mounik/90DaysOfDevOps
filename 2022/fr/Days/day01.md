@@ -1,14 +1,3 @@
----
-title: '#90DaysOfDevOps - Introduction - Jour 1'
-published: true
-description: 90DaysOfDevOps - Introduction
-tags: 'devops, 90daysofdevops, apprentissage'
-cover_image: null
-canonical_url: null
-id: 1048731
-date: '2022-04-17T10:12:40Z'
----
-
 ## Introduction - Jour 1
 
 Jour 1 de nos 90 jours et début de l'aventure pour acquérir une bonne compréhension de base du DevOps et des outils qui aident à adopter un état d'esprit DevOps.
