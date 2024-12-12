@@ -37,7 +37,7 @@ Les images ci-dessous vous mèneront aux éditions 2022, 2023 et 2024 du parcour
     <br />
     <em>Année 2022 - C'est ici que nous commençons, 110k mots</em>
   </div>
-
+  
   <div style="margin: 10px; text-align: center;">
     <a href="2023.md">
       <img src="2023.png?raw=true" alt="2023" style="border: 2px solid #555; border-radius: 8px; width: 100%; max-width: 400px;" />
@@ -45,7 +45,7 @@ Les images ci-dessous vous mèneront aux éditions 2022, 2023 et 2024 du parcour
     <br />
     <em>Année 2023 - Continue... Un peu d'aide de mes amis</em>
   </div>
-
+  
   <div style="margin: 10px; text-align: center;">
     <a href="2024.md">
       <img src="2024.png?raw=true" alt="2024" style="border: 2px solid #555; border-radius: 8px; width: 100%; max-width: 400px;" />
@@ -55,7 +55,7 @@ Les images ci-dessous vous mèneront aux éditions 2022, 2023 et 2024 du parcour
   </div>
 
 </div>
-
+  
 Le moyen le plus rapide de me contacter est via Twitter, mon pseudo est [@MichaelCade1](https://twitter.com/MichaelCade1)
 
 ## Licence
