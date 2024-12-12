@@ -1,70 +1,60 @@
----
-title: '#90DaysOfDevOps - Setting up your DevOps environment for Go & Hello World - Day 8'
-published: false
-description: 90DaysOfDevOps - Setting up your DevOps environment for Go & Hello World
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048857
----
+## Configuration de votre environnement DevOps pour Go et Hello World
 
-## Setting up your DevOps environment for Go & Hello World
+Avant de nous plonger dans les fondamentaux de Go, nous devons installer Go sur notre poste de travail et faire ce que tout module "apprentissage de la programmation 101" nous enseigne : créer l'application Hello World. Comme cette étape va nous guider à travers les étapes d'installation de Go sur votre poste de travail, nous allons tenter de documenter le processus en images pour que les gens puissent facilement suivre.
 
-Before we get into some of the fundamentals of Go we should get Go installed on our workstation and do what every "learning programming 101" module teaches us which is to create the Hello World app. As this one is going to be walking through the steps to get Go installed on your workstation we are going to attempt to document the process in pictures so people can easily follow along.
-
-First of all, let's head on over to [go.dev/dl](https://go.dev/dl/) and you will be greeted with some available options for downloads.
+Tout d'abord, rendez-vous sur [go.dev/dl](https://go.dev/dl/) et vous serez accueilli avec quelques options de téléchargement disponibles.
 
 ![](Images/Day8_Go1.png)
 
-If we made it this far you probably know which workstation operating system you are running so select the appropriate download and then we can get installing. I am using Windows for this walkthrough, basically, from this next screen, we can leave all the defaults in place for now. **_(I will note that at the time of writing this was the latest version so screenshots might be out of date)_**
+Si vous êtes arrivé jusqu'ici, vous savez probablement quel système d'exploitation de poste de travail vous utilisez, alors sélectionnez le téléchargement approprié et nous pouvons commencer l'installation. J'utilise Windows pour ce guide, donc à partir de cet écran, nous pouvons laisser tous les paramètres par défaut pour l'instant. **_(Je note qu'au moment de l'écriture, c'était la dernière version, donc les captures d'écran peuvent être obsolètes)_**
 
 ![](Images/Day8_Go2.png)
 
-Also note if you do have an older version of Go installed you will have to remove this before installing, Windows has this built into the installer and will remove and install as one.
+Notez également que si vous avez une version plus ancienne de Go installée, vous devrez la supprimer avant d'installer la nouvelle. Windows intègre cette fonctionnalité dans l'installateur et supprimera et installera en une seule opération.
 
-Once finished you should now open a command prompt/terminal and we want to check that we have to Go installed. If you do not get the output that we see below then Go is not installed and you will need to retrace your steps.
+Une fois terminé, ouvrez une invite de commande/terminal et vérifions que Go est installé. Si vous n'obtenez pas la sortie que nous voyons ci-dessous, Go n'est pas installé et vous devrez revenir sur vos pas.
 
 `go version`
 
 ![](Images/Day8_Go3.png)
 
-Next up we want to check our environment for Go. This is always good to check to make sure your working directories are configured correctly, as you can see below we need to make sure you have the following directory on your system.
+Ensuite, nous voulons vérifier notre environnement pour Go. Il est toujours bon de vérifier que vos répertoires de travail sont correctement configurés. Comme vous pouvez le voir ci-dessous, nous devons nous assurer que vous avez le répertoire suivant sur votre système.
 
 ![](Images/Day8_Go4.png)
 
-Did you check? Are you following along? You will probably get something like the below if you try and navigate there.
+Avez-vous vérifié ? Suivez-vous ? Vous obtiendrez probablement quelque chose comme ci-dessous si vous essayez de naviguer là-bas.
 
 ![](Images/Day8_Go5.png)
 
-Ok, let's create that directory for ease I am going to use the mkdir command in my PowerShell terminal. We also need to create 3 folders within the Go folder as you will see also below.
+D'accord, créons ce répertoire. Pour plus de facilité, je vais utiliser la commande `mkdir` dans mon terminal PowerShell. Nous devons également créer 3 dossiers dans le dossier Go comme vous pouvez le voir ci-dessous.
 
 ![](Images/Day8_Go6.png)
 
-Now we have to Go installed and we have our Go working directory ready for action. We now need an integrated development environment (IDE) Now there are many out there available that you can use but the most common and the one I use is Visual Studio Code or Code. You can learn more about IDEs [here](https://www.youtube.com/watch?v=vUn5akOlFXQ).
+Maintenant que nous avons Go installé et que notre répertoire de travail Go est prêt à l'emploi, nous avons besoin d'un environnement de développement intégré (IDE). Il en existe de nombreux disponibles, mais le plus courant et celui que j'utilise est Visual Studio Code ou Code. Vous pouvez en savoir plus sur les IDE [ici](https://www.youtube.com/watch?v=vUn5akOlFXQ).
 
-If you have not downloaded and installed VSCode already on your workstation then you can do so by heading [here](https://code.visualstudio.com/download). As you can see below you have your different OS options.
+Si vous n'avez pas encore téléchargé et installé VSCode sur votre poste de travail, vous pouvez le faire en vous rendant [ici](https://code.visualstudio.com/download). Comme vous pouvez le voir ci-dessous, vous avez différentes options de système d'exploitation.
 
 ![](Images/Day8_Go7.png)
 
-Much the same as with the Go installation we are going to download and install and keep the defaults. Once complete you can open VSCode you can select Open File and navigate to our Go directory that we created above.
+Comme pour l'installation de Go, nous allons télécharger et installer en gardant les paramètres par défaut. Une fois terminé, vous pouvez ouvrir VSCode, sélectionner Ouvrir un fichier et naviguer vers notre répertoire Go que nous avons créé précédemment.
 
 ![](Images/Day8_Go8.png)
 
-You may get a popup about trust, read it if you want and then hit Yes, trust the authors. (I am not responsible later on though if you start opening things you don't trust!)
+Vous pourriez recevoir un pop-up concernant la confiance. Lisez-le si vous le souhaitez, puis cliquez sur Oui, faites confiance aux auteurs. (Je ne suis pas responsable plus tard si vous commencez à ouvrir des choses en lesquelles vous n'avez pas confiance !)
 
-Now you should see the three folders we also created earlier as well and what we want to do now is right click the src folder and create a new folder called `Hello`
+Maintenant, vous devriez voir les trois dossiers que nous avons également créés précédemment. Ce que nous voulons faire maintenant, c'est faire un clic droit sur le dossier `src` et créer un nouveau dossier appelé `Hello`.
 
 ![](Images/Day8_Go9.png)
 
-Pretty easy stuff I would say up till this point? Now we are going to create our first Go Program with no understanding of anything we put in this next phase.
+Plutôt facile jusqu'à présent, non ? Maintenant, nous allons créer notre premier programme Go sans comprendre ce que nous mettons dans cette prochaine phase.
 
-Next, create a file called `main.go` in your `Hello` folder. As soon as you hit enter on the main.go you will be asked if you want to install the Go extension and also packages you can also check that empty pkg file that we made a few steps back and notice that we should have some new packages in there now?
+Ensuite, créez un fichier appelé `main.go` dans votre dossier `Hello`. Dès que vous appuyez sur Entrée pour `main.go`, vous serez invité à installer l'extension Go ainsi que des packages. Vous pouvez également vérifier ce fichier `pkg` vide que nous avons créé il y a quelques étapes et remarquer que nous devrions avoir de nouveaux packages là-dedans maintenant.
 
 ![](Images/Day8_Go10.png)
 
-Now let's get this Hello World app going, copy the following code into your new main.go file and save that.
+Maintenant, lançons cette application Hello World. Copiez le code suivant dans votre nouveau fichier `main.go` et enregistrez-le.
 
-```
+```go
 package main
 
 import "fmt"
@@ -74,39 +64,40 @@ func main() {
 }
 ```
 
-Now I appreciate that the above might make no sense at all, but we will cover more about functions, packages and more in later days. For now, let's run our app. Back in the terminal and in our Hello folder we can now check that all is working. Using the command below we can check to see if our generic learning program is working.
+Je comprends que ce qui précède puisse ne pas avoir de sens, mais nous aborderons davantage les fonctions, les packages et plus dans les prochains jours. Pour l'instant, exécutons notre application. De retour dans le terminal et dans notre dossier `Hello`, nous pouvons maintenant vérifier que tout fonctionne. En utilisant la commande ci-dessous, nous pouvons vérifier si notre programme d'apprentissage générique fonctionne.
 
-```
+```bash
 go run main.go
 ```
 
 ![](Images/Day8_Go11.png)
 
-It doesn't end there though, what if we now want to take our program and run it on other Windows machines? We can do that by building our binary using the following command
+Mais ce n'est pas tout. Que se passe-t-il si nous voulons maintenant prendre notre programme et l'exécuter sur d'autres machines Windows ? Nous pouvons le faire en construisant notre binaire à l'aide de la commande suivante :
 
-```
+```bash
 go build main.go
 ```
 
 ![](Images/Day8_Go12.png)
 
-If we run that, we would see the same output:
+Si nous exécutons cela, nous verrons la même sortie :
 
 ```bash
 $ ./main.exe
 Hello #90DaysOfDevOps
 ```
 
-## Resources
+## Ressources
 
-- [StackOverflow 2021 Developer Survey](https://insights.stackoverflow.com/survey/2021)
-- [Why we are choosing Golang to learn](https://www.youtube.com/watch?v=7pLqIIAqZD4&t=9s)
-- [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s)
-- [Techworld with Nana - Golang full course - 3 hours 24 mins](https://www.youtube.com/watch?v=yyUHQIec83I)
-- [**NOT FREE** Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins](https://www.pluralsight.com/courses/go-fundamentals)
-- [FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s)
-- [Hitesh Choudhary - Complete playlist](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N)
+- [Enquête StackOverflow 2021 sur les développeurs](https://insights.stackoverflow.com/survey/2021)
+- [Pourquoi nous choisissons Golang pour apprendre](https://www.youtube.com/watch?v=7pLqIIAqZD4&t=9s)
+- [Jake Wright - Apprenez Go en 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s)
+- [Techworld With Nana - Cours complet sur Golang - 3 heures 24 minutes](https://www.youtube.com/watch?v=yyUHQIec83I)
+- [Techworld With Nana - Learn Go by Building a TodoList App](https://www.youtube.com/watch?v=XCZWyN9ZbEQ)
+- [**PAS GRATUIT** Nigel Poulton Pluralsight - Fondamentaux de Go - 3 heures 26 minutes](https://www.pluralsight.com/courses/go-fundamentals)
+- [FreeCodeCamp - Apprenez la programmation Go - Tutoriel Golang pour débutants](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s)
+- [Hitesh Choudhary - Liste de lecture complète](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N)
 
-See you on [Day 9](day09.md).
+À bientôt sur [Jour 9](day09.md).
 
 ![](Images/Day8_Go13.png)
