@@ -1,70 +1,70 @@
 ---
-title: '#90DaysOfDevOps - Responsibilities of a DevOps Engineer - Day 2'
+title: '#90DaysOfDevOps - Responsabilités d\'un Ingénieur DevOps - Jour 2'
 published: false
-description: 90DaysOfDevOps - Responsibilities of a DevOps Engineer
-tags: 'devops, 90daysofdevops, learning'
+description: 90DaysOfDevOps - Responsabilités d\'un Ingénieur DevOps
+tags: 'devops, 90daysofdevops, apprentissage'
 cover_image: null
 canonical_url: null
 id: 1048699
 date: '2022-04-17T21:15:34Z'
 ---
 
-## Responsibilities of a DevOps Engineer
+## Responsabilités d'un Ingénieur DevOps
 
-Hopefully, you are coming into this off the back of going through the resources and posting on [Day1 of #90DaysOfDevOps](day01.md)
+Espérons que vous arrivez ici après avoir parcouru les ressources publié sur [Jour 1 de #90DaysOfDevOps](day01.md).
 
-It was briefly touched on in the first post but now we must get deeper into this concept and understand that there are two main parts when creating an application. We have the **Development** part where software developers program the application and test it. Then we have the **Operations** part where the application is deployed and maintained on a server.
+Cela a été brièvement abordé dans le premier post, mais maintenant nous devons approfondir ce concept et comprendre qu'il y a deux parties principales lors de la création d'une application. Nous avons la partie **Développement** où les développeurs de logiciels programment l'application et la testent. Ensuite, nous avons la partie **Opérations** où l'application est déployée et maintenue sur un serveur.
 
-## DevOps is the link between the two
+## DevOps est le lien entre les deux
 
-To get to grips with DevOps or the tasks which a DevOps engineer would be carrying out we need to understand the tools or the process and overview of those and how they come together.
+Pour comprendre le DevOps ou les tâches qu'un ingénieur DevOps effectuerait, nous devons comprendre les outils ou le processus et avoir une vue d'ensemble de ceux-ci et de la manière dont ils s'assemblent.
 
-Everything starts with the application! You will see so much throughout that it is all about the application when it comes to DevOps.
+Tout commence avec l'application ! Vous verrez tellement de choses tout au long de ce parcours que tout tourne autour de l'application lorsqu'il s'agit de DevOps.
 
-Developers will create an application, this can be done with many different technology stacks and let's leave that to the imagination for now as we get into this later. This can also involve many different programming languages, build tools, code repositories etc.
+Les développeurs créeront une application, cela peut être fait avec de nombreuses stacks technologiques différentes et laissons cela à l'imagination pour l'instant car nous aborderons cela plus tard. Cela peut également impliquer de nombreux langages de programmation différents, outils de construction, dépôts de code, etc.
 
-As a DevOps engineer you won't be programming the application but having a good understanding of the concepts of how a developer works and the systems, tools and processes they are using is key to success.
+En tant qu'ingénieur DevOps, vous ne programmerez pas l'application, mais avoir une bonne compréhension des concepts de travail d'un développeur et des systèmes, outils et processus qu'ils utilisent est la clé du succès.
 
-At a very high level, you are going to need to know how the application is configured to talk to all of its required services or data services and then also sprinkle a requirement of how this can or should be tested.
+À un niveau très élevé, vous devrez savoir comment l'application est configurée pour communiquer avec tous ses services ou services de données requis, puis ajouter une exigence sur la manière dont cela peut ou doit être testé.
 
-The application will need to be deployed somewhere, let's keep it generally simple here and make this a server, doesn't matter where but a server. This is then expected to be accessed by the customer or end user depending on the application that has been created.
+L'application devra être déployée quelque part, gardons cela généralement simple ici et faisons en sorte que ce soit un serveur, peu importe où mais un serveur. On s'attend ensuite à ce qu'il soit accessible par le client ou l'utilisateur final en fonction de l'application qui a été créée.
 
-This server needs to run somewhere, on-premises, in a public cloud, serverless (Ok I have gone too far, we won't be covering serverless but its an option and more and more enterprises are heading this way) Someone needs to create and configure these servers and get them ready for the application to run. Now, this element might land to you as a DevOps engineer to deploy and configure these servers.
+Ce serveur doit fonctionner quelque part, sur site, dans un cloud public, sans serveur (d'accord, je suis allé trop loin, nous ne couvrirons pas le sans serveur mais c'est une option et de plus en plus d'entreprises se dirigent dans cette direction). Quelqu'un doit créer et configurer ces serveurs et les préparer pour l'exécution de l'application. Maintenant, cet élément pourrait vous revenir en tant qu'ingénieur DevOps pour déployer et configurer ces serveurs.
 
-These servers run an operating system and generally speaking this is going to be Linux but we have a whole section or week where we cover some of the foundational knowledge you should gain here.
+Ces serveurs exécutent un système d'exploitation et, en général, il s'agira de Linux, mais nous avons une section d'une semaine entière où nous couvrons certaines des connaissances de base que vous devriez acquérir ici.
 
-It is also likely that we need to communicate with other services in our network or environment, so we also need to have that level of knowledge around networking and configuring that, this might to some degree also land at the feet of the DevOps engineer. Again we will cover this in more detail in a dedicated section talking about all things DNS, DHCP, Load Balancing etc.
+Il est également probable que nous devions communiquer avec d'autres services de notre réseau ou environnement, nous devons donc également avoir ce niveau de connaissance autour de la mise en réseau et de la configuration de celle-ci, cela pourrait également dans une certaine mesure revenir aux tâches de l'ingénieur DevOps. Encore une fois, nous aborderons cela en détail dans une section dédiée parlant de toutes les choses DNS, DHCP, load balancer, etc.
 
-## Jack of all trades, Master of none
+## Homme à tout faire, maître de rien
 
-I will say at this point though, you don't need to be a Network or Infrastructure specialist you need a foundational knowledge of how to get things up and running and talking to each other, much the same as maybe having a foundational knowledge of a programming language but you don't need to be a developer. However, you might be coming into this as a specialist in an area and that is a great footing to adapt to other areas.
+Je dirai cependant à ce stade que vous n'avez pas besoin d'être un spécialiste du réseau ou de l'infrastructure, vous avez besoin de connaissances de base sur la façon de faire fonctionner les choses et de les faire communiquer entre elles, de la même manière qu'avoir une connaissance de base d'un langage de programmation mais vous n'avez pas besoin d'être un développeur. Cependant, vous pourriez venir dans ce domaine en tant que spécialiste et c'est une excellente base pour vous adapter à d'autres domaines.
 
-You will also most likely not take over the management of these servers or the application daily.
+Vous ne prendrez probablement pas non plus la gestion quotidienne de ces serveurs ou de l'application.
 
-We have been talking about servers but the likelihood is that your application will be developed to run as containers, Which still runs on a server for the most part but you will also need an understanding of not only virtualisation, Cloud Infrastructure as a Service (IaaS) but also containerisation as well, The focus in these 90 days will be more catered towards containers.
+Nous avons parlé de serveurs, mais il est probable que votre application soit développée pour s'exécuter en tant que conteneurs, ce qui s'exécute toujours sur un serveur pour la plupart, mais vous aurez également besoin d'une compréhension non seulement de la virtualisation, de l'infrastructure cloud en tant que service (IaaS) mais aussi de la conteneurisation, le focus dans ces 90 jours sera plus orienté vers les conteneurs.
 
-## High-Level Overview
+## Vue d'ensemble de haut niveau
 
-On one side we have our developers creating new features and functionality (as well as bug fixes) for the application.
+D'un côté, nous avons nos développeurs qui créent de nouvelles fonctionnalités (ainsi que des correctifs de bugs) pour l'application.
 
-On the other side, we have some sort of environment, infrastructure or servers which are configured and managed to run this application and communicate with all its required services.
+De l'autre côté, nous avons une sorte d'environnement, d'infrastructure ou de serveurs qui sont configurés et gérés pour exécuter cette application et communiquer avec tous ses services requis.
 
-The big question is how do we get those features and bug fixes into our products and make them available to those end users?
+La grande question est de savoir comment intégrer ces fonctionnalités et correctifs de bugs dans nos produits et les rendre disponibles à ces utilisateurs finaux ?
 
-How do we release the new application version? This is one of the main tasks for a DevOps engineer, and the important thing here is not to just figure out how to do this once but we need to do this continuously and in an automated, efficient way which also needs to include testing!
+Comment publions-nous la nouvelle version de l'application ? C'est l'une des principales tâches d'un ingénieur DevOps, et l'important ici n'est pas seulement de comprendre comment faire cela une fois, mais nous devons le faire de manière continue et automatisée, efficace, qui doit également inclure des tests !
 
-This is where we are going to end this day of learning, hopefully, this was useful. Over the next few days, we are going to dive a little deeper into some other areas of DevOps and then we will get into the sections that dive deeper into the tooling and processes and the benefits of these.
+C'est là que nous allons terminer cette journée d'apprentissage, espérons que cela a été utile. Au cours des prochains jours, nous allons approfondir certains autres domaines du DevOps, puis nous aborderons les sections qui approfondissent les outils et les processus et les avantages de ceux-ci.
 
-## Resources
+## Ressources
 
-I am always open to adding additional resources to these readme files as it is here as a learning tool.
+Je suis toujours ouvert à l'ajout de ressources supplémentaires à ces fichiers readme car ils sont là comme outil d'apprentissage.
 
-My advice is to watch all of the below and hopefully you also picked something up from the text and explanations above.
+Mon conseil est de regarder tout ce qui suit et, espérons-le, que vous ayez également appris quelque chose du texte et des explications ci-dessus.
 
-- [What is DevOps? - TechWorld with Nana](https://www.youtube.com/watch?v=0yWAtQ6wYNM)
-- [What is DevOps? - GitHub YouTube](https://www.youtube.com/watch?v=kBV8gPVZNEE)
-- [What is DevOps? - IBM YouTube](https://www.youtube.com/watch?v=UbtB4sMaaNM)
-- [What is DevOps? - AWS](https://aws.amazon.com/devops/what-is-devops/)
-- [What is DevOps? - Microsoft](https://docs.microsoft.com/en-us/devops/what-is-devops)
+- [Qu'est-ce que DevOps ? - TechWorld avec Nana](https://www.youtube.com/watch?v=0yWAtQ6wYNM)
+- [Qu'est-ce que DevOps ? - GitHub YouTube](https://www.youtube.com/watch?v=kBV8gPVZNEE)
+- [Qu'est-ce que DevOps ? - IBM YouTube](https://www.youtube.com/watch?v=UbtB4sMaaNM)
+- [Qu'est-ce que DevOps ? - AWS](https://aws.amazon.com/devops/what-is-devops/)
+- [Qu'est-ce que DevOps ? - Microsoft](https://docs.microsoft.com/en-us/devops/what-is-devops)
 
-If you made it this far then you will know if this is where you want to be or not. See you on [Day 3](day03.md).
+Si vous êtes arrivé jusqu'ici, alors vous saurez si c'est là que vous voulez être ou non. À bientôt sur [Jour 3](day03.md).
