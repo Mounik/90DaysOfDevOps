@@ -1,32 +1,32 @@
 # 90DaysOfDevOps
 
 <p align="center">
- <img src="logo.png?raw=true" alt="90DaysOfDevOps Logo" width="50%" height="50%" />
+ <img src="logo.png?raw=true" alt="Logo 90DaysOfDevOps" width="50%" height="50%" />
 </p>
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.90daysofdevops.com)](https://www.90daysofdevops.com) [![GitHub Repo stars](https://img.shields.io/github/stars/MichaelCade/90DaysOfDevOps)](https://github.com/MichaelCade/90DaysOfDevOps) [![GitHub Repo stars](https://img.shields.io/github/forks/MichaelCade/90DaysOfDevOps)](https://github.com/MichaelCade/90DaysOfDevOps)  [![GitHub Repo issues](https://img.shields.io/github/issues/MichaelCade/90DaysOfDevOps)](https://github.com/MichaelCade/90DaysOfDevOps)  
+[![Site Web](https://img.shields.io/website?url=https%3A%2F%2Fwww.90daysofdevops.com)](https://www.90daysofdevops.com) [![Étoiles du dépôt GitHub](https://img.shields.io/github/stars/MichaelCade/90DaysOfDevOps)](https://github.com/MichaelCade/90DaysOfDevOps) [![Forks du dépôt GitHub](https://img.shields.io/github/forks/MichaelCade/90DaysOfDevOps)](https://github.com/MichaelCade/90DaysOfDevOps) [![Issues du dépôt GitHub](https://img.shields.io/github/issues/MichaelCade/90DaysOfDevOps)](https://github.com/MichaelCade/90DaysOfDevOps)  
 
-This repository started as a way to document my journey on getting a better foundational knowledge of "DevOps". It was started on the 1st January 2022 and ran to the 31st March 2022 which is 90 Days! 
+Ce dépôt est un moyen de documenter mon parcours vers une meilleure compréhension de base du "DevOps". Il a été lancé le 1er janvier 2022 et s'est terminé le 31 mars 2022, soit 90 jours!
 
-What started off as a learning in public project has quickly become a structured way of learning the foundations of DevOps principles, processes and tooling. Maybe you can help contribute some resources you have found useful to the project. 
+Ce qui a commencé comme un projet d'apprentissage en public est rapidement devenu une méthode structurée pour apprendre les fondements des principes, processus et outils DevOps. Peut-être pouvez-vous contribuer au projet en partageant des ressources que vous avez trouvées utiles.
 
-- 2022 - Written content by myself but then translated and corrected and enhanced by the community 
-- 2023 - Focus on Security and other topics we did not get to in 2022, Perspectives from communinty subject matter experts. 
-- 2024 - Community Sessions by the community, 91 Sessions shared on YouTube. Different Media with intent to build out resources here as well. 
+- 2022 - Contenu écrit par moi-même, puis traduit, corrigé et amélioré par la communauté
+- 2023 - Focus sur la sécurité et d'autres sujets que nous n'avons pas abordés en 2022, perspectives d'experts de la communauté
+- 2024 - Sessions communautaires par la communauté, 91 sessions partagées sur YouTube. Différents médias avec l'intention de développer également des ressources ici.
 
-2025 - Where should we take this next? Are we finished? 
+2025 - Où devrions-nous aller ensuite? Avons-nous terminé?
 
-This will **not cover all things** "DevOps" but it will cover some of the areas that will benefit your learning and understanding overall in this space. The encouragement here is to read & watch the content, be curious, provide feedback and discuss within the community your findings.
+Cela **ne couvrira pas tout** ce qui concerne le "DevOps", mais cela couvrira certaines des zones qui bénéficieront à votre apprentissage et à votre compréhension globale dans cet espace. L'encouragement ici est de lire et regarder le contenu, d'être curieux, de fournir des retours et de discuter de vos découvertes au sein de la communauté.
 
-The project is not a sponsored operation by any vendors and everything is accessible using free, community and open source software. 
+Le projet n'est pas une opération sponsorisée par des fournisseurs et tout est accessible en utilisant des logiciels gratuits, communautaires et open source.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N33YRCS)
 
-[![Discord Invite Link](https://dcbadge.vercel.app/api/server/vqwPrNQsyK)](https://discord.gg/vqwPrNQsyK)
+[![Lien d'invitation Discord](https://dcbadge.vercel.app/api/server/vqwPrNQsyK)](https://discord.gg/vqwPrNQsyK)
 
-![GitHub Repo Stars](https://img.shields.io/github/stars/michaelcade/90daysofdevops?style=social?)
+![Étoiles du dépôt GitHub](https://img.shields.io/github/stars/michaelcade/90daysofdevops?style=social?)
 
-The to images below will take you to the 2022, 2023 and 2024 editions of the learning journey. 
+Les images ci-dessous vous mèneront aux éditions 2022, 2023 et 2024 du parcours d'apprentissage.
 
 <div style="display: flex; justify-content: center; align-items: center;">
 
@@ -35,7 +35,7 @@ The to images below will take you to the 2022, 2023 and 2024 editions of the lea
       <img src="2022.png?raw=true" alt="2022" style="border: 2px solid #555; border-radius: 8px; width: 100%; max-width: 400px;" />
     </a>
     <br />
-    <em>Year 2022 - This is where we start, 110k words </em>
+    <em>Année 2022 - C'est ici que nous commençons, 110k mots</em>
   </div>
 
   <div style="margin: 10px; text-align: center;">
@@ -43,7 +43,7 @@ The to images below will take you to the 2022, 2023 and 2024 editions of the lea
       <img src="2023.png?raw=true" alt="2023" style="border: 2px solid #555; border-radius: 8px; width: 100%; max-width: 400px;" />
     </a>
     <br />
-    <em>Year 2023 - Continues... Some help from my friends</em>
+    <em>Année 2023 - Continue... Un peu d'aide de mes amis</em>
   </div>
 
   <div style="margin: 10px; text-align: center;">
@@ -51,25 +51,25 @@ The to images below will take you to the 2022, 2023 and 2024 editions of the lea
       <img src="2024.png?raw=true" alt="2024" style="border: 2px solid #555; border-radius: 8px; width: 100%; max-width: 400px;" />
     </a>
     <br />
-    <em>Year 2024 - Community Edition: 90 Sessions</em>
+    <em>Année 2024 - Édition Communautaire: 90 Sessions</em>
   </div>
 
 </div>
 
-The quickest way to get in touch is going to be via Twitter, my handle is [@MichaelCade1](https://twitter.com/MichaelCade1)
+Le moyen le plus rapide de me contacter est via Twitter, mon pseudo est [@MichaelCade1](https://twitter.com/MichaelCade1)
 
-## License
+## Licence
 
-Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+Badge: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
-This work is licensed under a
+Ce travail est sous licence
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
 
-## Star History
+## Historique des Étoiles
 
-[![Star History Chart](https://api.star-history.com/svg?repos=MichaelCade/90DaysOfDevOps&type=Timeline)](https://star-history.com/#MichaelCade/90DaysOfDevOps&Timeline)
+[![Graphique de l'historique des étoiles](https://api.star-history.com/svg?repos=MichaelCade/90DaysOfDevOps&type=Timeline)](https://star-history.com/#MichaelCade/90DaysOfDevOps&Timeline)
 
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
