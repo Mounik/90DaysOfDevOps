@@ -71,6 +71,6 @@ Mon conseil est de regarder tout ce qui suit et, espérons-le, vous avez égalem
 - [Intégration Continue - IBM YouTube](https://www.youtube.com/watch?v=1er2cjUq1UI)
 - [Surveillance Continue](https://www.youtube.com/watch?v=Zu53QQuYqJ0)
 - [FinOps Foundation - Qu'est-ce que FinOps](https://www.finops.org/introduction/what-is-finops/)
-- [**PAS GRATUIT** The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win](https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/1942788290/)
+- [**PAS GRATUIT** The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win](https://www.amazon.fr/Phoenix-Project-Gene-Kim-dp-1950508943/dp/1950508943)
 
 Si vous êtes arrivé jusqu'ici, alors vous saurez si c'est là que vous voulez être ou non. À bientôt sur [Jour 4](day04.md).
