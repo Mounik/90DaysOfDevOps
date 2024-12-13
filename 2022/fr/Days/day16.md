@@ -1,166 +1,156 @@
----
-title: '#90DaysOfDevOps - Managing your Linux System, Filesystem & Storage - Day 16'
-published: false
-description: '90DaysOfDevOps - Managing your Linux System, Filesystem & Storage'
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048702
----
+## Gestion de votre système Linux, du système de fichiers et du stockage
 
-## Managing your Linux System, Filesystem & Storage
+Jusqu'à présent, nous avons eu un aperçu bref de Linux et DevOps, puis nous avons configuré notre environnement de laboratoire en utilisant Vagrant [(Jour 14)](day14.md), ensuite nous avons abordé une petite partie des commandes qui feront partie de votre boîte à outils quotidienne dans le terminal pour accomplir des tâches [(Jour 15)](day15.md).
 
-So far we have had a brief overview of Linux and DevOps and then we got our lab environment set up using Vagrant [(Day 14)](day14.md), we then touched on a small portion of commands that will be in your daily toolkit when in the terminal and getting things done [(Day 15)](day15.md).
+Ici, nous allons examiner trois domaines clés pour prendre soin de vos systèmes Linux avec les mises à jour, l'installation de logiciels, la compréhension des dossiers système utilisés et nous allons également examiner le stockage.
 
-Here we are going to look into three key areas of looking after your Linux systems with updates, installing software, understanding what system folders are used for and we will also take a look at storage.
+## Gestion d'Ubuntu et des logiciels
 
-## Managing Ubuntu & Software
+La première chose que nous allons examiner est la manière dont nous mettons à jour notre système d'exploitation. La plupart d'entre vous seront familiers avec ce processus sous Windows et macOS, cela semble légèrement différent sur un bureau et un serveur Linux.
 
-The first thing we are going to look at is how we update our operating system. Most of you will be familiar with this process in a Windows OS and macOS, this looks slightly different on a Linux desktop and server.
+Nous allons examiner le gestionnaire de paquets apt, c'est ce que nous allons utiliser sur notre VM Ubuntu pour les mises à jour et l'installation de logiciels.
 
-We are going to be looking at the apt package manager, this is what we are going to use on our Ubuntu VM for updates and software installation.
-
-Generally, at least on dev workstations, I run this command to make sure that I have the latest available updates from the central repositories, before any software installation.
+Généralement, au moins sur les postes de travail de développement, j'exécute cette commande pour m'assurer que j'ai les dernières mises à jour disponibles à partir des dépôts centraux, avant toute installation de logiciel.
 
 `sudo apt-get update`
 
 ![](Images/Day16_Linux1.png)
 
-Now we have an updated Ubuntu VM with the latest OS updates installed. We now want to get some software installed here.
+Maintenant, nous avons une VM Ubuntu mise à jour avec les dernières mises à jour du système d'exploitation installées. Nous voulons maintenant installer quelques logiciels ici.
 
-Let's choose `figlet` which is a program that generates text banners.
+Choisissons `figlet` qui est un programme générant des bannières de texte.
 
-If we type `figlet` in our terminal you are going to see that we do not have it installed on our system.
+Si nous tapons `figlet` dans notre terminal, vous verrez que nous ne l'avons pas installé sur notre système.
 
 ![](Images/Day16_Linux2.png)
 
-You will see from the above though that it does give us some `apt` install options that we could try. This is because in the default repositories there is a program called figlet. Let's try `sudo apt install figlet`
+Vous verrez cependant ci-dessus qu'il nous donne quelques options d'installation `apt` que nous pourrions essayer. C'est parce que dans les dépôts par défaut, il y a un programme appelé figlet. Essayons `sudo apt install figlet`.
 
 ![](Images/Day16_Linux3.png)
 
-We can now use our `figlet` app as you can see below.
+Nous pouvons maintenant utiliser notre application `figlet` comme vous pouvez le voir ci-dessous.
 
 ![](Images/Day16_Linux4.png)
 
-If we want to remove that or any of our software installations we can also do that via the `apt` package manager.
+Si nous voulons supprimer cela ou l'une de nos installations de logiciels, nous pouvons également le faire via le gestionnaire de paquets `apt`.
 
 `sudo apt remove figlet`
 
 ![](Images/Day16_Linux5.png)
 
-There are third party repositories that we can also add to our system, the ones we have access to out of the box are the Ubuntu default repositories.
+Il existe des dépôts tiers que nous pouvons également ajouter à notre système, ceux auxquels nous avons accès dès le départ sont les dépôts par défaut d'Ubuntu.
 
-If for example, we wanted to install vagrant on our Ubuntu VM we would not be able to right now and you can see this below on the first command issued. We then add the key to trust the HashiCorp repository, then add the repository to our system.
+Par exemple, si nous voulions installer Vagrant sur notre VM Ubuntu, nous ne pourrions pas le faire pour le moment et vous pouvez le voir ci-dessous sur la première commande émise. Nous ajoutons ensuite la clé pour faire confiance au dépôt HashiCorp, puis nous ajoutons le dépôt à notre système.
 
 ![](Images/Day16_Linux6.png)
 
-Once we have the HashiCorp repository added we can go ahead and run `sudo apt install vagrant` and get vagrant installed on our system.
+Une fois le dépôt HashiCorp ajouté, nous pouvons continuer et exécuter `sudo apt install vagrant` et obtenir Vagrant installé sur notre système.
 
 ![](Images/Day16_Linux7.png)
 
-There are so many options when it comes to software installation, different options for package managers, built into Ubuntu we could also use snaps for our software installations.
+Il existe de nombreuses options en matière d'installation de logiciels, différentes options pour les gestionnaires de paquets, intégrés à Ubuntu, nous pourrions également utiliser des snaps pour nos installations de logiciels.
 
-Hopefully, this gives you a feel about how to manage your OS and software installations on Linux.
+Espérons que cela vous donne une idée de la manière de gérer votre système d'exploitation et les installations de logiciels sous Linux.
 
-## File System Explained
+## Système de fichiers expliqué
 
-Linux is made up of configuration files, if you want to change anything then you change these configuration files.
+Linux est composé de fichiers de configuration, si vous voulez changer quelque chose, vous changez ces fichiers de configuration.
 
-On Windows, you have C: drive and that is what we consider the root. On Linux we have `/` this is where we are going to find the important folders on our Linux system.
+Sous Windows, vous avez le lecteur C: et c'est ce que nous considérons comme la racine. Sous Linux, nous avons `/`, c'est ici que nous allons trouver les dossiers importants de notre système Linux.
 
 ![](Images/Day16_Linux8.png)
 
-- `/bin` - Short for binary, the bin folder is where our binaries that your system needs, executables and tools will mostly be found here.
+- `/bin` - Abréviation de binary, le dossier bin est l'endroit où se trouvent nos binaires dont votre système a besoin, les exécutables et les outils seront principalement trouvés ici.
 
 ![](Images/Day16_Linux9.png)
 
-- `/boot` - All the files your system needs to boot up. How to boot up, and what drive to boot from.
+- `/boot` - Tous les fichiers dont votre système a besoin pour démarrer. Comment démarrer et quel lecteur démarrer.
 
 ![](Images/Day16_Linux10.png)
 
-- `/dev` - You can find device information here, this is where you will find pointers to your disk drives `sda` will be your main OS disk.
+- `/dev` - Vous pouvez trouver des informations sur les périphériques ici, c'est ici que vous trouverez des pointeurs vers vos disques durs, `sda` sera votre disque principal du système d'exploitation.
 
 ![](Images/Day16_Linux11.png)
 
-- `/etc` Likely the most important folder on your Linux system, this is where the majority of your configuration files are.
+- `/etc` Probablement le dossier le plus important de votre système Linux, c'est ici que se trouvent la majorité de vos fichiers de configuration.
 
 ![](Images/Day16_Linux12.png)
 
-- `/home` - this is where you will find your user folders and files. We have our vagrant user folder. This is where you will find your `Documents` and `Desktop` folders that we worked in for the commands section.
+- `/home` - c'est ici que vous trouverez vos dossiers et fichiers utilisateur. Nous avons notre dossier utilisateur vagrant. C'est ici que vous trouverez vos dossiers `Documents` et `Bureau` dans lesquels nous avons travaillé pour la section des commandes.
 
 ![](Images/Day16_Linux13.png)
 
-- `/lib` - We mentioned that `/bin` is where our binaries and executables live, and `/lib` is where you will find the shared libraries for those.
+- `/lib` - Nous avons mentionné que `/bin` est l'endroit où vivent nos binaires et exécutables, et `/lib` est l'endroit où vous trouverez les bibliothèques partagées pour ceux-ci.
 
 ![](Images/Day16_Linux14.png)
 
-- `/media` - This is where we will find removable devices.
+- `/media` - C'est ici que nous trouverons les périphériques amovibles.
 
 ![](Images/Day16_Linux15.png)
 
-- `/mnt` - This is a temporary mount point. We will cover more here in the next storage section.
+- `/mnt` - Il s'agit d'un point de montage temporaire. Nous en couvrirons davantage dans la section suivante sur le stockage.
 
 ![](Images/Day16_Linux16.png)
 
-- `/opt` - Optional software packages. You will notice here that we have some vagrant and virtual box software stored here.
+- `/opt` - Paquets logiciels optionnels. Vous remarquerez ici que nous avons certains logiciels Vagrant et Virtual Box stockés ici.
 
 ![](Images/Day16_Linux17.png)
 
-- `/proc` - Kernel & process information, similar to `/dev`
+- `/proc` - Informations sur le noyau et les processus, similaire à `/dev`.
 
 ![](Images/Day16_Linux18.png)
 
-- `/root` - To gain access you will need to sudo into this folder. The home folder for root.
+- `/root` - Pour accéder, vous devrez sudo dans ce dossier. Le dossier personnel pour root.
 
 ![](Images/Day16_Linux19.png)
 
-- `/run` -Placeholder for application states.
+- `/run` - Espace réservé pour les états des applications.
 
 ![](Images/Day16_Linux20.png)
 
-- `/sbin` - Sudo bin, similar to the bin folder but these tools are intended for elevated superuser privileges on the system.
+- `/sbin` - Sudo bin, similaire au dossier bin mais ces outils sont destinés à des privilèges superutilisateur élevés sur le système.
 
 ![](Images/Day16_Linux21.png)
 
-- `/tmp` - temporary files.
+- `/tmp` - fichiers temporaires.
 
 ![](Images/Day16_Linux22.png)
 
-- `/usr` - If we as a standard user have installed software packages it would generally be installed in the `/usr/bin` location.
+- `/usr` - Si nous, en tant qu'utilisateur standard, avons installé des paquets logiciels, ils seraient généralement installés dans l'emplacement `/usr/bin`.
 
 ![](Images/Day16_Linux23.png)
 
-- `/var` - Our applications get installed in a `bin` folder. We need somewhere to store all of the log files this is `/var`
+- `/var` - Nos applications sont installées dans un dossier `bin`. Nous avons besoin d'un endroit pour stocker tous les fichiers journaux, c'est `/var`.
 
 ![](Images/Day16_Linux24.png)
 
-## Storage
+## Stockage
 
-When we come to a Linux system or any system we might want to know the available disks and how much free space we have on those disks. The next few commands will help us identify and use and manage storage.
+Lorsque nous arrivons sur un système Linux ou tout autre système, nous pourrions vouloir connaître les disques disponibles et la quantité d'espace libre sur ces disques. Les commandes suivantes vont nous aider à identifier, utiliser et gérer le stockage.
 
-- `lsblk` List Block devices. `sda` is our physical disk and then `sda1, sda2, sda3` are our partitions on that disk.
+- `lsblk` Liste des périphériques de bloc. `sda` est notre disque physique et ensuite `sda1, sda2, sda3` sont nos partitions sur ce disque.
 
 ![](Images/Day16_Linux25.png)
 
-- `df` gives us a little more detail about those partitions, total, used and available. You can parse other flags here I generally use `df -h` to give us a human output of the data.
+- `df` nous donne un peu plus de détails sur ces partitions, total, utilisé et disponible. Vous pouvez analyser d'autres indicateurs ici, j'utilise généralement `df -h` pour nous donner une sortie humaine des données.
 
 ![](Images/Day16_Linux26.png)
 
-If you were adding a new disk to your system and this is the same in Windows you would need to format the disk in disk management, in the Linux terminal you can do this by using the `sudo mkfs -t ext4 /dev/sdb` with sdb relating to our newly added disk.
+Si vous ajoutiez un nouveau disque à votre système et c'est la même chose sous Windows, vous devriez formater le disque dans la gestion des disques, dans le terminal Linux, vous pouvez le faire en utilisant `sudo mkfs -t ext4 /dev/sdb` avec sdb se rapportant à notre nouveau disque ajouté.
 
-We would then need to mount our newly formatted disk so that it was useable. We would do this in our `/mnt` folder previously mentioned and we would create a directory there with `sudo mkdir NewDisk` we would then use `sudo mount /dev/sdb newdisk` to mount the disk to that location.
+Nous devrions ensuite monter notre nouveau disque formaté pour qu'il soit utilisable. Nous le ferions dans notre dossier `/mnt` mentionné précédemment et nous créerions un répertoire là avec `sudo mkdir NewDisk`, nous utiliserions ensuite `sudo mount /dev/sdb newdisk` pour monter le disque à cet emplacement.
 
-It is also possible that you will need to unmount storage from your system safely vs just pulling it from the configuration. We can do this with `sudo umount /dev/sdb`
+Il est également possible que vous deviez démonter le stockage de votre système en toute sécurité plutôt que de simplement le retirer de la configuration. Nous pouvons le faire avec `sudo umount /dev/sdb`.
 
-If you did not want to unmount that disk and you were going to be using this disk for a database or some other persistent use case then you want it to be there when you reboot your system. For this to happen we need to add this disk to our `/etc/fstab` configuration file for it to persist, if you don't it won't be useable when the machine reboots and you would manually have to go through the above process. The data will still be there on the disk but it won't automount unless you add the configuration to this file.
+Si vous ne vouliez pas démonter ce disque et que vous alliez utiliser ce disque pour une base de données ou un autre cas d'utilisation persistant, vous voudriez qu'il soit là lorsque vous redémarrez votre système. Pour que cela se produise, nous devons ajouter ce disque à notre fichier de configuration `/etc/fstab` pour qu'il persiste, sinon il ne sera pas utilisable lorsque la machine redémarre et vous devriez manuellement suivre le processus ci-dessus. Les données seront toujours sur le disque mais il ne se montera pas automatiquement à moins que vous n'ajoutiez la configuration à ce fichier.
 
-Once you have edited the `fstab` configuration file you can check your workings with `sudo mount -a` if no errors then your changes will now be persistent across restarts.
+Une fois que vous avez modifié le fichier de configuration `fstab`, vous pouvez vérifier vos travaux avec `sudo mount -a`, si aucune erreur, alors vos modifications seront maintenant persistantes à travers les redémarrages.
 
-We will cover how you would edit a file using a text editor in a future session.
+Nous verrons comment vous pourriez modifier un fichier en utilisant un éditeur de texte dans une session future.
 
-## Resources
+## Ressources
 
-- [Learn the Linux Fundamentals - Part 1](https://www.youtube.com/watch?v=kPylihJRG70)
-- [Linux for hackers (don't worry you don't need to be a hacker!)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
+- [Apprenez les fondamentaux de Linux - Partie 1](https://www.youtube.com/watch?v=kPylihJRG70)
+- [Linux pour les hackers (ne vous inquiétez pas, vous n'avez pas besoin d'être un hacker !)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
 
-See you on [Day17](day17.md)
+À demain pour le [Jour 17](day17.md)
