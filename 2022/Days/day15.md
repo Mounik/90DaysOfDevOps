@@ -1,121 +1,111 @@
----
-title: '#90DaysOfDevOps - Linux Commands for DevOps (Actually everyone) - Day 15'
-published: false
-description: 90DaysOfDevOps - Linux Commands for DevOps (Actually everyone)
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048834
----
+## Commandes Linux pour DevOps (En fait, pour tout le monde)
 
-## Linux Commands for DevOps (Actually everyone)
+J'ai mentionné [hier](day14.md) que nous allions passer beaucoup de temps dans le terminal avec certaines commandes pour accomplir des tâches.
 
-I mentioned [yesterday](day14.md) that we are going to be spending a lot of time in the terminal with some commands to get stuff done.
+J'ai également mentionné qu'avec notre VM provisionnée par Vagrant, nous pouvons utiliser `vagrant ssh` et accéder à notre boîte. Vous devrez être dans le même répertoire que celui à partir duquel nous l'avons provisionné.
 
-I also mentioned that with our vagrant provisioned VM we can use `vagrant ssh` and gain access to our box. You will need to be in the same directory as we provisioned it from.
+Pour SSH, vous n'aurez pas besoin du nom d'utilisateur et du mot de passe, vous n'en aurez besoin que si vous décidez de vous connecter à la console Virtual Box.
 
-For SSH you won't need the username and password, you will only need that if you decide to log in to the Virtual Box console.
-
-This is where we want to be as per below:
+C'est ici que nous voulons être, comme indiqué ci-dessous :
 
 ![](Images/Day15_Linux1.png)
 
-## Commands
+## Commandes
 
-I cannot cover all the commands here, there are pages and pages of documentation that cover these but also if you are ever in your terminal and you just need to understand options to a specific command we have the `man` pages short for manual. We can use this to go through each of the commands we touch on during this post to find out more options for each one. We can run `man man` which will give you the help for manual pages. To escape the man pages you should press `q` for quit.
+Je ne peux pas couvrir toutes les commandes ici, il y a des pages et des pages de documentation qui les couvrent, mais aussi si vous êtes un jour dans votre terminal et que vous avez juste besoin de comprendre les options d'une commande spécifique, nous avons les pages `man` pour manual. Nous pouvons les utiliser pour parcourir chacune des commandes que nous abordons dans ce post pour trouver plus d'options pour chacune d'elles. Nous pouvons exécuter `man man` qui vous donnera de l'aide pour les pages de manuel. Pour quitter les pages de manuel, vous devez appuyer sur `q` pour quitter.
 
 ![](Images/Day15_Linux2.png)
 ![](Images/Day15_Linux3.png)
 
-`sudo` If you are familiar with Windows and the right click `run as administrator` we can think of `sudo` as very much this. When you run a command with this command you will be running it as `root` it will prompt you for the password before running the command.
+`sudo` Si vous êtes familier avec Windows et le clic droit `exécuter en tant qu'administrateur`, nous pouvons considérer `sudo` comme très similaire. Lorsque vous exécutez une commande avec cette commande, vous l'exécuterez en tant que `root`, elle vous demandera le mot de passe avant d'exécuter la commande.
 
 ![](Images/Day15_Linux4.png)
 
-For one off jobs like installing applications or services, you might need that `sudo command` but what if you have several tasks to deal with and you want to live as `sudo` for a while? This is where you can use `sudo su` again the same as `sudo` once entered you will be prompted for your `root` password. In a test VM like ours, this is fine but I would find it very hard for us to be rolling around as `root` for prolonged periods, bad things can happen. To get out of this elevated position you simply type in `exit`
+Pour des tâches ponctuelles comme l'installation d'applications ou de services, vous pourriez avoir besoin de cette `commande sudo`, mais que faire si vous avez plusieurs tâches à gérer et que vous voulez vivre en tant que `sudo` pendant un moment ? C'est là que vous pouvez utiliser `sudo su`, de la même manière que `sudo`, une fois entré, vous serez invité à entrer votre mot de passe `root`. Dans une VM de test comme la nôtre, c'est bien, mais je trouverais très difficile de rester en tant que `root` pendant des périodes prolongées, des choses mauvaises peuvent arriver. Pour sortir de cette position élevée, vous tapez simplement `exit`.
 
 ![](Images/Day15_Linux5.png)
 
-I find myself using `clear` all the time, the `clear` command does exactly what it says it is going to clear the screen of all previous commands, putting your prompt to the top and giving you a nice clean workspace. Windows I think is `cls` in the .mdprompt.
+Je me surprends à utiliser `clear` tout le temps, la commande `clear` fait exactement ce qu'elle dit, elle efface l'écran de toutes les commandes précédentes, mettant votre prompt en haut et vous donnant un espace de travail propre. Sur Windows, je pense que c'est `cls` dans le .mdprompt.
 
 ![](Images/Day15_Linux6.png)
 
-Let's now look at some commands where we can actually create things within our system and then visualise them in our terminal, first of all, we have `mkdir` which will allow us to create a folder in our system. With the following command, we can create a folder in our home directory called Day15 `mkdir Day15`
+Examinons maintenant quelques commandes où nous pouvons réellement créer des choses dans notre système et ensuite les visualiser dans notre terminal. Tout d'abord, nous avons `mkdir` qui nous permettra de créer un dossier dans notre système. Avec la commande suivante, nous pouvons créer un dossier dans notre répertoire personnel appelé Day15 `mkdir Day15`.
 
 ![](Images/Day15_Linux7.png)
 
-With `cd` this allows us to change the directory, so for us to move into our newly created directory we can do this with `cd Day15` tab can also be used to autocomplete the directory available. If we want to get back to where we started we can use `cd ..`
+Avec `cd`, cela nous permet de changer de répertoire, donc pour nous déplacer dans notre répertoire nouvellement créé, nous pouvons le faire avec `cd Day15`, la touche tab peut également être utilisée pour compléter automatiquement le répertoire disponible. Si nous voulons revenir à l'endroit où nous avons commencé, nous pouvons utiliser `cd ..`.
 
 ![](Images/Day15_Linux8.png)
 
-`rmdir` allows for us to remove the directory, if we run `rmdir Day15` then the folder will be removed (note that this will only work if you have nothing in the folder)
+`rmdir` nous permet de supprimer le répertoire, si nous exécutons `rmdir Day15`, alors le dossier sera supprimé (note : cela ne fonctionnera que si vous n'avez rien dans le dossier).
 
 ![](Images/Day15_Linux9.png)
 
-I am sure we have all done it where we have navigated to the depths of our file system to a directory and not known where we are. `pwd` gives us the printout of the working directory, pwd as much as it looks like password it stands for print working directory.
+Je suis sûr que nous l'avons tous fait où nous avons navigué dans les profondeurs de notre système de fichiers vers un répertoire et que nous ne savions pas où nous étions. `pwd` nous donne l'impression du répertoire de travail, pwd autant que cela ressemble à un mot de passe, cela signifie print working directory.
 
 ![](Images/Day15_Linux10.png)
 
-We know how to create folders and directories but how do we create files? We can create files using the `touch` command if we were to run `touch Day15` this would create a file. Ignore `mkdir` we are going to see this again later.
+Nous savons comment créer des dossiers et des répertoires, mais comment créons-nous des fichiers ? Nous pouvons créer des fichiers en utilisant la commande `touch`, si nous exécutions `touch Day15`, cela créerait un fichier. Ignorez `mkdir`, nous allons le revoir plus tard.
 
 ![](Images/Day15_Linux11.png)
 
-`ls` I can put my house on this, you will use this command so many times, this is going to list all the files and folders in the current directory. Let's see if we can see that file we just created.
+`ls` Je peux parier ma maison dessus, vous utiliserez cette commande tellement de fois, cela va lister tous les fichiers et dossiers dans le répertoire actuel. Voyons si nous pouvons voir ce fichier que nous venons de créer.
 
 ![](Images/Day15_Linux12.png)
 
-How can we find files on our Linux system? `locate` is going to allow us to search our file system. If we use `locate Day15` it will report back the location of the file. The bonus round is that if you know that the file does exist but you get a blank result then run `sudo updatedb` which will index all the files in the file system then run your `locate` again. If you do not have `locate` available to you, you can install it using this command `sudo apt install mlocate`
+Comment pouvons-nous trouver des fichiers sur notre système Linux ? `locate` va nous permettre de rechercher dans notre système de fichiers. Si nous utilisons `locate Day15`, il rapportera l'emplacement du fichier. Le bonus est que si vous savez que le fichier existe mais que vous obtenez un résultat vide, alors exécutez `sudo updatedb` qui indexera tous les fichiers dans le système de fichiers, puis exécutez votre `locate` à nouveau. Si vous n'avez pas `locate` disponible, vous pouvez l'installer en utilisant cette commande `sudo apt install mlocate`.
 
 ![](Images/Day15_Linux13.png)
 
-What about moving files from one location to another? `mv` is going to allow you to move your files. Example `mv Day15 90DaysOfDevOps` will move your file to the 90DaysOfDevOps folder.
+Et pour déplacer des fichiers d'un emplacement à un autre ? `mv` va nous permettre de déplacer vos fichiers. Exemple `mv Day15 90DaysOfDevOps` déplacera votre fichier vers le dossier 90DaysOfDevOps.
 
 ![](Images/Day15_Linux14.png)
 
-We have moved our file but what if we want to rename it now to something else? We can do that using the `mv` command again... WOT!!!? yep we can simply use `mv Day15 day15` to change to upper case or we could use `mv day15 AnotherDay` to change it altogether, now use `ls` to check the file.
+Nous avons déplacé notre fichier, mais que faire si nous voulons maintenant le renommer en autre chose ? Nous pouvons le faire en utilisant à nouveau la commande `mv`... WOT!!!? oui, nous pouvons simplement utiliser `mv Day15 day15` pour changer en majuscule ou nous pourrions utiliser `mv day15 AnotherDay` pour le changer complètement, maintenant utilisez `ls` pour vérifier le fichier.
 
 ![](Images/Day15_Linux15.png)
 
-Enough is enough, let's now get rid (delete)of our file and maybe even our directory if we have one created. `rm` simply `rm AnotherDay` will remove our file. We will also use quite a bit `rm -R` which will recursively work through a folder or location. We might also use `rm -R -f` to force the removal of all of those files. Spoiler if you run `rm -R -f /` add sudo to it and you can say goodbye to your system....!
+Assez, c'est assez, débarrassons-nous (supprimons) de notre fichier et peut-être même de notre répertoire si nous en avons créé un. `rm` simplement `rm AnotherDay` supprimera notre fichier. Nous utiliserons également beaucoup `rm -R` qui fonctionnera de manière récursive à travers un dossier ou un emplacement. Nous pourrions également utiliser `rm -R -f` pour forcer la suppression de tous ces fichiers. Spoiler : si vous exécutez `rm -R -f /` ajoutez sudo et vous pouvez dire au revoir à votre système....!
 
 ![](Images/Day15_Linux16.png)
 
-We have looked at moving files around but what if I just want to copy files from one folder to another, simply put its very similar to the `mv` command but we use `cp` so we can now say `cp Day15 Desktop`
+Nous avons vu comment déplacer des fichiers, mais que faire si je veux juste copier des fichiers d'un dossier à un autre, tout simplement c'est très similaire à la commande `mv` mais nous utilisons `cp` donc nous pouvons maintenant dire `cp Day15 Desktop`.
 
 ![](Images/Day15_Linux17.png)
 
-We have created folders and files but we haven't put any contents into our folder, we can add contents a few ways but an easy way is `echo` we can also use `echo` to print out a lot of things in our terminal, I use echo a lot to print out system variables to know if they are set or not at least. we can use `echo "Hello #90DaysOfDevOps" > Day15` and this will add this to our file. We can also append to our file using `echo "Commands are fun!" >> Day15`
+Nous avons créé des dossiers et des fichiers, mais nous n'avons mis aucun contenu dans notre dossier, nous pouvons ajouter du contenu de plusieurs façons, mais une façon facile est `echo`, nous pouvons également utiliser `echo` pour imprimer beaucoup de choses dans notre terminal, j'utilise echo beaucoup pour imprimer des variables système pour savoir si elles sont définies ou non au moins. nous pouvons utiliser `echo "Hello #90DaysOfDevOps" > Day15` et cela ajoutera cela à notre fichier. Nous pouvons également ajouter à notre fichier en utilisant `echo "Commands are fun!" >> Day15`.
 
 ![](Images/Day15_Linux18.png)
 
-Another one of those commands you will use a lot! `cat` short for concatenate. We can use `cat Day15` to see the contents inside the file. Great for quickly reading those configuration files.
+Une autre de ces commandes que vous utiliserez beaucoup ! `cat` pour concaténer. Nous pouvons utiliser `cat Day15` pour voir le contenu à l'intérieur du fichier. Génial pour lire rapidement ces fichiers de configuration.
 
 ![](Images/Day15_Linux19.png)
 
-If you have a long complex configuration file and you want or need to find something fast in that file vs reading every line then `grep` is your friend, this will allow us to search your file for a specific word using `cat Day15 | grep "#90DaysOfDevOps"`
+Si vous avez un fichier de configuration long et complexe et que vous voulez ou avez besoin de trouver quelque chose rapidement dans ce fichier plutôt que de lire chaque ligne, alors `grep` est votre ami, cela nous permettra de rechercher dans votre fichier un mot spécifique en utilisant `cat Day15 | grep "#90DaysOfDevOps"`.
 
 ![](Images/Day15_Linux20.png)
 
-If you are like me and you use that `clear` command a lot then you might miss some of the commands previously ran, we can use `history` to find out all those commands we have run prior. `history -c` will remove the history.
+Si vous êtes comme moi et que vous utilisez beaucoup cette commande `clear`, vous pourriez manquer certaines des commandes exécutées précédemment, nous pouvons utiliser `history` pour découvrir toutes ces commandes que nous avons exécutées auparavant. `history -c` supprimera l'historique.
 
-When you run `history` and you would like to pick a specific command you can use `!3` to choose the 3rd command in the list.
+Lorsque vous exécutez `history` et que vous souhaitez choisir une commande spécifique, vous pouvez utiliser `!3` pour choisir la 3ème commande de la liste.
 
-You are also able to use `history | grep "Command"` to search for something specific.
+Vous pouvez également utiliser `history | grep "Command"` pour rechercher quelque chose de spécifique.
 
-On servers to trace back when was a command executed, it can be useful to append the date and time to each command in the history file.
+Sur les serveurs pour retracer quand une commande a été exécutée, il peut être utile d'ajouter la date et l'heure à chaque commande dans le fichier d'historique.
 
-The following system variable controls this behaviour:
+La variable système suivante contrôle ce comportement :
 
 ```
 HISTTIMEFORMAT="%d-%m-%Y %T "
 ```
 
-You can easily add to your bash_profile:
+Vous pouvez facilement l'ajouter à votre bash_profile :
 
 ```
 echo 'export HISTTIMEFORMAT="%d-%m-%Y %T "' >> ~/.bash_profile
 ```
 
-So as useful to allow the history file to grow bigger:
+Ainsi, il est utile de permettre au fichier d'historique de devenir plus grand :
 
 ```
 echo 'export HISTSIZE=100000' >> ~/.bash_profile
@@ -124,72 +114,72 @@ echo 'export HISTFILESIZE=10000000' >> ~/.bash_profile
 
 ![](Images/Day15_Linux21.png)
 
-Need to change your password? `passwd` is going to allow us to change our password. Note that when you add your password like this when it is hidden it will not be shown in `history` however if your command has `-p PASSWORD` then this will be visible in your `history`.
+Besoin de changer votre mot de passe ? `passwd` va nous permettre de changer notre mot de passe. Notez que lorsque vous ajoutez votre mot de passe comme ceci lorsqu'il est caché, il ne sera pas affiché dans `history`, cependant, si votre commande a `-p PASSWORD`, alors cela sera visible dans votre `history`.
 
 ![](Images/Day15_Linux22.png)
 
-We might also want to add new users to our system, we can do this with `useradd` we have to add the user using our `sudo` command, we can add a new user with `sudo useradd NewUser`
+Nous pourrions également vouloir ajouter de nouveaux utilisateurs à notre système, nous pouvons le faire avec `useradd`, nous devons ajouter l'utilisateur en utilisant notre commande `sudo`, nous pouvons ajouter un nouvel utilisateur avec `sudo useradd NewUser`.
 
 ![](Images/Day15_Linux23.png)
 
-Creating a group again requires `sudo` and we can use `sudo groupadd DevOps` then if we want to add our new user to that group we can do this by running `sudo usermod -a -G DevOps` `-a` is add and `-G` is group name.
+Créer un groupe nécessite à nouveau `sudo` et nous pouvons utiliser `sudo groupadd DevOps`, puis si nous voulons ajouter notre nouvel utilisateur à ce groupe, nous pouvons le faire en exécutant `sudo usermod -a -G DevOps`, `-a` est ajouter et `-G` est le nom du groupe.
 
 ![](Images/Day15_Linux24.png)
 
-How do we add users to the `sudo` group, this would be a very rare occasion for this to happen but to do this it would be `usermod -a -G sudo NewUser`
+Comment ajoutons-nous des utilisateurs au groupe `sudo` ? Ce serait une occasion très rare pour que cela se produise, mais pour le faire, ce serait `usermod -a -G sudo NewUser`.
 
 ### Permissions
 
-read, write and execute are the permissions we have on all of our files and folders on our Linux system.
+lire, écrire et exécuter sont les permissions que nous avons sur tous nos fichiers et dossiers sur notre système Linux.
 
-A full list:
+Une liste complète :
 
-- 0 = None `---`
-- 1 = Execute only `--X`
-- 2 = Write only `-W-`
-- 3 = Write & Execute `-WX`
-- 4 = Read Only `R--`
-- 5 = Read & Execute `R-X`
-- 6 = Read & Write `RW-`
-- 7 = Read, Write & Execute `RWX`
+- 0 = Aucune `---`
+- 1 = Exécuter uniquement `--X`
+- 2 = Écrire uniquement `-W-`
+- 3 = Écrire et exécuter `-WX`
+- 4 = Lire uniquement `R--`
+- 5 = Lire et exécuter `R-X`
+- 6 = Lire et écrire `RW-`
+- 7 = Lire, écrire et exécuter `RWX`
 
-You will also see `777` or `775` and these represent the same numbers as the list above but each one represents **User - Group - Everyone**
+Vous verrez également `777` ou `775` et ceux-ci représentent les mêmes nombres que la liste ci-dessus, mais chacun représente **Utilisateur - Groupe - Tout le monde**.
 
-Let's take a look at our file. `ls -al Day15` you can see the 3 groups mentioned above, user and group have read & write but everyone only has read.
+Jetons un coup d'œil à notre fichier. `ls -al Day15` vous pouvez voir les 3 groupes mentionnés ci-dessus, l'utilisateur et le groupe ont lire et écrire mais tout le monde n'a que lire.
 
 ![](Images/Day15_Linux25.png)
 
-We can change this using `chmod` you might find yourself doing this if you are creating binaries a lot on your systems as well and you need to give the ability to execute those binaries. `chmod 750 Day15` now run `ls -al Day15` if you want to run this for a whole folder then you can use `-R` to recursively do that.
+Nous pouvons changer cela en utilisant `chmod`, vous pourriez vous retrouver à faire cela si vous créez beaucoup de binaires sur vos systèmes et que vous avez besoin de donner la capacité d'exécuter ces binaires. `chmod 750 Day15` maintenant exécutez `ls -al Day15` si vous voulez exécuter cela pour un dossier entier, alors vous pouvez utiliser `-R` pour le faire de manière récursive.
 
 ![](Images/Day15_Linux26.png)
 
-What about changing the owner of the file? We can use `chown` for this operation, if we wanted to change the ownership of our `Day15` from user `vagrant` to `NewUser` we can run `sudo chown NewUser Day15` again `-R` can be used.
+Et pour changer le propriétaire du fichier ? Nous pouvons utiliser `chown` pour cette opération, si nous voulions changer la propriété de notre `Day15` de l'utilisateur `vagrant` à `NewUser`, nous pouvons exécuter `sudo chown NewUser Day15`, à nouveau `-R` peut être utilisé.
 
 ![](Images/Day15_Linux27.png)
 
-A command that you will come across is `awk` which comes in real use when you have an output that you only need specific data from. like running `who` we get lines with information, but maybe we only need the names. We can run `who | awk '{print $1}'` to get just a list of that first column.
+Une commande que vous rencontrerez est `awk` qui est très utile lorsque vous avez une sortie dont vous n'avez besoin que de données spécifiques. comme exécuter `who`, nous obtenons des lignes avec des informations, mais peut-être que nous n'avons besoin que des noms. Nous pouvons exécuter `who | awk '{print $1}'` pour obtenir juste une liste de cette première colonne.
 
 ![](Images/Day15_Linux28.png)
 
-If you are looking to read streams of data from standard input, then generate and execute command lines; meaning it can take the output of a command and passes it as an argument of another command. `xargs` is a useful tool for this use case. If for example, I want a list of all the Linux user accounts on the system I can run. `cut -d: -f1 < /etc/passwd` and get the long list we see below.
+Si vous cherchez à lire des flux de données à partir de l'entrée standard, puis générer et exécuter des lignes de commande ; cela signifie qu'il peut prendre la sortie d'une commande et la passer en argument d'une autre commande. `xargs` est un outil utile pour ce cas d'utilisation. Par exemple, si je veux une liste de tous les comptes utilisateurs Linux sur le système, je peux exécuter `cut -d: -f1 < /etc/passwd` et obtenir la longue liste que nous voyons ci-dessous.
 
 ![](Images/Day15_Linux29.png)
 
-If I want to compact that list I can do so by using `xargs` in a command like this `cut -d: -f1 < /etc/passwd | sort | xargs`
+Si je veux compacter cette liste, je peux le faire en utilisant `xargs` dans une commande comme celle-ci `cut -d: -f1 < /etc/passwd | sort | xargs`.
 
 ![](Images/Day15_Linux30.png)
 
-I didn't mention the `cut` command either, this allows us to remove sections from each line of a file. It can be used to cut parts of a line by byte position, character and field. The `cut -d " " -f 2 list.txt` command allows us to remove that first letter we have and just display our numbers. There are so many combinations that can be used here with this command, I am sure I have spent too much time trying to use this command when I could have extracted data quicker manually.
+Je n'ai pas non plus mentionné la commande `cut`, cela nous permet de supprimer des sections de chaque ligne d'un fichier. Il peut être utilisé pour couper des parties d'une ligne par position d'octet, caractère et champ. La commande `cut -d " " -f 2 list.txt` nous permet de supprimer cette première lettre que nous avons et d'afficher simplement nos numéros. Il y a tellement de combinaisons qui peuvent être utilisées ici avec cette commande, je suis sûr que j'ai passé trop de temps à essayer d'utiliser cette commande alors que j'aurais pu extraire des données plus rapidement manuellement.
 
 ![](Images/Day15_Linux31.png)
 
-Also to note if you type a command and you are no longer happy with it and you want to start again just hit control + c and this will cancel that line and start you fresh.
+Aussi à noter, si vous tapez une commande et que vous n'êtes plus satisfait de celle-ci et que vous voulez recommencer, appuyez simplement sur control + c et cela annulera cette ligne et vous redémarrera.
 
-## Resources
+## Ressources
 
-- [Learn the Linux Fundamentals - Part 1](https://www.youtube.com/watch?v=kPylihJRG70)
-- [Linux for hackers (don't worry you don't need to be a hacker!)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
+- [Apprenez les fondamentaux de Linux - Partie 1](https://www.youtube.com/watch?v=kPylihJRG70)
+- [Linux pour les hackers (ne vous inquiétez pas, vous n'avez pas besoin d'être un hacker !)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
 
-See you on [Day16](day16.md)
+À demain pour le [Jour 16](day16.md)
 
-This is a pretty heavy list already but I can safely say that I have used all of these commands in my day to day, be it from an administering Linux servers or on my Linux Desktop, it is very easy when you are in Windows or macOS to navigate the UI but in Linux Servers, they are not there, everything is done through the terminal.
+C'est déjà une liste assez lourde, mais je peux dire en toute sécurité que j'ai utilisé toutes ces commandes dans ma vie quotidienne, que ce soit pour administrer des serveurs Linux ou sur mon bureau Linux, il est très facile lorsque vous êtes sous Windows ou macOS de naviguer dans l'interface utilisateur, mais dans les serveurs Linux, ils ne sont pas là, tout se fait via le terminal.

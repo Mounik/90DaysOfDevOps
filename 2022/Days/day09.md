@@ -1,82 +1,73 @@
----
-title: '#90DaysOfDevOps - Let''s explain the Hello World code - Day 9'
-published: false
-description: 90DaysOfDevOps - Let's explain the Hello World code
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1099682
----
+## Expliquons le code Hello World
 
-## Let's explain the Hello World code
+### Comment fonctionne Go
 
-### How Go works
+Le [Jour 8](day08.md), nous avons parcouru l'installation de Go sur votre poste de travail et créé notre première application Go.
 
-On [Day 8](day08.md) we walked through getting Go installed on your workstation and we then created our first Go application.
+Dans cette section, nous allons examiner plus en profondeur le code et comprendre quelques éléments supplémentaires sur le langage Go.
 
-In this section, we are going to take a deeper look into the code and understand a few more things about the Go language.
+### Qu'est-ce que la compilation ?
 
-### What is Compiling?
+Avant de nous plonger dans les [6 lignes du code Hello World](Go/hello.go), nous devons comprendre un peu ce qu'est la compilation.
 
-Before we get into the [6 lines of the Hello World code](Go/hello.go) we need to have a bit of an understanding of compiling.
-
-Programming languages that we commonly use such as Python, Java, Go and C++ are high-level languages. Meaning they are human-readable but when a machine is trying to execute a program it needs to be in a form that a machine can understand. We have to translate our human-readable code to machine code which is called compiling.
+Les langages de programmation que nous utilisons couramment, comme Python, Java, Go et C++, sont des langages de haut niveau. Cela signifie qu'ils sont lisibles par l'homme, mais lorsqu'une machine essaie d'exécuter un programme, il doit être sous une forme que la machine peut comprendre. Nous devons traduire notre code lisible par l'homme en code machine, ce qui s'appelle la compilation.
 
 ![](Images/Day9_Go1.png)
 
-From the above you can see what we did on [Day 8](day08.md) here, we created a simple Hello World main.go and we then used the command `go build main.go` to compile our executable.
+Comme vous pouvez le voir ci-dessus, le [Jour 8](day08.md), nous avons créé un simple Hello World main.go et utilisé la commande `go build main.go` pour compiler notre exécutable.
 
-### What are packages?
+### Qu'est-ce qu'un package ?
 
-A package is a collection of source files in the same directory that are compiled together. We can simplify this further, a package is a bunch of .go files in the same directory. Remember our Hello folder from Day 8? If and when you get into more complex Go programs you might find that you have folder1 folder2 and folder3 containing different.go files that make up your program with multiple packages.
+Un package est une collection de fichiers source dans le même répertoire qui sont compilés ensemble. Nous pouvons simplifier cela davantage : un package est un ensemble de fichiers .go dans le même répertoire. Vous vous souvenez de notre dossier Hello du Jour 8 ? Si et quand vous vous lancez dans des programmes Go plus complexes, vous pourriez trouver que vous avez dossier1, dossier2 et dossier3 contenant différents fichiers .go qui composent votre programme avec plusieurs packages.
 
-We use packages so we can reuse other people's code, we don't have to write everything from scratch. Maybe we are wanting a calculator as part of our program, you could probably find an existing Go Package that contains the mathematical functions that you could import into your code saving you a lot of time and effort in the long run.
+Nous utilisons des packages pour pouvoir réutiliser le code des autres. Nous n'avons pas besoin d'écrire tout à partir de zéro. Peut-être que nous voulons une calculatrice dans notre programme ; vous pourriez probablement trouver un package Go existant qui contient les fonctions mathématiques que vous pourriez importer dans votre code, vous faisant gagner beaucoup de temps et d'efforts à long terme.
 
-Go encourages you to organise your code in packages so that it is easy to reuse and maintain source code.
+Go vous encourage à organiser votre code en packages pour qu'il soit facile de réutiliser et de maintenir le code source.
 
-### Hello #90DaysOfDevOps Line by Line
+### Hello #90DaysOfDevOps Ligne par Ligne
 
-Now let's take a look at our Hello #90DaysOfDevOps main.go file and walk through the lines.
+Maintenant, jetons un coup d'œil à notre fichier main.go Hello #90DaysOfDevOps et parcourons les lignes.
 
 ![](Images/Day9_Go2.png)
 
-In the first line, you have `package main` which means that this file belongs to a package called main. All .go files need to belong to a package, they should also have `package something` in the opening line.
+Dans la première ligne, vous avez `package main`, ce qui signifie que ce fichier appartient à un package appelé main. Tous les fichiers .go doivent appartenir à un package ; ils doivent également avoir `package something` dans la ligne d'ouverture.
 
-A package can be named whatever you wish. We have to call this `main` as this is the starting point of the program that is going to be in this package, this is a rule. (I need to understand more about this rule?)
+Un package peut être nommé comme vous le souhaitez. Nous devons appeler cela `main` car c'est le point de départ du programme qui sera dans ce package, c'est une règle. (Je dois comprendre davantage cette règle ?)
 
 ![](Images/Day9_Go3.png)
 
-Whenever we want to compile and execute our code we have to tell the machine where the execution needs to start. We do this by writing a function called main. The machine will look for a function called main to find the entry point of the program.
+Chaque fois que nous voulons compiler et exécuter notre code, nous devons indiquer à la machine où l'exécution doit commencer. Nous faisons cela en écrivant une fonction appelée main. La machine recherchera une fonction appelée main pour trouver le point d'entrée du programme.
 
-A function is a block of code that can do some specific task and can be used across the program.
+Une fonction est un bloc de code qui peut effectuer une tâche spécifique et peut être utilisé dans tout le programme.
 
-You can declare a function with any name using `func` but in this case, we need to name it `main` as this is where the code starts.
+Vous pouvez déclarer une fonction avec n'importe quel nom en utilisant `func`, mais dans ce cas, nous devons la nommer `main` car c'est là que le code commence.
 
 ![](Images/Day9_Go4.png)
 
-Next, we are going to look at line 3 of our code, the import, this means you want to bring in another package to your main program. fmt is a standard package being used here provided by Go, this package contains the `Println()` function and because we have imported this we can use this in line 6. There are several standard packages you can include in your program and leverage or reuse them in your code saving you the hassle of having to write from scratch. [Go Standard Library](https://pkg.go.dev/std)
+Ensuite, nous allons examiner la ligne 3 de notre code, l'importation. Cela signifie que vous voulez intégrer un autre package à votre programme principal. fmt est un package standard fourni par Go utilisé ici ; ce package contient la fonction `Println()` et parce que nous l'avons importé, nous pouvons l'utiliser à la ligne 6. Il existe plusieurs packages standard que vous pouvez inclure dans votre programme et utiliser ou réutiliser dans votre code, vous évitant ainsi la peine d'avoir à écrire à partir de zéro. [Bibliothèque standard Go](https://pkg.go.dev/std)
 
 ![](Images/Day9_Go5.png)
 
-the `Println()` that we have here is a way in which to write standard output to the terminal where ever the executable has been executed successfully. Feel free to change the message in between the ().
+Le `Println()` que nous avons ici est un moyen d'écrire la sortie standard dans le terminal où l'exécutable a été exécuté avec succès. N'hésitez pas à changer le message entre les ().
 
 ![](Images/Day9_Go6.png)
 
 ### TLDR
 
-- **Line 1** = This file will be in the package called `main` and this needs to be called `main` because includes the entry point of the program.
-- **Line 3** = For us to use the `Println()` we have to import the fmt package to use this on line 6.
-- **Line 5** = The actual starting point, its the `main` function.
-- **Line 6** = This will let us print "Hello #90DaysOfDevOps" on our system.
+- **Ligne 1** = Ce fichier sera dans le package appelé `main` et doit être appelé `main` car il inclut le point d'entrée du programme.
+- **Ligne 3** = Pour utiliser `Println()`, nous devons importer le package fmt pour l'utiliser à la ligne 6.
+- **Ligne 5** = Le véritable point de départ, c'est la fonction `main`.
+- **Ligne 6** = Cela nous permettra d'imprimer "Hello #90DaysOfDevOps" sur notre système.
 
-## Resources
+## Ressources
 
-- [StackOverflow 2021 Developer Survey](https://insights.stackoverflow.com/survey/2021)
-- [Why we are choosing Golang to learn](https://www.youtube.com/watch?v=7pLqIIAqZD4&t=9s)
-- [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s)
-- [Techworld with Nana - Golang full course - 3 hours 24 mins](https://www.youtube.com/watch?v=yyUHQIec83I)
-- [**NOT FREE** Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins](https://www.pluralsight.com/courses/go-fundamentals)
-- [FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s)
-- [Hitesh Choudhary - Complete playlist](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N)
+- [Enquête StackOverflow 2021 sur les développeurs](https://insights.stackoverflow.com/survey/2021)
+- [Pourquoi nous choisissons Golang pour apprendre](https://www.youtube.com/watch?v=7pLqIIAqZD4&t=9s)
+- [Jake Wright - Apprenez Go en 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s)
+- [Techworld With Nana - Cours complet sur Golang - 3 heures 24 minutes](https://www.youtube.com/watch?v=yyUHQIec83I)
+- [Techworld With Nana - Apprenez Go en construisant une application TodoList](https://www.youtube.com/watch?v=XCZWyN9ZbEQ)
+- [**PAS GRATUIT** Nigel Poulton Pluralsight - Fondamentaux de Go - 3 heures 26 minutes](https://www.pluralsight.com/courses/go-fundamentals)
+- [FreeCodeCamp - Apprenez la programmation Go - Tutoriel Golang pour débutants](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s)
+- [Hitesh Choudhary - Liste de lecture complète](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N)
 
-See you on [Day 10](day10.md).
+À bientôt sur [Jour 10](day10.md).

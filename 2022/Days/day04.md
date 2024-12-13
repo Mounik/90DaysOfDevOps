@@ -1,99 +1,87 @@
----
-title: '#90DaysOfDevOps - DevOps & Agile - Day 4'
-published: false
-description: 90DaysOfDevOps - DevOps & Agile
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048700
----
-
 ## DevOps & Agile
 
-Do you know the difference between DevOps and Agile? They were formed as standalone concepts. But now the two terms are getting fused.
+Connaissez-vous la différence entre DevOps et Agile ? Ils ont été formés comme des concepts indépendants. Mais maintenant, les deux termes sont en train de fusionner.
 
-In this post, we will examine the crucial differences between Agile and DevOps and find out why the two are connected so tightly.
+Dans cet article, nous allons examiner les différences cruciales entre Agile et DevOps et découvrir pourquoi les deux sont si étroitement liés.
 
-I think a good place to start is understanding a little more about a common angle I have seen in learning this area and that is DevOps vs Agile, even though they have similar goals and processes. In this section, I am going to summarise this hopefully.
+Je pense qu'un bon point de départ est de comprendre un peu plus un angle commun que j'ai vu dans l'apprentissage de ce domaine, à savoir DevOps vs Agile, même s'ils ont des objectifs et des processus similaires. Dans cette section, je vais essayer de résumer cela.
 
-Let's start with definitions.
+Commençons par les définitions.
 
-### Agile Development
+### Développement Agile
 
-Agile is an approach that focuses on delivering small results faster rather than releasing one big interaction of the product; software is developed in iterations. The team releases a new version every week or month with incremental updates. The final goal of Agile is to deliver an optimal experience to the end-users.
+Agile est une approche qui se concentre sur la livraison de petits résultats plus rapidement plutôt que de publier une grande interaction du produit ; le logiciel est développé en itérations. L'équipe publie une nouvelle version chaque semaine ou chaque mois avec des mises à jour incrémentales. L'objectif final d'Agile est de fournir une expérience optimale aux utilisateurs finaux.
 
 ### DevOps
 
-We have been covering this for the past few days with a few different ways of describing the end goals of DevOps. DevOps usually describes software development
-and delivery practices based on cooperation between software developers and operations specialists. The main DevOps benefits are delivering a simplified development process and minimising miscommunication.
+Nous avons abordé ce sujet ces derniers jours avec différentes façons de décrire les objectifs finaux de DevOps. DevOps décrit généralement les pratiques de développement et de livraison de logiciels basées sur la coopération entre les développeurs de logiciels et les spécialistes des opérations. Les principaux avantages de DevOps sont de fournir un processus de développement simplifié et de minimiser les malentendus.
 
-## What is the difference between Agile and DevOps
+## Quelle est la différence entre Agile et DevOps ?
 
-The difference is mainly the preoccupations. Agile and DevOps have different preoccupations but they are helping each other. Agile wants short iteration, which is only possible with the automation that DevOps brings. Agile wants the customer to try a specific version and quickly give feedback which is only possible if DevOps make the creation of a new environment easily.
+La différence réside principalement dans les préoccupations. Agile et DevOps ont des préoccupations différentes, mais ils se complètent. Agile veut des itérations courtes, ce qui n'est possible qu'avec l'automatisation que DevOps apporte. Agile veut que le client essaie une version spécifique et donne rapidement un retour d'information, ce qui n'est possible que si DevOps facilite la création d'un nouvel environnement.
 
-### Different participants
+### Différents participants
 
-Agile focuses on optimising communication between end-users and developers while DevOps targets developers and operation, team members. We could say that agile is outward-oriented toward customers whereas DevOps is a set of internal practices.
+Agile se concentre sur l'optimisation de la communication entre les utilisateurs finaux et les développeurs, tandis que DevOps cible les développeurs et les membres de l'équipe opérationnelle. On pourrait dire qu'Agile est orienté vers l'extérieur, vers les clients, tandis que DevOps est un ensemble de pratiques internes.
 
-### Team
+### Équipe
 
-Agile usually applies to software developers and project managers. The competencies of DevOps engineers lie in the intersection of development, QA (quality assurance) and operations as they are involved in all stages of the product cycle and are part of the Agile team.
+Agile s'applique généralement aux développeurs de logiciels et aux chefs de projet. Les compétences des ingénieurs DevOps se situent à l'intersection du développement, de l'assurance qualité (QA) et des opérations, car ils sont impliqués dans toutes les étapes du cycle de vie du produit et font partie de l'équipe Agile.
 
-### Applied Frameworks
+### Cadres appliqués
 
-Agile has a lot of management frameworks to achieve flexibility and transparency: Scrum > Kanban > Lean > Extreme > Crystal > Dynamic > Feature-Driven. DevOps focuses on the development approach in collaboration but doesn't offer specific methodologies. However, DevOps promote practices like Infrastructure as Code, Architecture as Code, Monitoring, Self Healing, end to end test automation ... But per se this is not a framework, but rather practice.
+Agile dispose de nombreux cadres de gestion pour atteindre la flexibilité et la transparence : Scrum > Kanban > Lean > Extreme > Crystal > Dynamic > Feature-Driven. DevOps se concentre sur l'approche de développement en collaboration mais ne propose pas de méthodologies spécifiques. Cependant, DevOps promeut des pratiques comme l'Infrastructure as Code, l'Architecture as Code, la Surveillance, l'Auto-réparation, l'automatisation des tests de bout en bout... Mais en soi, ce n'est pas un cadre, mais plutôt une pratique.
 
-### Feedback
+### Retour d'information
 
-In Agile the main source of feedback is the end-user while in DevOps the feedback from stakeholders and the team itself has a higher priority.
+Dans Agile, la principale source de retour d'information est l'utilisateur final, tandis que dans DevOps, le retour d'information des parties prenantes et de l'équipe elle-même a une priorité plus élevée.
 
-### Target areas
+### Zones cibles
 
-Agile focuses more on software development than deployment and maintenance. DevOps focuses on software development as well but its values and tools also cover deployment and post-release stages like monitoring, high availability, security and data protection.
+Agile se concentre davantage sur le développement de logiciels que sur le déploiement et la maintenance. DevOps se concentre également sur le développement de logiciels, mais ses valeurs et outils couvrent également les étapes de déploiement et de post-release comme la surveillance, la haute disponibilité, la sécurité et la protection des données.
 
 ### Documentation
 
-Agile prioritises flexibility and tasks at hand over documentation and monitoring. DevOps on the other hand regards project documentation as one of the essential project components.
+Agile privilégie la flexibilité et les tâches en cours par rapport à la documentation et à la surveillance. DevOps, en revanche, considère la documentation du projet comme l'un des composants essentiels du projet.
 
-### Risks
+### Risques
 
-Agile risks derive from the flexibility of the methodology. Agile projects are difficult to predict or evaluate as priorities and requirements are continually changing.
+Les risques d'Agile découlent de la flexibilité de la méthodologie. Les projets Agile sont difficiles à prédire ou à évaluer car les priorités et les exigences changent continuellement.
 
-DevOps risks derive from a misunderstanding of the term and the lack of suitable tools. Some people see DevOps as a collection of software for the deployment and continuous integration failing to change the underlying structure of the development process.
+Les risques de DevOps découlent d'une mauvaise compréhension du terme et du manque d'outils appropriés. Certaines personnes voient DevOps comme une collection de logiciels pour le déploiement et l'intégration continue, sans changer la structure sous-jacente du processus de développement.
 
-### The Tools Used
+### Les outils utilisés
 
-Agile tools are focused on management communication collaboration, metrics and feedback processing. The most popular agile tools include JIRA, Trello, Slack, Zoom, SurveyMonkey and others.
+Les outils Agile se concentrent sur la gestion, la communication, la collaboration, les métriques et le traitement des retours d'information. Les outils Agile les plus populaires incluent JIRA, Trello, Slack, Zoom, SurveyMonkey et autres.
 
-DevOps uses tools for team communication, software development, deployment and integration like Jenkins, GitHub Actions, BitBucket, etc. Even though agile and DevOps have slightly different focuses and scopes the key values are almost identical, therefore you can combine the two.
+DevOps utilise des outils pour la communication d'équipe, le développement de logiciels, le déploiement et l'intégration comme Jenkins, GitHub Actions, BitBucket, etc. Bien que Agile et DevOps aient des focuses et des portées légèrement différents, les valeurs clés sont presque identiques, donc vous pouvez combiner les deux.
 
-## Bring it all together… good idea or not? Discuss?
+## Tout rassembler… bonne idée ou pas ? Discutons-en ?
 
-The combination of Agile and DevOps brings the following benefits you will get:
+La combinaison d'Agile et de DevOps apporte les avantages suivants :
 
-- Flexible management and powerful technology.
-- Agile practices help DevOps teams to communicate their priorities more efficiently.
-- The automation cost that you have to pay for your DevOps practices is justified by your agile requirement of deploying quickly and frequently.
-- It leads to strengthening: the team adopting agile practices will improve collaboration, increase the team's motivation and decrease employee turnover rates.
-- As a result, you get better product quality.
+- Gestion flexible et technologie puissante.
+- Les pratiques Agile aident les équipes DevOps à communiquer leurs priorités plus efficacement.
+- Le coût de l'automatisation que vous devez payer pour vos pratiques DevOps est justifié par votre exigence Agile de déployer rapidement et fréquemment.
+- Cela conduit à un renforcement : l'équipe adoptant les pratiques Agile améliorera la collaboration, augmentera la motivation de l'équipe et diminuera le taux de rotation des employés.
+- En résultat, vous obtenez une meilleure qualité de produit.
 
-Agile allows coming back to previous product development stages to fix errors and prevent the accumulation of technical debt. To adopt agile and DevOps
-simultaneously just follow 7 steps:
+Agile permet de revenir aux étapes précédentes du développement du produit pour corriger les erreurs et prévenir l'accumulation de la dette technique. Pour adopter Agile et DevOps simultanément, suivez ces 7 étapes :
 
-1. Unite the development and operation teams.
-2. Create build and run teams, all development and operational concerns are discussed by the entire DevOps team.
-3. Change your approach to sprints, and assign priority ratings to offer DevOps tasks that have the same value as development tasks. Encourage development and operations teams to exchange their opinion on other teams' workflow and possible issues.
-4. Include QA in all development stages.
-5. Choose the right tools.
-6. Automate everything you can.
-7. Measure and control by using tangible numeric deliverables.
+1. Unissez les équipes de développement et d'opérations.
+2. Créez des équipes de construction et d'exécution, toutes les préoccupations de développement et opérationnelles sont discutées par l'ensemble de l'équipe DevOps.
+3. Changez votre approche des sprints et attribuez des notes de priorité pour offrir des tâches DevOps qui ont la même valeur que les tâches de développement. Encouragez les équipes de développement et d'opérations à échanger leurs opinions sur le flux de travail des autres équipes et les problèmes possibles.
+4. Incluez la QA dans toutes les étapes de développement.
+5. Choisissez les bons outils.
+6. Automatisez tout ce que vous pouvez.
+7. Mesurez et contrôlez en utilisant des livrables numériques tangibles.
 
-What do you think? Do you have different views? I want to hear from Developers, Operations, QA or anyone that has a better understanding of Agile and DevOps that can pass comments and feedback on this?
+Qu'en pensez-vous ? Avez-vous des points de vue différents ? Je veux entendre les développeurs, les opérations, la QA ou toute personne ayant une meilleure compréhension d'Agile et de DevOps qui peut passer des commentaires et des retours sur ce sujet.
 
-### Resources
+### Ressources
 
 - [DevOps for Developers – Day in the Life: DevOps Engineer in 2021](https://www.youtube.com/watch?v=2JymM0YoqGA)
 - [3 Things I wish I knew as a DevOps Engineer](https://www.youtube.com/watch?v=udRNM7YRdY4)
 - [How to become a DevOps Engineer feat. Shawn Powers](https://www.youtube.com/watch?v=kDQMjAQNvY4)
 
-If you made it this far then you will know if this is where you want to be or not. See you on [Day 5](day05.md).
+Si vous êtes arrivé jusqu'ici, vous saurez si c'est là que vous voulez être ou non. À bientôt sur [Jour 5](day05.md).
