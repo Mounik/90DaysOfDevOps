@@ -1,86 +1,76 @@
----
-title: '#90DaysOfDevOps - Text Editors - nano vs vim - Day 17'
-published: false
-description: 90DaysOfDevOps - Text Editors - nano vs vim
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048703
----
+## Éditeurs de texte - nano vs vim
 
-## Text Editors - nano vs vim
+La majorité de vos systèmes Linux seront des serveurs et ceux-ci n'auront pas d'interface graphique (GUI). J'ai également mentionné dans la dernière session que Linux est principalement composé de fichiers de configuration. Pour apporter des modifications, vous devrez être capable d'éditer ces fichiers de configuration pour changer quoi que ce soit sur le système.
 
-The majority of your Linux systems are going to be servers and these are not going to have a GUI. I also mentioned in the last session that Linux is mostly made up of configuration files, to make changes you are going to need to be able to edit those configuration files to change anything on the system.
-
-There are lots of options out there but I think we should cover probably the two most common terminal text editors. I have used both of these editors and for me, I find `nano` the easy button when it comes to quick changes but `vim` has such a broad set of capabilities.
+Il existe de nombreuses options, mais je pense que nous devrions couvrir probablement les deux éditeurs de texte en terminal les plus courants. J'ai utilisé ces deux éditeurs et, pour moi, `nano` est le choix facile pour des modifications rapides, mais `vim` offre un ensemble très large de capacités.
 
 ### nano
 
-- Not available on every system.
-- Great for getting started.
+- Non disponible sur tous les systèmes.
+- Idéal pour débuter.
 
-If you run `nano 90DaysOfDevOps.txt` we will create a new file with nothing in, from here we can add our text and we have our instructions below for what we want to do with that file.
+Si vous exécutez `nano 90DaysOfDevOps.txt`, nous créerons un nouveau fichier vide. À partir de là, nous pouvons ajouter notre texte et nous avons nos instructions ci-dessous pour ce que nous voulons faire avec ce fichier.
 
 ![](Images/Day17_Linux1.png)
 
-We can now use `control x + enter` and then run `ls` you can now see our new text file.
+Nous pouvons maintenant utiliser `control x + enter` et ensuite exécuter `ls`, vous pouvez maintenant voir notre nouveau fichier texte.
 
 ![](Images/Day17_Linux2.png)
 
-We can now run `cat` against that file to read our file. We can then use that same `nano 90DaysOfDevOps.txt` to add additional text or modify your file.
+Nous pouvons maintenant exécuter `cat` sur ce fichier pour lire notre fichier. Nous pouvons ensuite utiliser ce même `nano 90DaysOfDevOps.txt` pour ajouter du texte supplémentaire ou modifier votre fichier.
 
-For me, nano is super easy when it comes to getting small changes done on configuration files.
+Pour moi, nano est super facile lorsqu'il s'agit de faire de petites modifications sur des fichiers de configuration.
 
 ### vim
 
-Possibly the most common text editor around? A sibling of the UNIX text editor vi from 1976 we get a lot of functionality with vim.
+Probablement l'éditeur de texte le plus courant ? Un dérivé de l'éditeur de texte UNIX vi de 1976, vim offre beaucoup de fonctionnalités.
 
-- Pretty much supported on every single Linux distribution.
-- Incredibly powerful! You can likely find a full 7-hour course just covering vim.
+- Pratiquement supporté sur chaque distribution Linux.
+- Incroyablement puissant ! Vous pouvez probablement trouver un cours complet de 7 heures couvrant uniquement vim.
 
-We can jump into vim with the `vim` command or if we want to edit our new txt file we could run `vim 90DaysOfDevOps.txt` but you are going to first see the lack of help menus at the bottom.
+Nous pouvons lancer vim avec la commande `vim` ou, si nous voulons éditer notre nouveau fichier txt, nous pourrions exécuter `vim 90DaysOfDevOps.txt`, mais vous verrez d'abord l'absence de menus d'aide en bas.
 
-The first question might be "How do I exit vim?" that is going to be `escape` and if we have not made any changes then it will be `:q`
+La première question pourrait être "Comment quitter vim ?". Pour cela, il faut appuyer sur `échap` et, si nous n'avons fait aucune modification, il faudra taper `:q`.
 
 ![](Images/Day17_Linux3.png)
 
-You start in `normal` mode, there are other modes `command, normal, visual, insert`, if we want to add the text we will need to switch from `normal` to `insert` we need to press `i` if you have added some text and would like to save these changes then you would hit escape and then `:wq`
+Vous commencez en mode `normal`. Il existe d'autres modes : `command`, `normal`, `visual`, `insert`. Si nous voulons ajouter du texte, nous devons passer du mode `normal` au mode `insert` en appuyant sur `i`. Si vous avez ajouté du texte et que vous souhaitez sauvegarder ces modifications, vous devez appuyer sur `échap` puis taper `:wq`.
 
 ![](Images/Day17_Linux4.png)
 
 ![](Images/Day17_Linux5.png)
 
-You can confirm this with the `cat` command to check you have saved those changes.
+Vous pouvez confirmer cela avec la commande `cat` pour vérifier que vous avez sauvegardé ces modifications.
 
-There is some cool fast functionality with vim that allows you to do menial tasks very quickly if you know the shortcuts which is a lecture in itself. Let's say we have added a list of repeated words and we now need to change that, maybe it's a configuration file and we repeat a network name and now this has changed and we quickly want to change this. I am using the word day for this example.
+Il existe des fonctionnalités rapides intéressantes avec vim qui permettent d'effectuer des tâches subalternes très rapidement si vous connaissez les raccourcis, ce qui est un sujet en soi. Supposons que nous avons ajouté une liste de mots répétés et que nous devons maintenant les changer. Peut-être s'agit-il d'un fichier de configuration et nous répétons un nom de réseau, et maintenant cela a changé et nous voulons changer cela rapidement. J'utilise le mot "day" pour cet exemple.
 
 ![](Images/Day17_Linux6.png)
 
-Now we want to replace that word with 90DaysOfDevOps, we can do this by hitting `ESC` and typing `:%s/Day/90DaysOfDevOps`
+Maintenant, nous voulons remplacer ce mot par 90DaysOfDevOps. Nous pouvons le faire en appuyant sur `ÉCHAP` et en tapant `:%s/Day/90DaysOfDevOps`.
 
 ![](Images/Day17_Linux7.png)
 
-The outcome when you hit enter is that the word day is then replaced with 90DaysOfDevOps.
+Le résultat, lorsque vous appuyez sur Entrée, est que le mot "day" est remplacé par 90DaysOfDevOps.
 
 ![](Images/Day17_Linux8.png)
 
-Copy and Paste was a big eye-opener for me. Copy is not copied it is yanked. we can copy using `yy` on our keyboard in normal mode. `p` paste on the same line, `P` paste on a new line.
+Copier et coller a été une grande révélation pour moi. Copier n'est pas copié, c'est arraché. Nous pouvons copier en utilisant `yy` sur notre clavier en mode normal. `p` colle sur la même ligne, `P` colle sur une nouvelle ligne.
 
-You can also delete these lines by choosing the number of lines you wish to delete followed by `dd`
+Vous pouvez également supprimer ces lignes en choisissant le nombre de lignes que vous souhaitez supprimer suivi de `dd`.
 
-There is also likely a time you will need to search a file, now we can use `grep` as mentioned in a previous session but we can also use vim. we can use `/word` and this will find the first match, to navigate through to the next you will use the `n` key and so on.
+Il y aura probablement aussi un moment où vous aurez besoin de rechercher dans un fichier. Maintenant, nous pouvons utiliser `grep` comme mentionné dans une session précédente, mais nous pouvons aussi utiliser vim. Nous pouvons utiliser `/word` et cela trouvera la première correspondance. Pour naviguer vers la suivante, vous utiliserez la touche `n` et ainsi de suite.
 
-For vim this is not even touching the surface, the biggest advice I can give is to get hands-on and use vim wherever possible.
+Pour vim, cela ne fait même pas effleurer la surface. Le meilleur conseil que je puisse donner est de pratiquer et d'utiliser vim autant que possible.
 
-A common interview question is what is your favourite text editor in Linux and I would make sure you have at least this knowledge of both so you can answer, it is fine to say nano because it's simple. At least you show competence in understanding what a text editor is. But get hands-on with them to be more proficient.
+Une question d'entretien courante est "Quel est votre éditeur de texte préféré sous Linux ?" et je m'assurerais que vous ayez au moins cette connaissance des deux pour pouvoir répondre. Il est tout à fait acceptable de dire nano parce que c'est simple. Au moins, vous montrez que vous savez ce qu'est un éditeur de texte. Mais pratiquez avec eux pour être plus compétent.
 
-Another pointer to navigate around in vim we can use `H,J,K,L` as well as our arrow keys.
+Un autre conseil pour naviguer dans vim : nous pouvons utiliser `H, J, K, L` ainsi que nos touches fléchées.
 
-## Resources
+## Ressources
 
-- [Vim in 100 Seconds](https://www.youtube.com/watch?v=-txKSRn0qeA)
-- [Vim tutorial](https://www.youtube.com/watch?v=IiwGbcd8S7I)
-- [Learn the Linux Fundamentals - Part 1](https://www.youtube.com/watch?v=kPylihJRG70)
-- [Linux for hackers (don't worry you don't need to be a hacker!)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
+- [Vim en 100 secondes](https://www.youtube.com/watch?v=-txKSRn0qeA)
+- [Tutoriel Vim](https://www.youtube.com/watch?v=IiwGbcd8S7I)
+- [Apprenez les fondamentaux de Linux - Partie 1](https://www.youtube.com/watch?v=kPylihJRG70)
+- [Linux pour les hackers (ne vous inquiétez pas, vous n'avez pas besoin d'être un hacker !)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
 
-See you on [Day18](day18.md)
+À demain pour le [Jour 18](day18.md)
