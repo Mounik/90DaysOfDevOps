@@ -1,123 +1,108 @@
----
-title: '#90DaysOfDevOps - Network Protocols - Day 23'
-published: false
-description: 90DaysOfDevOps - Network Protocols
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048704
----
-
-The content below comes mostly from Practical Networking's [Networking Fundamentals series](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi). If you prefer this content in video form, check out this video:
+Le contenu ci-dessous provient principalement de la série [Networking Fundamentals](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi) de Practical Networking. Si vous préférez ce contenu sous forme de vidéo, consultez cette vidéo :
 
 * [Network Protocols - ARP, FTP, SMTP, HTTP, SSL, TLS, HTTPS, DNS, DHCP](https://www.youtube.com/watch?v=E5bSumTAHZE&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&index=12)
 
+## Protocoles Réseau
 
-## Network Protocols
-
-A set of rules and messages that form a standard. An Internet Standard.
+Un ensemble de règles et de messages qui forment une norme. Une norme Internet.
 
 - ARP - Address Resolution Protocol
 
-If you want to get really into the weeds on ARP you can read the Internet Standard here. [RFC 826](https://datatracker.ietf.org/doc/html/rfc826)
+Si vous voulez vraiment entrer dans les détails sur ARP, vous pouvez lire la norme Internet ici : [RFC 826](https://datatracker.ietf.org/doc/html/rfc826).
 
-Connects IP addresses to fixed physical machine addresses, also known as MAC addresses across a layer 2 network.
+Connecte les adresses IP aux adresses physiques fixes des machines, également connues sous le nom d'adresses MAC sur un réseau de couche 2.
 
 ![](Images/Day23_Networking1.png)
 
 - FTP - File Transfer Protocol
 
-Allows for the transfer of files from source to destination. Generally, this process is authenticated but there is the ability if configured to use anonymous access. You will more frequently now see FTPS which provides SSL/TLS connectivity to FTP servers from the client for better security. This protocol would be found in the Application layer of the OSI Model.
+Permet le transfert de fichiers de la source vers la destination. Généralement, ce processus est authentifié, mais il est possible, si configuré, d'utiliser un accès anonyme. Vous verrez plus fréquemment maintenant FTPS, qui fournit une connectivité SSL/TLS aux serveurs FTP depuis le client pour une meilleure sécurité. Ce protocole se trouve dans la couche Application du modèle OSI.
 
 ![](Images/Day23_Networking2.png)
 
 - SMTP - Simple Mail Transfer Protocol
 
-Used for email transmission, mail servers use SMTP to send and receive mail messages. You will still find even with Microsoft 365 that the SMTP protocol is used for the same purpose.
+Utilisé pour la transmission de courriels, les serveurs de messagerie utilisent SMTP pour envoyer et recevoir des messages. Même avec Microsoft 365, le protocole SMTP est toujours utilisé à cette fin.
 
 ![](Images/Day23_Networking3.png)
 
 - HTTP - Hyper Text Transfer Protocol
 
-HTTP is the foundation of the internet and browsing content. Giving us the ability to easily access our favourite websites. HTTP is still heavily used but HTTPS is more so used or should be used on most of your favourite sites.
+HTTP est la base d'Internet et de la navigation sur le contenu. Il nous permet d'accéder facilement à nos sites web préférés. HTTP est encore largement utilisé, mais HTTPS devrait être utilisé sur la plupart de vos sites préférés.
 
 ![](Images/Day23_Networking4.png)
 
 - SSL - Secure Sockets Layer | TLS - Transport Layer Security
 
-TLS has taken over from SSL, TLS is a **Cryptographic Protocol** that provides secure communications over a network. It can and will be found in the mail, Instant Messaging and other applications but most commonly it is used to secure HTTPS.
+TLS a pris le relais de SSL. TLS est un **protocole cryptographique** qui assure des communications sécurisées sur un réseau. Il peut et sera trouvé dans le courrier électronique, la messagerie instantanée et d'autres applications, mais il est le plus couramment utilisé pour sécuriser HTTPS.
 
 ![](Images/Day23_Networking5.png)
 
-- HTTPS - HTTP secured with SSL/TLS
+- HTTPS - HTTP sécurisé avec SSL/TLS
 
-An extension of HTTP, used for secure communications over a network, HTTPS is encrypted with TLS as mentioned above. The focus here was to bring authentication, privacy and integrity whilst data is exchanged between hosts.
+Une extension de HTTP, utilisée pour des communications sécurisées sur un réseau, HTTPS est crypté avec TLS comme mentionné ci-dessus. L'objectif ici était d'apporter authentification, confidentialité et intégrité pendant l'échange de données entre les hôtes.
 
 ![](Images/Day23_Networking6.png)
 
 - DNS - Domain Name System
 
-The DNS is used to map human-friendly domain names for example we all know [google.com](https://google.com) but if you were to open a browser and put in [8.8.8.8](https://8.8.8.8) you would get Google as we pretty much know it. However good luck trying to remember all of the IP addresses for all of your websites where some of them we even use google to find information.
+Le DNS est utilisé pour mapper des noms de domaine conviviaux. Par exemple, nous connaissons tous [google.com](https://google.com), mais si vous ouvrez un navigateur et tapez [8.8.8.8](https://8.8.8.8), vous obtiendrez Google tel que nous le connaissons. Cependant, bonne chance pour essayer de mémoriser toutes les adresses IP de tous vos sites web, où pour certains d'entre eux nous utilisons même Google pour trouver des informations.
 
-This is where DNS comes in, it ensures that hosts, services and other resources are reachable.
+C'est là que le DNS intervient ; il garantit que les hôtes, les services et autres ressources sont accessibles.
 
-On all hosts, if they require internet connectivity then they must have DNS to be able to resolve those domain names. DNS is an area you could spend Days and Years on learning. I would also say from experience that DNS is mostly the common cause of all errors when it comes to Networking. Not sure if a Network engineer would agree there though.
+Sur tous les hôtes, s'ils nécessitent une connectivité Internet, ils doivent avoir un DNS pour pouvoir résoudre ces noms de domaine. Le DNS est un domaine dans lequel vous pourriez passer des jours et des années à apprendre. Je dirais également par expérience que le DNS est la cause la plus courante de toutes les erreurs en matière de réseau. Je ne suis pas sûr qu'un ingénieur réseau serait d'accord avec cela, cependant.
 
 ![](Images/Day23_Networking7.png)
 
 - DHCP - Dynamic Host Configuration Protocol
 
-We have discussed a lot about protocols that are required to make our hosts work, be it accessing the internet or transferring files between each other.
+Nous avons beaucoup discuté des protocoles nécessaires pour faire fonctionner nos hôtes, qu'il s'agisse d'accéder à Internet ou de transférer des fichiers entre eux.
 
-There are 4 things that we need on every host for it to be able to achieve both of those tasks.
+Il y a 4 choses dont nous avons besoin sur chaque hôte pour qu'il puisse accomplir ces deux tâches.
 
-- IP Address
-- Subnet Mask
-- Default Gateway
+- Adresse IP
+- Masque de sous-réseau
+- Passerelle par défaut
 - DNS
 
-We have covered IP address being a unique address for your host on the network it resides, we can think of this as our house number.
+Nous avons vu que l'adresse IP est une adresse unique pour votre hôte sur le réseau où il réside ; nous pouvons considérer cela comme notre numéro de maison.
 
-Subnet mask we will cover shortly, but you can think of this as postcode or zip code.
+Nous aborderons bientôt le masque de sous-réseau, mais vous pouvez le considérer comme un code postal ou un code ZIP.
 
-A default gateway is the IP of our router generally on our network providing us with that Layer 3 connectivity. You could think of this as the single road that allows us out of our street.
+Une passerelle par défaut est l'adresse IP de notre routeur, généralement sur notre réseau, nous fournissant cette connectivité de couche 3. Vous pourriez considérer cela comme la route unique qui nous permet de sortir de notre rue.
 
-Then we have DNS as we just covered to help us convert complicated public IP addresses to more suitable and rememberable domain names. Maybe we can think of this as the giant sorting office to make sure we get the right post.
+Ensuite, nous avons le DNS, comme nous venons de le voir, pour nous aider à convertir des adresses IP publiques compliquées en noms de domaine plus appropriés et mémorables. Peut-être pouvons-nous considérer cela comme le grand bureau de tri pour nous assurer que nous recevons le bon courrier.
 
-As I said each host requires these 4 things, if you have 1000 or 10,000 hosts then that is going to take you a very long time to determine each one of these individually. This is where DHCP comes in and allows you to determine a scope for your network and then this protocol will distribute to all available hosts in your network.
+Comme je l'ai dit, chaque hôte a besoin de ces 4 choses. Si vous avez 1000 ou 10 000 hôtes, cela prendra beaucoup de temps pour déterminer chacune de ces choses individuellement. C'est là que le DHCP intervient et vous permet de déterminer une portée pour votre réseau, puis ce protocole distribuera à tous les hôtes disponibles dans votre réseau.
 
-Another example is you head into a coffee shop, grab a coffee and sit down with your laptop or your phone let's call that your host. You connect your host to the coffee shop WiFi and you gain access to the internet, messages and mail start pinging through and you can navigate web pages and social media. When you connected to the coffee shop WiFi your machine would have picked up a DHCP address either from a dedicated DHCP server or most likely from the router also handling DHCP.
+Un autre exemple est lorsque vous entrez dans un café, prenez un café et vous asseyez avec votre ordinateur portable ou votre téléphone, appelons cela votre hôte. Vous connectez votre hôte au Wi-Fi du café et vous obtenez accès à Internet, des messages et des courriels commencent à arriver et vous pouvez naviguer sur des pages web et des réseaux sociaux. Lorsque vous vous êtes connecté au Wi-Fi du café, votre machine aura obtenu une adresse DHCP soit d'un serveur DHCP dédié, soit, plus probablement, du routeur gérant également le DHCP.
 
 ![](Images/Day23_Networking8.png)
 
-### Subnetting
+### Sous-réseaux
 
-A subnet is a logical subdivision of an IP network.
+Un sous-réseau est une subdivision logique d'un réseau IP.
 
-Subnets break large networks into smaller, more manageable networks that run more efficiently.
+Les sous-réseaux divisent de grands réseaux en réseaux plus petits et plus gérables qui fonctionnent plus efficacement.
 
-Each subnet is a logical subdivision of the bigger network. Connected devices with enough subnet share common IP address identifiers, enabling them to communicate with each other.
+Chaque sous-réseau est une subdivision logique du réseau plus grand. Les dispositifs connectés avec un sous-réseau suffisant partagent des identifiants d'adresses IP communs, leur permettant de communiquer entre eux.
 
-Routers manage communication between subnets.
+Les routeurs gèrent la communication entre les sous-réseaux.
 
-The size of a subnet depends on the connectivity requirements and the network technology used.
+La taille d'un sous-réseau dépend des besoins de connectivité et de la technologie réseau utilisée.
 
-An organisation is responsible for determining the number and size of the subnets within the limits of address space
-available, and the details remain local to that organisation. Subnets can also be segmented into even smaller subnets for things like Point to Point links, or subnetworks supporting a few devices.
+Une organisation est responsable de la détermination du nombre et de la taille des sous-réseaux dans les limites de l'espace d'adressage disponible, et les détails restent locaux à cette organisation. Les sous-réseaux peuvent également être segmentés en sous-réseaux encore plus petits pour des choses comme des liaisons point à point ou des sous-réseaux supportant quelques dispositifs.
 
-Among other advantages, segmenting large
-networks into subnets enable IP address
-reallocation and relieves network congestion, streamlining, network communication and efficiency.
+Parmi d'autres avantages, la segmentation de grands réseaux en sous-réseaux permet la réaffectation des adresses IP et soulage la congestion du réseau, rationalisant la communication et l'efficacité du réseau.
 
-Subnets can also improve network security.
-If a section of a network is compromised, it can be quarantined, making it difficult for bad actors to move around the larger network.
+Les sous-réseaux peuvent également améliorer la sécurité du réseau. Si une section d'un réseau est compromise, elle peut être mise en quarantaine, rendant difficile pour les acteurs malveillants de se déplacer dans le réseau plus large.
 
 ![](Images/Day23_Networking9.png)
 
-## Resources
+## Ressources
 
 - [Networking Fundamentals](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi)
 - [Subnetting Mastery](https://www.youtube.com/playlist?list=PLIFyRwBY_4bQUE4IB5c4VPRyDoLgOdExE)
 - [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
 
-See you on [Day 24](day24.md)
+À demain pour le [Jour 24](day24.md)
