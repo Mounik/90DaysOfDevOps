@@ -1,127 +1,117 @@
----
-title: '#90DaysOfDevOps - Staging & Changing - Day 38'
-published: false
-description: 90DaysOfDevOps - Staging & Changing
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1049042
----
+## Vue d'Ensemble : Mise en Scène et Changement
 
-## Staging & Changing
+Nous avons déjà couvert certains des fondamentaux, mais mettre les choses en pratique nous aide à mieux comprendre comment et pourquoi nous le faisons de cette manière. Avant de nous plonger dans les services basés sur Git comme GitHub, Git a ses propres capacités que nous pouvons exploiter sur notre station de travail locale.
 
-We have already covered some of the basics but putting things into a walkthrough makes it better for me to learn and understand how and why we are doing it this way. Before we get into any git-based services such as GitHub, git has its powers that we can take advantage of on our local workstation.
-
-We are going to take the project folder we created at the start of the git session and we are going to walk through some of the simple steps we can do with git. We created a folder on our local machine and we initialised it with the `git init` command
+Nous allons prendre le dossier de projet que nous avons créé au début de la session Git et nous allons parcourir certaines des étapes simples que nous pouvons faire avec Git. Nous avons créé un dossier sur notre machine locale et nous l'avons initialisé avec la commande `git init`.
 
 ![](Images/Day38_Git1.png)
 
-We can also see now that we have initialised the folder we have a hidden folder in our directory.
+Nous pouvons également voir maintenant que nous avons initialisé le dossier, nous avons un dossier caché dans notre répertoire.
 
 ![](Images/Day38_Git2.png)
 
-This is where the details of the git repository are stored as well as the information regarding our branches and commits.
+C'est ici que les détails du dépôt Git sont stockés ainsi que les informations concernant nos branches et nos commits.
 
-### Staging Files
+### Mise en Scène des Fichiers
 
-We then start working on our empty folder and maybe we add some source code on the first days of work. We create our readme.mdfile and we can see that file in the directory, next we check our `git status` and it knows about the new readme.mdfile but we have not committed the file yet.
+Nous commençons ensuite à travailler sur notre dossier vide et peut-être ajoutons du code source les premiers jours de travail. Nous créons notre fichier readme.md et nous pouvons voir ce fichier dans le répertoire, ensuite nous vérifions notre `git status` et il connaît le nouveau fichier readme.md mais nous n'avons pas encore commis le fichier.
 
 ![](Images/Day38_Git3.png)
 
-We can stage our readme.mdfile with the `git add README.md` command then we can see changes to be committed that we did not have before and a green new file.
+Nous pouvons mettre en scène notre fichier readme.md avec la commande `git add README.md`, puis nous pouvons voir les changements à commettre que nous n'avions pas auparavant et un nouveau fichier vert.
 
 ![](Images/Day38_Git4.png)
 
-Next up we want to commit this, our first commit or our first snapshot of our project. We can do this by using the `git commit -m "Meaningful message"` command so that we can easily see what has changed for each commit. Also, notice the yellow cross changes now to a green tick. This is something I have within my terminal with the theme I use, something we covered in the Linux section.
+Ensuite, nous voulons commit ceci, notre premier commit ou notre premier instantané de notre projet. Nous pouvons le faire en utilisant la commande `git commit -m "Message significatif"` afin de pouvoir facilement voir ce qui a changé pour chaque commit. Aussi, remarquez que la croix jaune des changements devient maintenant une coche verte. C'est quelque chose que j'ai dans mon terminal avec le thème que j'utilise, quelque chose que nous avons couvert dans la section Linux.
 
 ![](Images/Day38_Git5.png)
 
-### Committing Changes
+### Committre des Changements
 
-We are going to most likely want to add more files or even change the files we have in our directory. We have already done our first commit above. But now we are going to add more details and more files.
+Nous allons très probablement vouloir ajouter plus de fichiers ou même changer les fichiers que nous avons dans notre répertoire. Nous avons déjà fait notre premier commit ci-dessus. Mais maintenant, nous allons ajouter plus de détails et plus de fichiers.
 
-We could repeat our process from before, create or edit our file > `git add .` to add all files to the staging area then `git commit -m "meaningful message"` and this would work just fine. But to be able to offer a meaningful message on commit of what has changed you might not want to write something out like `git commit -m "Well, I changed some code because it did not work and when I fixed that I also added something new to the readme.mdto ensure everyone knew about the user experience and then I made a tea."` I mean this would work as well although probably make it descriptive but the preferred way here is to add this with a text editor.
+Nous pourrions répéter notre processus précédent, créer ou éditer notre fichier > `git add .` pour ajouter tous les fichiers à la zone de mise en scène, puis `git commit -m "message significatif"` et cela fonctionnerait très bien. Mais pour pouvoir offrir un message significatif sur le commit de ce qui a changé, vous ne voudrez peut-être pas écrire quelque chose comme `git commit -m "Eh bien, j'ai changé du code parce que cela ne fonctionnait pas et quand je l'ai corrigé, j'ai également ajouté quelque chose de nouveau au readme.md pour m'assurer que tout le monde connaissait l'expérience utilisateur, puis j'ai fait un thé."` Je veux dire que cela fonctionnerait bien, bien que probablement rendre cela descriptif mais la manière préférée ici est d'ajouter ceci avec un éditeur de texte.
 
-If we run `git commit` after running `git add` it will open our default text editor which in my case here is nano. Here are the steps I took to add some changes to the file, ran `git status` to show what is and what is not staged. Then I used `git add` to add the file to the staging area, then ran `git commit` which opened nano.
+Si nous exécutons `git commit` après avoir exécuté `git add`, cela ouvrira notre éditeur de texte par défaut, qui dans mon cas ici est nano. Voici les étapes que j'ai suivies pour ajouter quelques changements au fichier, exécuter `git status` pour montrer ce qui est et ce qui n'est pas mis en scène. Ensuite, j'ai utilisé `git add` pour ajouter le fichier à la zone de mise en scène, puis exécuté `git commit` qui a ouvert nano.
 
 ![](Images/Day38_Git6.png)
 
-When nano opens you can then add your short and long description and then save the file.
+Lorsque nano s'ouvre, vous pouvez ensuite ajouter votre message court et long de description, puis enregistrer le fichier.
 
 ![](Images/Day38_Git7.png)
 
-### Committing Best Practices
+### Meilleures Pratiques de Commit
 
-There is a balance here between when to commit and commit often. We don't want to wait to the end of the project before committing, each commit should be meaningful and they also should not be coupled with non-relevant tasks with each other. If you have a bug fix and a typo make sure they are two separate commits as a best practice.
+Il y a un équilibre ici entre quand commettre et commettre souvent. Nous ne voulons pas attendre la fin du projet avant de commettre, chaque commit devrait être significatif et ils ne devraient pas non plus être couplés à des tâches non pertinentes les unes avec les autres. Si vous avez une correction de bug et une faute de frappe, assurez-vous qu'il s'agit de deux commits séparés en tant que meilleure pratique.
 
-Make the commit message mean something.
+Rendez le message de commit significatif.
 
-In terms of wording, the team or yourself should be sticking to the same wording for each commit.
+En termes de rédaction, l'équipe ou vous-même devriez vous en tenir au même mot pour chaque commit.
 
-### Skipping the Staging Area
+### Sauter la Zone de Mise en Scène
 
-Do we always have to stage our changes before committing them?
+Devons-nous toujours mettre en scène nos changements avant de les commettre ?
 
-The answer is yes but don't see this as a shortcut, you have to be sure 100% that you are not needing that snapshot to roll back to, it is a risky thing to do.
+La réponse est oui, mais ne voyez pas cela comme un raccourci, vous devez être sûr à 100 % que vous n'avez pas besoin de cet instantané pour revenir en arrière, c'est une chose risquée à faire.
 
 ![](Images/Day38_Git8.png)
 
-### Removing Files
+### Suppression de Fichiers
 
-What about removing files from our project, maybe we have another file in our directory that we have committed but now the project no longer needs or using it, as a best practice we should remove it.
+Et si nous supprimons des fichiers de notre projet, peut-être avons-nous un autre fichier dans notre répertoire que nous avons commis mais maintenant le projet n'en a plus besoin ou ne l'utilise plus, en tant que meilleure pratique, nous devrions le supprimer.
 
-Just because we remove the file from the directory, git is still aware of this file and we also need to remove it from the repository. You can see the workflow for this below.
+Juste parce que nous supprimons le fichier du répertoire, Git est toujours conscient de ce fichier et nous devons également le supprimer du dépôt. Vous pouvez voir le flux de travail pour cela ci-dessous.
 
 ![](Images/Day38_Git9.png)
 
-That could be a bit of a pain to either remember or have to deal with if you have a large project which has many moving files and folders. We can do this with one command with `git rm oldcode.ps1`
+Cela pourrait être un peu douloureux à gérer si vous avez un grand projet qui a beaucoup de fichiers et de dossiers en mouvement. Nous pouvons faire cela avec une seule commande avec `git rm oldcode.ps1`.
 
 ![](Images/Day38_Git10.png)
 
-### Renaming or Moving Files
+### Renommer ou Déplacer des Fichiers
 
-Within our operating system, we can rename and move our files. We will no doubt need to do this from time to time with our projects. Similar to removing though there is a two-step process, we change our files on our OS and then we have to modify and make sure that the staging area or that the files are added correctly. Steps as follows:
+Au sein de notre système d'exploitation, nous pouvons renommer et déplacer nos fichiers. Nous devrons sans aucun doute le faire de temps en temps avec nos projets. Similaire à la suppression de fichiers du système d'exploitation puis du dépôt Git, nous pouvons également effectuer ce renommage en utilisant une commande Git.
 
 ![](Images/Day38_Git11.png)
 
-However, like removing files from the operating system and then the git repository we can perform this rename using a git command too.
+Cependant, comme pour la suppression de fichiers du système d'exploitation puis du dépôt Git, nous pouvons également effectuer ce renommage en utilisant une commande Git.
 
 ![](Images/Day38_Git12.png)
 
-### Ignoring Files
+### Ignorer des Fichiers
 
-We may have the requirement to ignore files or folders within our project that we might be using locally or that will be just wasted space if we were to share with the overall project, a good example of this could be logs. I also think using this for secrets that you do not want to be shared out in public or across teams.
+Nous pourrions avoir besoin d'ignorer des fichiers ou des dossiers dans notre projet que nous pourrions utiliser localement ou qui seraient simplement un espace perdu si nous devions les partager avec l'ensemble du projet, un bon exemple de cela pourrait être les journaux. Je pense également utiliser ceci pour les secrets que vous ne souhaitez pas partager en public ou entre les équipes.
 
-We can ignore files by adding folders or files to the `.gitignore` file in our project directory.
+Nous pouvons ignorer des fichiers en ajoutant des dossiers ou des fichiers au fichier `.gitignore` dans notre répertoire de projet.
 
 ![](Images/Day38_Git13.png)
 
-You can then open the `.gitignore` file and see that we have the logs/ directory present. But we could also add additional files and folders here to ignore.
+Vous pouvez ensuite ouvrir le fichier `.gitignore` et voir que nous avons le dossier logs/ présent. Mais nous pourrions également ajouter des fichiers et des dossiers supplémentaires ici à ignorer.
 
 ![](Images/Day38_Git14.png)
 
-We can then see `git status` and then see what has happened.
+Nous pouvons ensuite voir `git status` puis voir ce qui s'est passé.
 
 ![](Images/Day38_Git15.png)
 
-There are also ways in which you might need to go back and ignore files and folders, maybe you did want to share the logs folder but then later realised that you didn't want to. You will have to use `git rm --cached ` to remove files and folders from the staging area if you have a previously tracked folder that you now want to ignore.
+Il existe également des moyens de revenir en arrière et d'ignorer des fichiers et des dossiers, peut-être que vous vouliez partager le dossier logs mais que vous avez ensuite réalisé que vous ne le souhaitiez pas. Vous devrez utiliser `git rm --cached` pour supprimer les fichiers et les dossiers de la zone de mise en scène si vous avez un dossier précédemment suivi que vous souhaitez maintenant ignorer.
 
-### Short Status
+### Statut Court
 
-We have been using `git status` a lot to understand what we have in our staging area and what we do not, it's a very comprehensive command with lots of detail. Most of the time you will just want to know what has been modified or what is new? We can use `git status -s` for a short status of this detail. I would usually set an alias on my system to just use `git status -s` vs the more detailed command.
+Nous avons beaucoup utilisé `git status` pour comprendre ce que nous avons dans notre zone de mise en scène et ce que nous n'avons pas, c'est une commande très complète avec beaucoup de détails. La plupart du temps, vous voudrez simplement savoir ce qui a été modifié ou ce qui est nouveau ? Nous pouvons utiliser `git status -s` pour un statut court de ce détail. J'établirais généralement un alias sur mon système pour simplement utiliser `git status -s` par rapport à la commande plus détaillée.
 
 ![](Images/Day38_Git16.png)
 
-In the post tomorrow we will continue to look through these short examples of these common git commands.
+Dans le post de demain, nous continuerons à examiner ces exemples courts de ces commandes Git courantes.
 
-## Resources
+## Ressources
 
-- [What is Version Control?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
-- [Types of Version Control System](https://www.youtube.com/watch?v=kr62e_n6QuQ)
-- [Git Tutorial for Beginners](https://www.youtube.com/watch?v=8JJ101D3knE&t=52s)
-- [Git for Professionals Tutorial](https://www.youtube.com/watch?v=Uszj_k0DGsg)
-- [Git and GitHub for Beginners - Crash Course](https://www.youtube.com/watch?v=RGOj5yH7evk&t=8s)
-- [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
-- [Git cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
+- [Qu'est-ce que le Contrôle de Version ?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
+- [Types de Systèmes de Contrôle de Version](https://www.youtube.com/watch?v=kr62e_n6QuQ)
+- [Tutoriel Git pour Débutants](https://www.youtube.com/watch?v=8JJ101D3knE&t=52s)
+- [Tutoriel Git pour Professionnels](https://www.youtube.com/watch?v=Uszj_k0DGsg)
+- [Git et GitHub pour Débutants - Cours Complet](https://www.youtube.com/watch?v=RGOj5yH7evk&t=8s)
+- [Tutoriel Complet sur Git et GitHub](https://www.youtube.com/watch?v=apGV9Kg7ics)
+- [Feuille de Triche Git](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 
-See you on [Day 39](day39.md)
+À demain pour le [Jour 39](day39.md)
