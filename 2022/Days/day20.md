@@ -1,98 +1,88 @@
----
-title: '#90DaysOfDevOps - Dev workstation setup - All the pretty things - Day 20'
-published: false
-description: 90DaysOfDevOps - Dev workstation setup - All the pretty things
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048734
----
+## Configuration de la station de travail de développement - Toutes les jolies choses
 
-## Dev workstation setup - All the pretty things
+À ne pas confondre avec la configuration des serveurs Linux, mais je voulais également montrer le choix et la flexibilité que nous avons avec le bureau Linux.
 
-Not to be confused with us setting Linux servers up this way but I wanted to also show off the choice and flexibility that we have within the Linux desktop.
+J'utilise un bureau Linux depuis presque un an maintenant et je l'ai configuré exactement comme je le souhaite en termes d'apparence et de sensation. En utilisant notre VM Ubuntu sur Virtual Box, nous pouvons parcourir certaines des personnalisations que j'ai apportées à mon système principal.
 
-I have been using a Linux Desktop for almost a year now and I have it configured just the way I want from a look and feel perspective. Using our Ubuntu VM on Virtual Box we can run through some of the customisations I have made to my daily driver.
+J'ai réalisé une vidéo YouTube qui présente le reste, car certaines personnes pourraient mieux suivre de cette manière :
 
-I have put together a YouTube video walking through the rest as some people might be able to better follow along:
+[![Cliquez pour accéder à la vidéo YouTube](Images/Day20_YouTube.png)](https://youtu.be/jeEslAtHfKc)
 
-[![Click to access YouTube Video](Images/Day20_YouTube.png)](https://youtu.be/jeEslAtHfKc)
-
-Out of the box, our system will look something like the below:
+Dès la sortie de la boîte, notre système ressemblera à ceci :
 
 ![](Images/Day20_Linux1.png)
 
-We can also see our default bash shell below,
+Nous pouvons également voir notre shell bash par défaut ci-dessous :
 
 ![](Images/Day20_Linux2.png)
 
-A lot of this comes down to dotfiles something we will cover in this final Linux session of the series.
+Une grande partie de cela repose sur les dotfiles, quelque chose que nous allons aborder dans cette dernière session Linux de la série.
 
-### dotfiles
+### Dotfiles
 
-First up I want to dig into dotfiles, I have said on a previous day that Linux is made up of configuration files. These dotfiles are configuration files for your Linux system and applications.
+Tout d'abord, je veux creuser dans les dotfiles. J'ai dit précédemment que Linux est composé de fichiers de configuration. Ces dotfiles sont des fichiers de configuration pour votre système Linux et vos applications.
 
-I will also add that dotfiles are not just used to customise and make your desktop look pretty, there are also dotfile changes and configurations that will help you with productivity.
+J'ajouterai également que les dotfiles ne servent pas seulement à personnaliser et à rendre votre bureau joli, il existe également des modifications et des configurations de dotfiles qui vous aideront à améliorer votre productivité.
 
-As I mentioned many software programs store their configurations in these dotfiles. These dotfiles assist in managing functionality.
+Comme je l'ai mentionné, de nombreux programmes logiciels stockent leurs configurations dans ces dotfiles. Ces dotfiles aident à gérer la fonctionnalité.
 
-Each dotfile starts with a `.` You can probably guess where the naming came from?
+Chaque dotfile commence par un `.`. Vous pouvez probablement deviner d'où vient le nom ?
 
-So far we have been using bash as our shell which means you will have a .bashrc and .bash_profile in our home folder. You can see below a few dotfiles we have on our system.
+Jusqu'à présent, nous avons utilisé bash comme notre shell, ce qui signifie que vous aurez un .bashrc et un .bash_profile dans notre dossier personnel. Vous pouvez voir ci-dessous quelques dotfiles que nous avons sur notre système.
 
 ![](Images/Day20_Linux3.png)
 
-We are going to be changing our shell, so we will later be seeing a new `.zshrc` configuration dotfile.
+Nous allons changer notre shell, nous verrons donc plus tard un nouveau fichier de configuration dotfile `.zshrc`.
 
-But now you know if we refer to dotfiles you know they are configuration files. We can use them to add aliases to our command prompt as well as paths to different locations. Some people publish their dotfiles so they are publicly available. You will find mine here on my GitHub [MichaelCade/dotfiles](https://github.com/MichaelCade/dotfiles) here you will find my custom `.zshrc` file, my terminal of choice is terminator which also has some configuration files in the folder and then also some background options.
+Mais maintenant vous savez que si nous faisons référence à des dotfiles, vous savez qu'il s'agit de fichiers de configuration. Nous pouvons les utiliser pour ajouter des alias à notre invite de commande ainsi que des chemins vers différents emplacements. Certaines personnes publient leurs dotfiles pour qu'ils soient publiquement disponibles. Vous trouverez les miens ici sur mon GitHub [MichaelCade/dotfiles](https://github.com/MichaelCade/dotfiles). Ici, vous trouverez mon fichier `.zshrc` personnalisé, mon terminal de choix est terminator qui a également quelques fichiers de configuration dans le dossier, puis également quelques options d'arrière-plan.
 
 ### ZSH
 
-As I mentioned throughout our interactions so far we have been using a bash shell the default shell with Ubuntu. ZSH is very similar but it does have some benefits over bash.
+Comme je l'ai mentionné tout au long de nos interactions jusqu'à présent, nous avons utilisé un shell bash, le shell par défaut avec Ubuntu. ZSH est très similaire mais il présente certains avantages par rapport à bash.
 
-Zsh has features like interactive Tab completion, automated file searching, regex integration, advanced shorthand for defining command scope, and a rich theme engine.
+Zsh possède des fonctionnalités telles que la complétion interactive par tabulation, la recherche automatique de fichiers, l'intégration des expressions régulières, des raccourcis avancés pour définir la portée des commandes, et un moteur de thème riche.
 
-We can use our `apt` package manager to get zsh installed on our system. Let's go ahead and run `sudo apt install zsh` from our bash terminal. I am going to do this from within the VM console vs being connected over SSH.
+Nous pouvons utiliser notre gestionnaire de paquets `apt` pour installer zsh sur notre système. Allons-y et exécutons `sudo apt install zsh` à partir de notre terminal bash. Je vais le faire depuis la console de la VM plutôt que d'être connecté via SSH.
 
-When the installation command is complete you can run `zsh` inside your terminal, this will then start a shell configuration script.
+Lorsque la commande d'installation est terminée, vous pouvez exécuter `zsh` dans votre terminal, cela démarrera ensuite un script de configuration de shell.
 
 ![](Images/Day20_Linux4.png)
 
-I selected `1` to the above question and now we have some more options.
+J'ai sélectionné `1` pour la question ci-dessus et maintenant nous avons plus d'options.
 
 ![](Images/Day20_Linux5.png)
 
-You can see from this menu that we can make some out of the box edits to make ZSH configured to our needs.
+Vous pouvez voir à partir de ce menu que nous pouvons apporter quelques modifications dès la sortie de la boîte pour configurer ZSH selon nos besoins.
 
-If you exit the wizard with a `0` and then use the `ls -al | grep .zshrc` you should see we have a new configuration file.
+Si vous quittez l'assistant avec un `0` puis utilisez `ls -al | grep .zshrc`, vous devriez voir que nous avons un nouveau fichier de configuration.
 
-Now we want to make zsh our default shell every time we open our terminal, we can do this by running the following command to change our shell `chsh -s $(which zsh)` we then need to log out and back in again for the changes to take place.
+Maintenant, nous voulons faire de zsh notre shell par défaut à chaque fois que nous ouvrons notre terminal. Nous pouvons le faire en exécutant la commande suivante pour changer notre shell `chsh -s $(which zsh)`. Ensuite, nous devons nous déconnecter et nous reconnecter pour que les modifications prennent effet.
 
-When you log back and open a terminal it should look something like this. We can also confirm our shell has now been changed over by running `which $SHELL`
+Lorsque vous vous reconnectez et ouvrez un terminal, cela devrait ressembler à ceci. Nous pouvons également confirmer que notre shell a maintenant été changé en exécutant `which $SHELL`.
 
 ![](Images/Day20_Linux6.png)
 
-I generally perform this step on each Ubuntu desktop I spin up and find in general without going any further that the zsh shell is a little faster than bash.
+En général, j'effectue cette étape sur chaque bureau Ubuntu que je lance et je trouve en général, sans aller plus loin, que le shell zsh est un peu plus rapide que bash.
 
 ### OhMyZSH
 
-Next up we want to make things look a little better and also add some functionality to help us move around within the terminal.
+Ensuite, nous voulons améliorer un peu les choses et ajouter également quelques fonctionnalités pour nous aider à nous déplacer dans le terminal.
 
-OhMyZSH is a free and open source framework for managing your zsh configuration. There are lots of plugins, themes and other things that just make interacting with the zsh shell a lot nicer.
+OhMyZSH est un framework gratuit et open source pour gérer votre configuration zsh. Il existe de nombreux plugins, thèmes et autres éléments qui rendent l'interaction avec le shell zsh beaucoup plus agréable.
 
-You can find out more about [ohmyzsh](https://ohmyz.sh/)
+Vous pouvez en savoir plus sur [ohmyzsh](https://ohmyz.sh/).
 
-Let's get Oh My ZSH installed, we have a few options with `curl` `wget` or `fetch` we have the first two available on our system but I will lead with `curl`
+Installons Oh My ZSH. Nous avons quelques options avec `curl`, `wget` ou `fetch`, nous avons les deux premières disponibles sur notre système, mais je vais commencer avec `curl`.
 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
-When you have run the above command you should see some output like the below.
+Lorsque vous avez exécuté la commande ci-dessus, vous devriez voir une sortie similaire à celle ci-dessous.
 
 ![](Images/Day20_Linux7.png)
 
-Now we can move on to start putting a theme in for our experience, there are well over 100 bundled with Oh My ZSH but my go-to for all of my applications and everything is the Dracula theme.
+Maintenant, nous pouvons passer à l'étape suivante pour ajouter un thème à notre expérience. Il y en a bien plus de 100 inclus avec Oh My ZSH, mais mon choix pour toutes mes applications et tout le reste est le thème Dracula.
 
-I also want to add that these two plugins are a must when using Oh My ZSH.
+Je veux également ajouter que ces deux plugins sont indispensables lors de l'utilisation de Oh My ZSH.
 
 `git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
 
@@ -100,13 +90,13 @@ I also want to add that these two plugins are a must when using Oh My ZSH.
 
 `nano ~/.zshrc`
 
-edit the plugins to now include `plugins=(git zsh-autosuggestions zsh-syntax-highlighting)`
+modifiez les plugins pour inclure maintenant `plugins=(git zsh-autosuggestions zsh-syntax-highlighting)`
 
-## Gnome Extensions
+## Extensions Gnome
 
-I also use Gnome extensions, and in particular the list below
+J'utilise également des extensions Gnome, et en particulier la liste ci-dessous :
 
-[Gnome extensions](https://extensions.gnome.org)
+[Extensions Gnome](https://extensions.gnome.org)
 
     - Caffeine
     - CPU Power Manager
@@ -114,9 +104,9 @@ I also use Gnome extensions, and in particular the list below
     - Desktop Icons
     - User Themes
 
-## Software Installation
+## Installation de logiciels
 
-A short list of the programs I install on the machine using `apt`
+Une courte liste des programmes que j'installe sur la machine en utilisant `apt` :
 
     - VSCode
     - azure-cli
@@ -130,37 +120,37 @@ A short list of the programs I install on the machine using `apt`
     - terraform
     - vagrant
 
-### Dracula theme
+### Thème Dracula
 
-This site is the only theme I am using at the moment. Looks clear, and clean and everything looks great. [Dracula Theme](https://draculatheme.com/) It also has you covered when you have lots of other programs you use on your machine.
+Ce site est le seul thème que j'utilise actuellement. Il a l'air clair et propre, et tout a l'air super. [Thème Dracula](https://draculatheme.com/). Il vous couvre également lorsque vous avez beaucoup d'autres programmes que vous utilisez sur votre machine.
 
-From the link above we can search for zsh on the site and you will find at least two options.
+À partir du lien ci-dessus, nous pouvons rechercher zsh sur le site et vous trouverez au moins deux options.
 
-Follow the instructions listed to install either manually or using git. Then you will need to finally edit your `.zshrc` configuration file as per below.
+Suivez les instructions listées pour installer manuellement ou en utilisant git. Ensuite, vous devrez enfin modifier votre fichier de configuration `.zshrc` comme indiqué ci-dessous.
 
 ![](Images/Day20_Linux8.png)
 
-You are next going to want the [Gnome Terminal Dracula theme](https://draculatheme.com/gnome-terminal) with all instructions available here as well.
+Ensuite, vous voudrez le [thème Dracula pour Gnome Terminal](https://draculatheme.com/gnome-terminal) avec toutes les instructions disponibles ici également.
 
-It would take a long time for me to document every step so I created a video walkthrough of the process. (**Click on the image below**)
+Il me faudrait beaucoup de temps pour documenter chaque étape, j'ai donc créé une vidéo expliquant le processus. (**Cliquez sur l'image ci-dessous**)
 
 [![](Images/Day20_YouTube.png)](https://youtu.be/jeEslAtHfKc)
 
-If you made it this far, then we have now finished our Linux section of the #90DaysOfDevOps. Once again I am open to feedback and additions to resources here.
+Si vous êtes arrivé jusqu'ici, nous avons maintenant terminé notre section Linux de #90DaysOfDevOps. Encore une fois, je suis ouvert aux commentaires et aux ajouts de ressources ici.
 
-I also thought on this it was easier to show you a lot of the steps through video vs writing them down here, what do you think about this? I do have a goal to work back through these days and where possible create video walkthroughs to add in and better maybe explain and show some of the things we have covered. What do you think?
+J'ai également pensé qu'il serait plus facile de vous montrer beaucoup des étapes à travers une vidéo plutôt que de les écrire ici. Qu'en pensez-vous ? J'ai pour objectif de revenir sur ces jours et, lorsque cela est possible, de créer des vidéos expliquant et montrant certaines des choses que nous avons couvertes. Qu'en pensez-vous ?
 
-## Resources
+## Ressources
 
-- [Bash in 100 seconds](https://www.youtube.com/watch?v=I4EWvMFj37g)
-- [Bash script with practical examples - Full Course](https://www.youtube.com/watch?v=TPRSJbtfK4M)
+- [Bash en 100 secondes](https://www.youtube.com/watch?v=I4EWvMFj37g)
+- [Script bash avec des exemples pratiques - Cours complet](https://www.youtube.com/watch?v=TPRSJbtfK4M)
 - [Client SSH GUI - Remmina](https://remmina.org/)
-- [The Beginner's guide to SSH](https://www.youtube.com/watch?v=2QXkrLVsRmk)
-- [Vim in 100 Seconds](https://www.youtube.com/watch?v=-txKSRn0qeA)
-- [Vim tutorial](https://www.youtube.com/watch?v=IiwGbcd8S7I)
-- [Learn the Linux Fundamentals - Part 1](https://www.youtube.com/watch?v=kPylihJRG70)
-- [Linux for hackers (don't worry you don't need to be a hacker!)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
+- [Le guide du débutant pour SSH](https://www.youtube.com/watch?v=2QXkrLVsRmk)
+- [Vim en 100 secondes](https://www.youtube.com/watch?v=-txKSRn0qeA)
+- [Tutoriel Vim](https://www.youtube.com/watch?v=IiwGbcd8S7I)
+- [Apprenez les fondamentaux de Linux - Partie 1](https://www.youtube.com/watch?v=kPylihJRG70)
+- [Linux pour les hackers (ne vous inquiétez pas, vous n'avez pas besoin d'être un hacker !)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
 
-Tomorrow we start our 7 days of diving into Networking, we will be looking to give ourselves the foundational knowledge and understanding of Networking around DevOps.
+Demain, nous commençons nos 7 jours de plongée dans le réseau. Nous chercherons à nous donner les connaissances et la compréhension fondamentales du réseau autour de DevOps.
 
-See you on [Day21](day21.md)
+À demain pour le [Jour 21](day21.md)
