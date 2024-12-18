@@ -1,32 +1,22 @@
----
-title: '#90DaysOfDevOps - Getting Hands-On with Python & Network - Day 27'
-published: false
-description: 90DaysOfDevOps - Getting Hands-On with Python & Network
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048735
----
+## Mise en Pratique avec Python et Réseau
 
-## Getting Hands-On with Python & Network
+Dans cette dernière section des fondamentaux du réseautage, nous allons couvrir certaines tâches et outils d'automatisation avec notre environnement de laboratoire créé le [Jour 26](day26.md).
 
-In this final section of Networking fundamentals, we are going to cover some automation tasks and tools with our lab environment created on [Day 26](day26.md)
+Nous allons utiliser un tunnel SSH pour nous connecter à nos dispositifs depuis notre client plutôt que telnet. Le tunnel SSH créé entre le client et le dispositif est chiffré. Nous avons également couvert SSH dans la section Linux le [Jour 18](day18.md).
 
-We will be using an SSH tunnel to connect to our devices from our client vs telnet. The SSH tunnel created between client and device is encrypted. We also covered SSH in the Linux section on [Day 18](day18.md)
+## Accéder à notre environnement émulé virtuel
 
-## Access our virtual emulated environment
-
-For us to interact with our switches we either need a workstation inside the EVE-NG network or you can deploy a Linux box there with Python installed to perform your automation ([Resource for setting up Linux inside EVE-NG](https://www.youtube.com/watch?v=3Qstk3zngrY)) or you can do something like me and define a cloud for access from your workstation.
+Pour interagir avec nos commutateurs, nous avons besoin soit d'une station de travail à l'intérieur du réseau EVE-NG, soit vous pouvez déployer une boîte Linux avec Python installé pour effectuer votre automatisation ([Ressource pour configurer Linux à l'intérieur d'EVE-NG](https://www.youtube.com/watch?v=3Qstk3zngrY)) ou vous pouvez faire quelque chose comme moi et définir un cloud pour l'accès depuis votre station de travail.
 
 ![](Images/Day27_Networking3.png)
 
-To do this, we have right-clicked on our canvas and we have selected network and then selected "Management(Cloud0)" this will bridge out to our home network.
+Pour ce faire, nous avons fait un clic droit sur notre toile et avons sélectionné "réseau", puis "Management(Cloud0)". Cela créera un pont vers notre réseau domestique.
 
 ![](Images/Day27_Networking4.png)
 
-However, we do not have anything inside this network so we need to add connections from the new network to each of our devices. (My networking knowledge needs more attention and I feel that you could just do this next step to the top router and then have connectivity to the rest of the network through this one cable?)
+Cependant, nous n'avons rien à l'intérieur de ce réseau, donc nous devons ajouter des connexions du nouveau réseau à chacun de nos dispositifs. (Mes connaissances en réseautage nécessitent plus d'attention et je pense que vous pourriez simplement faire cette étape suivante vers le routeur principal, puis avoir une connectivité avec le reste du réseau via ce seul câble ?)
 
-I have then logged on to each of our devices and I have run through the following commands for the interfaces applicable to where the cloud comes in.
+Je me suis ensuite connecté à chacun de nos dispositifs et j'ai exécuté les commandes suivantes pour les interfaces applicables à l'endroit où le cloud entre.
 
 ```
 enable
@@ -39,101 +29,101 @@ exit
 sh ip int br
 ```
 
-The final step gives us the DHCP address from our home network. My device network list is as follows:
+La dernière étape nous donne l'adresse DHCP de notre réseau domestique. Ma liste de réseau de dispositifs est la suivante :
 
-| Node    | IP Address   | Home Network IP |
+| Nœud    | Adresse IP   | IP Réseau Domestique |
 | ------- | ------------ | --------------- |
-| Router  | 10.10.88.110 | 192.168.169.115 |
-| Switch1 | 10.10.88.111 | 192.168.169.178 |
-| Switch2 | 10.10.88.112 | 192.168.169.193 |
-| Switch3 | 10.10.88.113 | 192.168.169.125 |
-| Switch4 | 10.10.88.114 | 192.168.169.197 |
+| Routeur  | 10.10.88.110 | 192.168.169.115 |
+| Commutateur1 | 10.10.88.111 | 192.168.169.178 |
+| Commutateur2 | 10.10.88.112 | 192.168.169.193 |
+| Commutateur3 | 10.10.88.113 | 192.168.169.125 |
+| Commutateur4 | 10.10.88.114 | 192.168.169.197 |
 
-### SSH to a network device
+### SSH vers un dispositif réseau
 
-With the above in place, we can now connect to our devices on our home network using our workstation. I am using Putty but also have access to other terminals such as git bash that give me the ability to SSH to our devices.
+Avec ce qui précède en place, nous pouvons maintenant nous connecter à nos dispositifs sur notre réseau domestique en utilisant notre station de travail. J'utilise Putty mais j'ai également accès à d'autres terminaux comme git bash qui me permettent de me connecter en SSH à nos dispositifs.
 
-Below you can see we have an SSH connection to our router device. (R1)
+Ci-dessous, vous pouvez voir que nous avons une connexion SSH à notre dispositif routeur (R1).
 
 ![](Images/Day27_Networking5.png)
 
-### Using Python to gather information from our devices
+### Utiliser Python pour collecter des informations de nos dispositifs
 
-The first example of how we can leverage Python is to gather information from all of our devices and in particular, I want to be able to connect to each one and run a simple command to provide me with interface configuration and settings. I have stored this script here [netmiko_con_multi.py](Networking/netmiko_con_multi.py)
+Le premier exemple de la manière dont nous pouvons utiliser Python est de collecter des informations de tous nos dispositifs, et en particulier, je veux pouvoir me connecter à chacun et exécuter une commande simple pour me fournir la configuration et les paramètres de l'interface. J'ai stocké ce script ici [netmiko_con_multi.py](Networking/netmiko_con_multi.py).
 
-Now when I run this I can see each port configuration over all of my devices.
+Maintenant, lorsque j'exécute ceci, je peux voir la configuration de chaque port sur tous mes dispositifs.
 
 ![](Images/Day27_Networking6.png)
 
-This could be handy if you have a lot of different devices, create this one script so that you can centrally control and understand quickly all of the configurations in one place.
+Cela pourrait être utile si vous avez beaucoup de dispositifs différents ; créez ce script pour pouvoir contrôler et comprendre rapidement toutes les configurations en un seul endroit.
 
-### Using Python to configure our devices
+### Utiliser Python pour configurer nos dispositifs
 
-The above is useful but what about using Python to configure our devices, in our scenario we have a trunked port between `SW1` and `SW2` again imagine if this was to be done across many of the same switches we want to automate that and not have to manually connect to each switch to make the configuration change.
+Ce qui précède est utile, mais qu'en est-il de l'utilisation de Python pour configurer nos dispositifs ? Dans notre scénario, nous avons un port trunké entre `SW1` et `SW2`. Imaginez si cela devait être fait sur de nombreux commutateurs similaires ; nous voulons automatiser cela et ne pas avoir à nous connecter manuellement à chaque commutateur pour effectuer le changement de configuration.
 
-We can use [netmiko_sendchange.py](Networking/netmiko_sendchange.py) to achieve this. This will connect over SSH and perform that change on our `SW1` which will also change to `SW2`.
+Nous pouvons utiliser [netmiko_sendchange.py](Networking/netmiko_sendchange.py) pour y parvenir. Cela se connectera via SSH et effectuera ce changement sur notre `SW1`, ce qui changera également `SW2`.
 
 ![](Images/Day27_Networking7.png)
 
-Now for those that look at the code, you will see the message appears and tells us `sending configuration to device` but there is no confirmation that this has happened we could add additional code to our script to perform that check and validation on our switch or we could modify our script before to show us this. [netmiko_con_multi_vlan.py](Networking/netmiko_con_multi_vlan.py)
+Maintenant, pour ceux qui regardent le code, vous verrez que le message apparaît et nous dit `envoi de la configuration au dispositif`, mais il n'y a pas de confirmation que cela s'est produit. Nous pourrions ajouter un code supplémentaire à notre script pour effectuer cette vérification et cette validation sur notre commutateur, ou nous pourrions modifier notre script précédent pour nous montrer cela. [netmiko_con_multi_vlan.py](Networking/netmiko_con_multi_vlan.py)
 
 ![](Images/Day27_Networking8.png)
 
-### backing up your device configurations
+### Sauvegarder les configurations de vos dispositifs
 
-Another use case would be to capture our network configurations and make sure we have those backed up, but again we don't want to be connecting to every device we have on our network so we can also automate this using [backup.py](Networking/backup.py). You will also need to populate the [backup.txt](Networking/backup.txt) with the IP addresses you want to backup.
+Un autre cas d'utilisation serait de capturer nos configurations réseau et de nous assurer que nous les avons sauvegardées, mais encore une fois, nous ne voulons pas nous connecter à chaque dispositif que nous avons sur notre réseau, donc nous pouvons également automatiser cela en utilisant [backup.py](Networking/backup.py). Vous devrez également remplir le fichier [backup.txt](Networking/backup.txt) avec les adresses IP que vous souhaitez sauvegarder.
 
-Run your script and you should see something like the below.
+Exécutez votre script et vous devriez voir quelque chose comme ci-dessous.
 
 ![](Images/Day27_Networking9.png)
 
-That could be me just writing a simple print script in python so I should show you the backup files as well.
+Cela pourrait être moi écrivant juste un simple script d'impression en Python, donc je devrais vous montrer les fichiers de sauvegarde aussi.
 
 ![](Images/Day27_Networking10.png)
 
 ### Paramiko
 
-A widely used Python module for SSH. You can find out more at the official GitHub link [here](https://github.com/paramiko/paramiko)
+Un module Python largement utilisé pour SSH. Vous pouvez en savoir plus sur le lien GitHub officiel [ici](https://github.com/paramiko/paramiko).
 
-We can install this module using the `pip install paramiko` command.
+Nous pouvons installer ce module en utilisant la commande `pip install paramiko`.
 
 ![](Images/Day27_Networking1.png)
 
-We can verify the installation by entering the Python shell and importing the paramiko module.
+Nous pouvons vérifier l'installation en entrant dans le shell Python et en important le module paramiko.
 
 ![](Images/Day27_Networking2.png)
 
 ### Netmiko
 
-The netmiko module targets network devices specifically whereas paramiko is a broader tool for handling SSH connections overall.
+Le module netmiko cible spécifiquement les dispositifs réseau, tandis que paramiko est un outil plus large pour gérer les connexions SSH dans l'ensemble.
 
-Netmiko which we have used above alongside paramiko can be installed using `pip install netmiko`
+Netmiko, que nous avons utilisé ci-dessus avec paramiko, peut être installé en utilisant `pip install netmiko`.
 
-Netmiko supports many network vendors and devices, you can find a list of supported devices on the [GitHub Page](https://github.com/ktbyers/netmiko#supports)
+Netmiko prend en charge de nombreux fournisseurs et dispositifs réseau ; vous pouvez trouver une liste des dispositifs pris en charge sur la [page GitHub](https://github.com/ktbyers/netmiko#supports).
 
-### Other modules
+### Autres modules
 
-It is also worth mentioning a few other modules that we have not had the chance to look at but they give a lot more functionality when it comes to network automation.
+Il est également utile de mentionner quelques autres modules que nous n'avons pas eu l'occasion d'examiner, mais ils offrent beaucoup plus de fonctionnalités en matière d'automatisation du réseau.
 
-`netaddr` is used for working with and manipulating IP addresses, again the installation is simple with `pip install netaddr`
+`netaddr` est utilisé pour travailler avec et manipuler les adresses IP ; encore une fois, l'installation est simple avec `pip install netaddr`.
 
-you might find yourself wanting to store a lot of your switch configuration in an excel spreadsheet, the `xlrd` will allow your scripts to read the excel workbook and convert rows and columns into a matrix. `pip install xlrd` to get the module installed.
+Vous pourriez vous retrouver à vouloir stocker beaucoup de votre configuration de commutateur dans une feuille de calcul Excel ; `xlrd` permettra à vos scripts de lire le classeur Excel et de convertir les lignes et les colonnes en une matrice. Utilisez `pip install xlrd` pour installer le module.
 
-Some more use cases where network automation can be used that I have not had the chance to look into can be found [here](https://github.com/ktbyers/pynet/tree/master/presentations/dfwcug/examples)
+D'autres cas d'utilisation où l'automatisation du réseau peut être utilisée et que je n'ai pas eu l'occasion d'examiner peuvent être trouvés [ici](https://github.com/ktbyers/pynet/tree/master/presentations/dfwcug/examples).
 
-I think this wraps up our Networking section of the #90DaysOfDevOps, Networking is one area that I have not touched for a while really and there is so much more to cover but I am hoping between my notes and the resources shared throughout it is helpful for some.
+Je pense que cela conclut notre section Réseautage de #90DaysOfDevOps. Le réseautage est un domaine que je n'ai pas vraiment touché depuis un certain temps, et il y a tellement plus à couvrir, mais j'espère qu'entre mes notes et les ressources partagées tout au long, cela sera utile pour certains.
 
-## Resources
+## Ressources
 
-- [Free Course: Introduction to EVE-NG](https://www.youtube.com/watch?v=g6B0f_E0NMg)
-- [EVE-NG - Creating your first lab](https://www.youtube.com/watch?v=9dPWARirtK8)
-- [3 Necessary Skills for Network Automation](https://www.youtube.com/watch?v=KhiJ7Fu9kKA&list=WL&index=122&t=89s)
-- [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
-- [Practical Networking](http://www.practicalnetworking.net/)
-- [Python Network Automation](https://www.youtube.com/watch?v=xKPzLplPECU&list=WL&index=126)
+- [Cours Gratuit : Introduction à EVE-NG](https://www.youtube.com/watch?v=g6B0f_E0NMg)
+- [EVE-NG - Créer votre premier laboratoire](https://www.youtube.com/watch?v=9dPWARirtK8)
+- [3 Compétences Nécessaires pour l'Automatisation du Réseau](https://www.youtube.com/watch?v=KhiJ7Fu9kKA&list=WL&index=122&t=89s)
+- [Cours Complet de Réseautage Informatique](https://www.youtube.com/watch?v=IPvYjXCsTg8)
+- [Réseautage Pratique](http://www.practicalnetworking.net/)
+- [Automatisation du Réseau Python](https://www.youtube.com/watch?v=xKPzLplPECU&list=WL&index=126)
 
-Most of the examples I am using here as I am not a Network Engineer have come from this extensive book which is not free but I am using some of the scenarios to help understand Network Automation.
+La plupart des exemples que j'utilise ici, car je ne suis pas un ingénieur réseau, proviennent de ce livre exhaustif qui n'est pas gratuit, mais j'utilise certains des scénarios pour aider à comprendre l'automatisation du réseau.
 
-- [Hands-On Enterprise Automation with Python (Book)](https://www.packtpub.com/product/hands-on-enterprise-automation-with-python/9781788998512)
+- [Hands-On Enterprise Automation with Python (Livre)](https://www.packtpub.com/product/hands-on-enterprise-automation-with-python/9781788998512)
 
-See you on [Day 28](day28.md) where will start looking into cloud computing and get a good grasp and foundational knowledge of the topic and what is available.
+À demain pour le [Jour 28](day28.md), où nous commencerons à nous pencher sur le cloud computing et à obtenir une bonne compréhension et des connaissances fondamentales sur le sujet et ce qui est disponible.
