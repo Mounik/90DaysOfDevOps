@@ -1,175 +1,165 @@
----
-title: '#90DaysOfDevOps - Python for Network Automation - Day 25'
-published: false
-description: 90DaysOfDevOps - Python for Network Automation
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1049038
----
+## Python pour l'Automatisation du Réseau
 
-## Python for Network Automation
+Python est le langage standard utilisé pour les opérations de réseau automatisées.
 
-Python is the standard language used for automated network operations.
+Bien qu'il ne soit pas uniquement destiné à l'automatisation du réseau, il semble être omniprésent lorsque vous recherchez des ressources. Comme mentionné précédemment, si ce n'est pas Python, c'est généralement Ansible, qui est également écrit en Python.
 
-Whilst it is not only for network automation it seems to be everywhere when you are looking for resources and as previously mentioned if it's not Python then it's generally Ansible which is written also in Python.
+Je pense avoir déjà mentionné cela, mais pendant la section "Apprendre un langage de programmation", j'ai choisi Golang plutôt que Python pour des raisons liées au fait que mon entreprise développe en Go, ce qui était une bonne raison pour moi d'apprendre. Mais si ce n'était pas le cas, Python aurait pris cette place.
 
-I think I have mentioned this already but during the "Learn a programming language" section I chose Golang over Python for reasons around my company is developing in Go so that was a good reason for me to learn but if that was not the case then Python would have taken that time.
+- **Lisibilité et facilité d'utilisation** : Il semble que Python ait du sens. Il n'y a pas de besoin d'utiliser `{}` dans le code pour commencer et terminer des blocs. Couplé à un IDE puissant comme VS Code, vous avez un bon point de départ pour exécuter du code Python.
 
-- Readability and ease of use - It seems that Python seems just makes sense. There don't seem to be the requirements around `{}` in the code to start and end blocks. Couple this with a strong IDE like VS Code you have a pretty easy start when wanting to run some python code.
+PyCharm pourrait être un autre IDE à mentionner ici.
 
-Pycharm might be another IDE worth mentioning here.
+- **Bibliothèques** : L'extensibilité de Python est la véritable mine d'or ici. J'ai mentionné précédemment que ce n'est pas seulement pour l'automatisation du réseau, mais il existe de nombreuses bibliothèques pour toutes sortes de dispositifs et de configurations. Vous pouvez voir la grande quantité ici [PyPi](https://pypi.python.org/pypi).
 
-- Libraries - The extensibility of Python is the real gold mine here, I mentioned before that this is not just for Network Automation but in fact, there are libraries plenty for all sorts of devices and configurations. You can see the vast amount here [PyPi](https://pypi.python.org/pypi)
+Lorsque vous souhaitez télécharger la bibliothèque sur votre poste de travail, vous utilisez un outil appelé `pip` pour vous connecter à PyPI et la télécharger localement. Des fournisseurs de réseau comme Cisco, Juniper et Arista ont développé des bibliothèques pour faciliter l'accès à leurs dispositifs.
 
-When you want to download the library to your workstation, then you use a tool called `pip` to connect to PyPI and download it locally. Network vendors such as Cisco, Juniper, and Arista developed libraries to facilitate access to their devices.
+- **Puissant et efficace** : Souvenez-vous, pendant les jours de Go, nous avons parcouru le scénario "Hello World" et nous avons parcouru, je pense, 6 lignes de code ? En Python, c'est :
 
-- Powerful & Efficient - Remember during the Go days I went through the "Hello World" scenario and we went through I think 6 lines of code? In Python it is
-
-```
+```python
 print('hello world')
 ```
 
-Put all of the above points together and it should be easy to see why Python is generally mentioned as the de-facto tool when working on automating.
+Mettez tous les points ci-dessus ensemble et il devrait être facile de voir pourquoi Python est généralement mentionné comme l'outil de référence lorsqu'il s'agit d'automatisation.
 
-I think it's important to note that it's possible that several years back there were scripts that might have interacted with your network devices to maybe automate the backup of configuration or to gather logs and other insights into your devices. The automation we are talking about here is a little different and that's because the overall networking landscape has also changed to suit this way of thinking better and enabled more automation.
+Il est important de noter qu'il est possible que plusieurs années auparavant, il y avait des scripts qui interagissaient peut-être avec vos dispositifs réseau pour automatiser la sauvegarde de la configuration ou pour collecter des journaux et d'autres informations sur vos dispositifs. L'automatisation dont nous parlons ici est un peu différente, et c'est parce que le paysage global du réseau a également changé pour mieux s'adapter à cette façon de penser et a permis plus d'automatisation.
 
-- Software-Defined Network - SDN Controllers take the responsibility of delivering the control plane configuration to all devices on the network, meaning just a single point of contact for any network changes, no longer having to telnet or SSH into every device and also relying on humans to do this which has a repeatable chance of failure or misconfiguration.
+- **Réseau Défini par Logiciel (SDN)** : Les contrôleurs SDN prennent la responsabilité de fournir la configuration du plan de contrôle à tous les dispositifs du réseau, ce qui signifie un seul point de contact pour tout changement de réseau, sans avoir à se connecter en telnet ou SSH à chaque dispositif et à compter sur les humains pour le faire, ce qui comporte un risque répété d'échec ou de mauvaise configuration.
 
-- High-Level Orchestration - Go up a level from those SDN controllers and this allows for orchestration of service levels then there is the integration of this orchestration layer into your platforms of choice, VMware, Kubernetes, Public Clouds etc.
+- **Orchestration de Haut Niveau** : Montez d'un niveau par rapport à ces contrôleurs SDN et cela permet l'orchestration des niveaux de service, puis il y a l'intégration de cette couche d'orchestration dans vos plateformes de choix, VMware, Kubernetes, Clouds Publics, etc.
 
-- Policy-based management - What do you want to have? What is the desired state? You describe this and the system has all the details on how to figure it out to become the desired state.
+- **Gestion basée sur les politiques** : Que voulez-vous avoir ? Quel est l'état souhaité ? Vous décrivez cela et le système a tous les détails sur la manière de le réaliser pour atteindre l'état souhaité.
 
-## Setting up the lab environment
+## Configuration de l'environnement de laboratoire
 
-Not everyone has access to physical routers, switches and other networking devices.
+Tout le monde n'a pas accès à des routeurs, commutateurs et autres dispositifs de réseau physiques.
 
-I wanted to make it possible for us to look at some of the tooling pre-mentioned but also get hands-on and learn how to automate the configuration of our networks.
+Je voulais rendre possible pour nous d'examiner certains des outils pré-mentionnés, mais aussi de nous familiariser et d'apprendre à automatiser la configuration de nos réseaux.
 
-When it comes to options there are a few that we can choose from.
+En ce qui concerne les options, nous avons plusieurs choix.
 
 - [GNS3 VM](https://www.gns3.com/software/download-vm)
 - [Eve-ng](https://www.eve-ng.net/)
-- [Unimus](https://unimus.net/) Not a lab environment but an interesting concept.
+- [Unimus](https://unimus.net/) Ce n'est pas un environnement de laboratoire, mais un concept intéressant.
 
-We will build our lab out using [Eve-ng](https://www.eve-ng.net/) as mentioned before you can use a physical device but to be honest a virtual environment means that we can have a sandbox environment to test many different scenarios. Plus being able to play with different devices and topologies might be of interest.
+Nous allons construire notre laboratoire en utilisant [Eve-ng](https://www.eve-ng.net/). Comme mentionné précédemment, vous pouvez utiliser un dispositif physique, mais honnêtement, un environnement virtuel signifie que nous pouvons avoir un environnement de bac à sable pour tester de nombreux scénarios différents. De plus, pouvoir jouer avec différents dispositifs et topologies pourrait être intéressant.
 
-We are going to do everything on EVE-NG with the community edition.
+Nous allons tout faire sur EVE-NG avec l'édition communautaire.
 
-### Getting started
+### Démarrage
 
-The community edition comes in ISO and OVF formats for [download](https://www.eve-ng.net/index.php/download/)
+L'édition communautaire est disponible en formats ISO et OVF pour [téléchargement](https://www.eve-ng.net/index.php/download/).
 
-We will be using the OVF download but with the ISO there is the option to build out on a bare metal server without the need for a hypervisor.
+Nous allons utiliser le téléchargement OVF, mais avec l'ISO, il y a l'option de construire sur un serveur bare metal sans avoir besoin d'un hyperviseur.
 
 ![](Images/Day25_Networking1.png)
 
-For our walkthrough, we will be using VMware Workstation as I have a license via my vExpert but you can equally use VMware Player or any of the other options mentioned in the [documentation](https://www.eve-ng.net/index.php/documentation/installation/system-requirement/). Unfortunately we cannot use our previously used Virtual box!
+Pour notre guide, nous allons utiliser VMware Workstation car j'ai une licence via mon vExpert, mais vous pouvez également utiliser VMware Player ou l'une des autres options mentionnées dans la [documentation](https://www.eve-ng.net/index.php/documentation/installation/system-requirement/). Malheureusement, nous ne pouvons pas utiliser notre VirtualBox précédemment utilisé !
 
-This is also where I had an issue with GNS3 with Virtual Box even though supported.
+C'est aussi là que j'ai eu un problème avec GNS3 avec VirtualBox même si c'est supporté.
 
-[Download VMware Workstation Player - FREE](https://www.vmware.com/uk/products/workstation-player.html)
+[Télécharger VMware Workstation Player - GRATUIT](https://www.vmware.com/uk/products/workstation-player.html)
 
-[VMware Workstation PRO](https://www.vmware.com/uk/products/workstation-pro.html) Also noted that there is an evaluation period for free!
+[VMware Workstation PRO](https://www.vmware.com/uk/products/workstation-pro.html) Il est également noté qu'il y a une période d'évaluation gratuite !
 
-### Installation on VMware Workstation PRO
+### Installation sur VMware Workstation PRO
 
-Now we have our hypervisor software downloaded and installed, and we have the EVE-NG OVF downloaded. If you are using VMware Player please let me know if this process is the same.
+Maintenant que nous avons téléchargé et installé notre logiciel d'hyperviseur, et que nous avons téléchargé l'OVF EVE-NG. Si vous utilisez VMware Player, veuillez me faire savoir si ce processus est le même.
 
-We are now ready to get things configured.
+Nous sommes maintenant prêts à configurer les choses.
 
-Open VMware Workstation and then select `file` and `open`
+Ouvrez VMware Workstation, puis sélectionnez `file` et `open`.
 
 ![](Images/Day25_Networking2.png)
 
-When you download the EVE-NG OVF Image it is going to be within a compressed file. Extract the contents out into its folder so it looks like this.
+Lorsque vous téléchargez l'image OVF EVE-NG, elle se trouvera dans un fichier compressé. Extrayez le contenu dans son dossier pour qu'il ressemble à ceci.
 
 ![](Images/Day25_Networking3.png)
 
-Navigate to the location where you downloaded the EVE-NG OVF image and begin the import.
+Accédez à l'emplacement où vous avez téléchargé l'image OVF EVE-NG et commencez l'importation.
 
-Give it a recognisable name and store the virtual machine somewhere on your system.
+Donnez-lui un nom reconnaissable et stockez la machine virtuelle quelque part sur votre système.
 
 ![](Images/Day25_Networking4.png)
 
-When the import is complete increase the number of processors to 4 and the memory allocated to 8 GB. (This should be the case after import with the latest version if not then edit VM settings)
+Lorsque l'importation est terminée, augmentez le nombre de processeurs à 4 et la mémoire allouée à 8 Go. (Cela devrait être le cas après l'importation avec la dernière version, sinon, modifiez les paramètres de la VM.)
 
-Also, make sure the Virtualise Intel VT-x/EPT or AMD-V/RVI checkbox is enabled. This option instructs the VMware workstation to pass the virtualisation flags to the guest OS (nested virtualisation) This was the issue I was having with GNS3 with Virtual Box even though my CPU allows this.
+Assurez-vous également que la case à cocher Virtualiser Intel VT-x/EPT ou AMD-V/RVI est activée. Cette option indique à VMware Workstation de transmettre les indicateurs de virtualisation à l'OS invité (virtualisation imbriquée). C'était le problème que j'avais avec GNS3 avec VirtualBox même si mon CPU le permet.
 
 ![](Images/Day25_Networking5.png)
 
-### Power on & Access
+### Mise sous tension et accès
 
-Sidenote & Rabbit hole: Remember I mentioned that this would not work with VirtualBox! Well yeah had the same issue with VMware Workstation and EVE-NG but it was not the fault of the virtualisation platform!
+Remarque et piste : Souvenez-vous que j'ai mentionné que cela ne fonctionnerait pas avec VirtualBox ! Eh bien, j'ai eu le même problème avec VMware Workstation et EVE-NG, mais ce n'était pas la faute de la plateforme de virtualisation !
 
-I have WSL2 running on my Windows Machine and this seems to remove the capability of being able to run anything nested inside of your environment. I am confused as to why the Ubuntu VM does run as it seems to take out the Intel VT-d virtualisation aspect of the CPU when using WSL2.
+J'ai WSL2 en cours d'exécution sur ma machine Windows et cela semble supprimer la capacité de pouvoir exécuter quoi que ce soit imbriqué dans votre environnement. Je suis confus quant à la raison pour laquelle la VM Ubuntu fonctionne car elle semble supprimer l'aspect de virtualisation Intel VT-d du CPU lors de l'utilisation de WSL2.
 
-To resolve this we can run the following command on our Windows machine and reboot the system, note that whilst this is off then you will not be able to use WSL2.
+Pour résoudre ce problème, nous pouvons exécuter la commande suivante sur notre machine Windows et redémarrer le système. Notez que tant que cela est désactivé, vous ne pourrez pas utiliser WSL2.
 
 `bcdedit /set hypervisorlaunchtype off`
 
-When you want to go back and use WSL2 then you will need to run this command and reboot.
+Lorsque vous voulez revenir et utiliser WSL2, vous devrez exécuter cette commande et redémarrer.
 
 `bcdedit /set hypervisorlaunchtype auto`
 
-Both of these commands should be run as administrator!
+Ces deux commandes doivent être exécutées en tant qu'administrateur !
 
-Ok back to the show, You should now have a powered-on machine in VMware Workstation and you should have a prompt looking similar to this.
+Retour au spectacle, vous devriez maintenant avoir une machine sous tension dans VMware Workstation et vous devriez avoir une invite ressemblant à ceci.
 
 ![](Images/Day25_Networking6.png)
 
-On the prompt above you can use:
+Sur l'invite ci-dessus, vous pouvez utiliser :
 
-username = root
-password = eve
+nom d'utilisateur = root
+mot de passe = eve
 
-You will then be asked to provide the root password again, this will be used to SSH into the host later on.
+Vous devrez ensuite fournir à nouveau le mot de passe root, qui sera utilisé pour se connecter en SSH à l'hôte plus tard.
 
-We then can change the hostname.
+Nous pouvons ensuite changer le nom d'hôte.
 
 ![](Images/Day25_Networking7.png)
 
-Next, we define a DNS Domain Name, I have used the one below but I am not sure if this will need to be changed later on.
+Ensuite, nous définissons un nom de domaine DNS. J'ai utilisé celui ci-dessous, mais je ne suis pas sûr s'il devra être modifié plus tard.
 
 ![](Images/Day25_Networking8.png)
 
-We then configure networking, I am selecting static so that the IP address given will be persistent after reboots.
+Ensuite, nous configurons le réseau. Je sélectionne statique afin que l'adresse IP donnée soit persistante après les redémarrages.
 
 ![](Images/Day25_Networking9.png)
 
-The final step, provide a static IP address from a network that is reachable from your workstation.
+La dernière étape consiste à fournir une adresse IP statique à partir d'un réseau accessible depuis votre poste de travail.
 
 ![](Images/Day25_Networking10.png)
 
-There are some additional steps here where you will have to provide a subnet mask for your network, default gateway and DNS.
+Il y a quelques étapes supplémentaires ici où vous devrez fournir un masque de sous-réseau pour votre réseau, une passerelle par défaut et un DNS.
 
-Once finished it will reboot, when it is back up you can take your static IP address and put this into your browser.
+Une fois terminé, il redémarrera. Lorsqu'il sera de nouveau opérationnel, vous pourrez prendre votre adresse IP statique et la mettre dans votre navigateur.
 
 ![](Images/Day25_Networking11.png)
 
-The default username for the GUI is `admin` and the password is `eve` while the default username for SSH is `root` and the password is `eve` but this would have been changed if you changed during the setup.
+Le nom d'utilisateur par défaut pour l'interface graphique est `admin` et le mot de passe est `eve`, tandis que le nom d'utilisateur par défaut pour SSH est `root` et le mot de passe est `eve`, mais cela aurait été modifié si vous l'avez changé pendant la configuration.
 
 ![](Images/Day25_Networking12.png)
 
-I chose HTML5 for the console vs native as this will open a new tab in your browser when you are navigating through different consoles.
+J'ai choisi HTML5 pour la console plutôt que native, car cela ouvrira un nouvel onglet dans votre navigateur lorsque vous naviguerez à travers différentes consoles.
 
-Next up we are going to:
+Ensuite, nous allons :
 
-- Install the EVE-NG client pack
-- Load some network images into EVE-NG
-- Build a Network Topology
-- Adding Nodes
-- Connecting Nodes
-- Start building Python Scripts
-- Look at telnetlib, Netmiko, Paramiko and Pexpect
+- Installer le pack client EVE-NG
+- Charger quelques images réseau dans EVE-NG
+- Construire une topologie réseau
+- Ajouter des nœuds
+- Connecter des nœuds
+- Commencer à construire des scripts Python
+- Regarder telnetlib, Netmiko, Paramiko et Pexpect
 
-## Resources
+## Ressources
 
-- [Free Course: Introduction to EVE-NG](https://www.youtube.com/watch?v=g6B0f_E0NMg)
-- [EVE-NG - Creating your first lab](https://www.youtube.com/watch?v=9dPWARirtK8)
-- [3 Necessary Skills for Network Automation](https://www.youtube.com/watch?v=KhiJ7Fu9kKA&list=WL&index=122&t=89s)
-- [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
-- [Practical Networking](http://www.practicalnetworking.net/)
-- [Python Network Automation](https://www.youtube.com/watch?v=xKPzLplPECU&list=WL&index=126)
+- [Cours gratuit : Introduction à EVE-NG](https://www.youtube.com/watch?v=g6B0f_E0NMg)
+- [EVE-NG - Créer votre premier laboratoire](https://www.youtube.com/watch?v=9dPWARirtK8)
+- [3 compétences nécessaires pour l'automatisation du réseau](https://www.youtube.com/watch?v=KhiJ7Fu9kKA&list=WL&index=122&t=89s)
+- [Cours complet de réseautage informatique](https://www.youtube.com/watch?v=IPvYjXCsTg8)
+- [Réseautage pratique](http://www.practicalnetworking.net/)
+- [Automatisation du réseau Python](https://www.youtube.com/watch?v=xKPzLplPECU&list=WL&index=126)
 
-See you on [Day 26](day26.md)
+À demain pour le [Jour 26](day26.md)
