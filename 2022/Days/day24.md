@@ -1,147 +1,137 @@
----
-title: '#90DaysOfDevOps - Network Automation - Day 24'
-published: false
-description: 90DaysOfDevOps - Network Automation
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048805
----
+## Automatisation du Réseau
 
-## Network Automation
+### Fondamentaux de l'automatisation du réseau
 
-### Basics of network automation
+Principaux moteurs de l'automatisation du réseau
 
-Primary drivers for Network Automation
+- Atteindre l'agilité
+- Réduire les coûts
+- Éliminer les erreurs
+- Assurer la conformité
+- Gestion centralisée
 
-- Achieve Agility
-- Reduce Cost
-- Eliminate Errors
-- Ensure Compliance
-- Centralised Management
+Le processus d'adoption de l'automatisation est spécifique à chaque entreprise. Il n'y a pas de solution unique lorsqu'il s'agit de déployer l'automatisation ; la capacité à identifier et à adopter l'approche qui fonctionne le mieux pour votre organisation est cruciale pour avancer vers le maintien ou la création d'un environnement plus agile. L'accent doit toujours être mis sur la valeur commerciale et l'expérience de l'utilisateur final. (Nous avons dit quelque chose de similaire dès le début concernant l'ensemble de DevOps et le changement de culture et le processus automatisé que cela apporte.)
 
-The automation adoption process is specific to each business. There's no one size fits all when it comes to deploying automation, the ability to identify and embrace the approach that works best for your organisation is critical in advancing towards maintaining or creating a more agile environment, the focus should always be on business value and end-user experience. (We said something similar right at the start in regards to the whole of DevOps and the culture change and the automated process that this brings)
+Pour décomposer cela, vous devez identifier comment la tâche ou le processus que vous essayez d'automatiser va atteindre et améliorer l'expérience de l'utilisateur final ou la valeur commerciale tout en suivant une approche systématique étape par étape.
 
-To break this down you would need to identify how the task or process that you're trying to automate is going to achieve and improve the end-user experience or business value whilst following a step-by-step systematic approach.
+"Si vous ne savez pas où vous allez, n'importe quel chemin vous y mènera."
 
-"If you don't know where you are going, any road will take you there."
+Ayez un cadre ou une structure de conception que vous essayez d'atteindre, sachez quel est votre objectif final, puis travaillez étape par étape pour atteindre cet objectif en mesurant le succès de l'automatisation à divers stades en fonction des résultats commerciaux.
 
-Have a framework or design structure that you're trying to achieve know what your end goal is and then work step by step towards achieving that goal measuring the automation success at various stages based on the business outcomes.
+Construisez des concepts modélisés autour des applications existantes ; il n'est pas nécessaire de concevoir les concepts autour de l'automatisation dans une bulle car ils doivent être appliqués à votre application, votre service et votre infrastructure. Commencez donc à construire les concepts et à les modéliser autour de votre infrastructure existante, de vos applications existantes.
 
-Build concepts modelled around existing applications there's no need to design the concepts around automation in a bubble because they need to be applied to your application, your service, and your infrastructure, so begin to build the concepts and model them around your existing infrastructure, you're existing applications.
+### Approche de l'automatisation du réseau
 
-### Approach to Networking Automation
+Nous devons identifier les tâches et effectuer une découverte des demandes de changement de réseau afin d'avoir les problèmes et les problèmes les plus courants à automatiser une solution.
 
-We should identify the tasks and perform a discovery on network change requests so that you have the most common issues and problems to automate a solution to.
+- Faites une liste de toutes les demandes de changement et des flux de travail qui sont actuellement traités manuellement.
+- Déterminez les activités les plus courantes, chronophages et sujettes aux erreurs.
+- Priorisez les demandes en adoptant une approche axée sur les affaires.
+- C'est le cadre pour construire un processus d'automatisation, ce qui doit être automatisé et ce qui ne doit pas l'être.
 
-- Make a list of all the change requests and workflows that are currently being addressed manually.
-- Determine the most common, time-consuming and error-prone activities.
-- Prioritise the requests by taking a business-driven approach.
-- This is the framework for building an automation process, what must be automated and what must not.
+Nous devons ensuite diviser les tâches et analyser comment différentes fonctions de réseau fonctionnent et interagissent les unes avec les autres.
 
-We should then divide tasks and analyse how different network functions work and interact with each other.
-
-- The infrastructure/Network team receives change tickets at multiple layers to deploy applications.
-- Based on Network services, divide them into different areas and understand how they interact with each other.
-  - Application Optimisation
+- L'équipe infrastructure/réseau reçoit des tickets de changement à plusieurs niveaux pour déployer des applications.
+- En fonction des services réseau, divisez-les en différentes zones et comprenez comment ils interagissent les uns avec les autres.
+  - Optimisation des applications
   - ADC (Application Delivery Controller)
-  - Firewall
-  - DDI (DNS, DHCP, IPAM etc)
-  - Routing
-  - Others
-- Identify various dependencies to address business and cultural differences and bring in cross-team collaboration.
+  - Pare-feu
+  - DDI (DNS, DHCP, IPAM, etc.)
+  - Routage
+  - Autres
+- Identifiez diverses dépendances pour traiter les différences commerciales et culturelles et apporter une collaboration inter-équipes.
 
-Reusable policies, define and simplify reusable service tasks, processes and input/outputs.
+Politiques réutilisables, définir et simplifier les tâches de service, les processus et les entrées/sorties réutilisables.
 
-- Define offerings for various services, processes and input/outputs.
-- Simplifying the deployment process will reduce the time to market for both new and existing workloads.
-- Once you have a standard process, it can be sequenced and aligned to individual requests for a multi-threaded approach and delivery.
+- Définir les offres pour divers services, processus et entrées/sorties.
+- Simplifier le processus de déploiement réduira le délai de mise sur le marché pour les nouvelles charges de travail et les charges de travail existantes.
+- Une fois que vous avez un processus standard, il peut être séquencé et aligné sur des demandes individuelles pour une approche multi-thread et une livraison.
 
-Combine the policies with business-specific activities. How does implementing this policy help the business? Saves time? Saves Money? Provides a better business outcome?
+Combinez les politiques avec des activités spécifiques à l'entreprise. Comment la mise en œuvre de cette politique aide-t-elle l'entreprise ? Économise du temps ? Économise de l'argent ? Fournit un meilleur résultat commercial ?
 
-- Ensure that service tasks are interoperable.
-- Associate the incremental service tasks so that they align to create business services.
-- Allow for the flexibility to associate and re-associate service tasks on demand.
-- Deploy Self-Service capabilities and pave the way for improved operational efficiency.
-- Allow for the multiple technology skillsets to continue to contribute with oversight and compliance.
+- Assurez-vous que les tâches de service sont interopérables.
+- Associez les tâches de service incrémentielles de sorte qu'elles s'alignent pour créer des services commerciaux.
+- Permettez la flexibilité d'associer et de réassocier les tâches de service à la demande.
+- Déployez des capacités en libre-service et ouvrez la voie à une efficacité opérationnelle améliorée.
+- Permettez à plusieurs ensembles de compétences technologiques de continuer à contribuer avec supervision et conformité.
 
-**Iterate** on the policies and process, adding and improving while maintaining availability and service.
+**Itérez** sur les politiques et les processus, en ajoutant et en améliorant tout en maintenant la disponibilité et le service.
 
-- Start small by automating existing tasks.
-- Get familiar with the automation process, so that you can identify other areas that can benefit from automation.
-- iterate your automation initiatives, adding agility incrementally while maintaining the required availability.
-- Taking an incremental approach paves the way for success!
+- Commencez petit en automatisant les tâches existantes.
+- Familiarisez-vous avec le processus d'automatisation, afin de pouvoir identifier d'autres domaines qui peuvent bénéficier de l'automatisation.
+- Itérez vos initiatives d'automatisation, en ajoutant de l'agilité de manière incrémentielle tout en maintenant la disponibilité requise.
+- Adopter une approche incrémentielle ouvre la voie au succès !
 
-Orchestrate the network service!
+Orchestrez le service réseau !
 
-- Automation of the deployment process is required to deliver applications rapidly.
-- Creating an agile service environment requires different elements to be managed across technology skillsets.
-- Prepare for an end to end orchestration that provides for control over automation and the order of deployments.
+- L'automatisation du processus de déploiement est nécessaire pour fournir rapidement des applications.
+- La création d'un environnement de service agile nécessite la gestion de différents éléments à travers les ensembles de compétences technologiques.
+- Préparez une orchestration de bout en bout qui permet un contrôle sur l'automatisation et l'ordre des déploiements.
 
-## Network Automation Tools
+## Outils d'Automatisation du Réseau
 
-The good news here is that for the most part, the tools we use here for Network automation are generally the same that we will use for other areas of automation or what we have already covered so far or what we will cover in future sessions.
+La bonne nouvelle ici est que, pour la plupart, les outils que nous utilisons ici pour l'automatisation du réseau sont généralement les mêmes que ceux que nous utiliserons pour d'autres domaines de l'automatisation ou ceux que nous avons déjà couverts ou que nous couvrirons dans les sessions futures.
 
-Operating System - As I have throughout this challenge, I am focusing on doing most of my learning with a Linux OS, those reasons were given in the Linux section but almost all of the tooling that we will touch albeit cross-OS platforms maybe today they all started as Linux based applications or tools, to begin with.
+Système d'exploitation - Comme je l'ai fait tout au long de ce défi, je me concentre sur l'apprentissage principalement avec un OS Linux. Les raisons en ont été données dans la section Linux, mais presque tous les outils que nous allons aborder, bien qu'ils soient multiplateformes, ont commencé comme des applications ou des outils basés sur Linux.
 
-Integrated Development Environment (IDE) - Again not much to say here other than throughout I would suggest Visual Studio Code as your IDE, based on the extensive plugins that are available for so many different languages.
+Environnement de développement intégré (IDE) - Encore une fois, il n'y a pas grand-chose à dire ici, sauf que tout au long de ce défi, je suggérerais Visual Studio Code comme votre IDE, en raison des nombreux plugins disponibles pour tant de langages différents.
 
-Configuration Management - We have not got to the Configuration management section yet, but it is very clear that Ansible is a favourite in this area for managing and automating configurations. Ansible is written in Python but you do not need to know Python.
+Gestion de la configuration - Nous n'avons pas encore abordé la section sur la gestion de la configuration, mais il est très clair qu'Ansible est un favori dans ce domaine pour la gestion et l'automatisation des configurations. Ansible est écrit en Python, mais vous n'avez pas besoin de connaître Python.
 
-- Agentless
-- Only requires SSH
-- Large Support Community
-- Lots of Network Modules
-- Push only model
-- Configured with YAML
-- Open Source!
+- Sans agent
+- Nécessite uniquement SSH
+- Grande communauté de support
+- Beaucoup de modules réseau
+- Modèle push uniquement
+- Configuré avec YAML
+- Open Source !
 
-[Link to Ansible Network Modules](https://docs.ansible.com/ansible/2.9/modules/list_of_network_modules.html)
+[Lien vers les modules réseau Ansible](https://docs.ansible.com/ansible/2.9/modules/list_of_network_modules.html)
 
-We will also touch on **Ansible Tower** in the configuration management section, see this as the GUI front end for Ansible.
+Nous aborderons également **Ansible Tower** dans la section sur la gestion de la configuration ; voyez cela comme l'interface graphique frontale pour Ansible.
 
-CI/CD - Again we will cover more about the concepts and tooling around this but it's important to at least mention here as this spans not only networking but all provisioning of service and platform.
+CI/CD - Encore une fois, nous aborderons davantage les concepts et les outils autour de cela, mais il est important de le mentionner ici car cela couvre non seulement le réseau mais aussi toute la fourniture de services et de plateformes.
 
-In particular, Jenkins provides or seems to be a popular tool for Network Automation.
+En particulier, Jenkins fournit ou semble être un outil populaire pour l'automatisation du réseau.
 
-- Monitors git repository for changes and then initiates them.
+- Surveille le dépôt git pour les changements, puis les initie.
 
-Version Control - Again something we will dive deeper into later on.
+Contrôle de version - Encore quelque chose que nous approfondirons plus tard.
 
-- Git provides version control of your code on your local device - Cross-Platform
-- GitHub, GitLab, BitBucket etc are online websites where you define your repositories and upload your code.
+- Git fournit un contrôle de version de votre code sur votre appareil local - Multiplateforme
+- GitHub, GitLab, BitBucket, etc. sont des sites web en ligne où vous définissez vos dépôts et téléchargez votre code.
 
-Language | Scripting - Something we have not covered here is Python as a language, I decided to dive into Go instead as the programming language based on my circumstances, I would say that it was a close call between Golang and Python and Python it seems to be the winner for Network Automation.
+Langage | Script - Quelque chose que nous n'avons pas couvert ici est Python en tant que langage. J'ai décidé de plonger dans Go à la place en tant que langage de programmation en fonction de mes circonstances. Je dirais que c'était un choix serré entre Golang et Python, et Python semble être le gagnant pour l'automatisation du réseau.
 
-- Nornir is something to mention here, an automation framework written in Python. This seems to take the role of Ansible but specifically around Network Automation. [Nornir documentation](https://nornir.readthedocs.io/en/latest/)
+- Nornir est quelque chose à mentionner ici, un cadre d'automatisation écrit en Python. Cela semble prendre le rôle d'Ansible mais spécifiquement autour de l'automatisation du réseau. [Documentation Nornir](https://nornir.readthedocs.io/en/latest/)
 
-Analyse APIs - Postman is a great tool for analysing RESTful APIs. Helps to build, test and modify APIs.
+Analyser les API - Postman est un excellent outil pour analyser les API RESTful. Aide à construire, tester et modifier les API.
 
-- POST >>> To create resources objects.
-- GET >>> To retrieve a resources.
-- PUT >>> To create or replace the resources.
-- PATCH >>> To create or update the resources object.
-- Delete >>> To delete a resources
+- POST >>> Pour créer des ressources objets.
+- GET >>> Pour récupérer une ressource.
+- PUT >>> Pour créer ou remplacer les ressources.
+- PATCH >>> Pour créer ou mettre à jour l'objet de ressources.
+- Delete >>> Pour supprimer une ressource
 
-[Postman tool Download](https://www.postman.com/downloads/)
+[Téléchargement de l'outil Postman](https://www.postman.com/downloads/)
 
-### Other tools to mention
+### Autres outils à mentionner
 
 [Cisco NSO (Network Services Orchestrator)](https://www.cisco.com/c/en/us/products/cloud-systems-management/network-services-orchestrator/index.html)
 
-[NetYCE - Simplify Network Automation](https://netyce.com/)
+[NetYCE - Simplifier l'automatisation du réseau](https://netyce.com/)
 
-[Network Test Automation](https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/)
+[Automatisation des tests réseau](https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/)
 
-Over the next 3 days, I am planning to get more hands-on with some of the things we have covered and put some work in around Python and Network automation.
+Au cours des 3 prochains jours, je prévois de me familiariser davantage avec certaines des choses que nous avons couvertes et de faire un peu de travail autour de Python et de l'automatisation du réseau.
 
-We have nowhere near covered all of the networking topics so far but wanted to make this broad enough to follow along and still keep learning from the resources I am adding below.
+Nous n'avons pas encore couvert tous les sujets de réseau, mais nous voulions rendre cela suffisamment large pour suivre et continuer à apprendre des ressources que j'ajoute ci-dessous.
 
-## Resources
+## Ressources
 
-- [3 Necessary Skills for Network Automation](https://www.youtube.com/watch?v=KhiJ7Fu9kKA&list=WL&index=122&t=89s)
-- [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
-- [Practical Networking](http://www.practicalnetworking.net/)
-- [Python Network Automation](https://www.youtube.com/watch?v=xKPzLplPECU&list=WL&index=126)
+- [3 compétences nécessaires pour l'automatisation du réseau](https://www.youtube.com/watch?v=KhiJ7Fu9kKA&list=WL&index=122&t=89s)
+- [Cours complet de réseautage informatique](https://www.youtube.com/watch?v=IPvYjXCsTg8)
+- [Réseautage pratique](http://www.practicalnetworking.net/)
+- [Automatisation du réseau Python](https://www.youtube.com/watch?v=xKPzLplPECU&list=WL&index=126)
 
-See you on [Day 25](day25.md)
+À demain pour le [Jour 25](day25.md)
