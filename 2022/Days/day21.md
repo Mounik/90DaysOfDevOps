@@ -1,116 +1,105 @@
----
-title: '#90DaysOfDevOps - The Big Picture: DevOps and Networking - Day 21'
-published: false
-description: 90DaysOfDevOps - The Big Picture DevOps and Networking
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048761
----
+## Vue d'ensemble : DevOps et Réseau
 
-## The Big Picture: DevOps and Networking
+Comme pour toutes les sections, j'utilise des matériaux de formation opensource et gratuits et une grande partie du contenu peut être attribuée à d'autres. Dans le cas de la section sur le réseau, une grande majorité du contenu présenté provient de la série gratuite [Fundamentals of Networking](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi) de [Practical Networking](https://www.practicalnetworking.net/). Il est mentionné dans les ressources ainsi qu'un lien, mais il est approprié de souligner cela car, du point de vue de la communauté, j'ai utilisé ce cours pour mieux comprendre certaines zones spécifiques des technologies. Ce dépôt est un dépôt pour ma prise de notes et permettre à la communauté de bénéficier, espérons-le, de cela et des ressources listées.
 
-As with all sections, I am using open and free training materials and a lot of the content can be attributed to others. In the case of the networking section a large majority of the content shown is from [Practical Networking](https://www.practicalnetworking.net/)'s free [Networking Fundamentals series](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi).  It is mentioned in the resources as well as a link but it's appropriate to highlight this as from a community point of view, I have leveraged this course to help myself understand more about particular areas of technologies. This repository is a repository for my note taking and enabling the community to hopefully benefit from this and the listed resources. 
+Bienvenue au Jour 21 ! Nous allons nous plonger dans le réseau au cours des 7 prochains jours. Le réseau et DevOps sont les thèmes principaux, mais nous devrons également aborder certains des fondamentaux du réseau.
 
-Welcome to Day 21! We are going to be getting into Networking over the next 7 days, Networking and DevOps are the overarching themes but we will need to get into some of the networking fundamentals as well.
+En fin de compte, comme nous l'avons dit précédemment, le DevOps concerne un changement de culture et de processus au sein de votre organisation. Comme nous en avons discuté, cela peut inclure des machines virtuelles, des conteneurs ou Kubernetes, mais cela peut aussi inclure le réseau. Si nous appliquons ces principes DevOps à notre infrastructure, cela doit inclure le réseau, plus précisément, du point de vue de DevOps, vous devez également connaître le réseau, c'est-à-dire les différentes topologies et outils et stacks réseau dont nous disposons.
 
-Ultimately as we have said previously DevOps is about a culture and process change within your organisation this as we have discussed can be Virtual Machines, Containers, or Kubernetes but it can also be the network, If we are using those DevOps principles for our infrastructure that has to include the network more to the point from a DevOps point of view you also need to know about the network as in the different topologies and networking tools and stacks that we have available.
+Je soutiendrais que nous devrions configurer nos dispositifs réseau en utilisant l'infrastructure en tant que code et automatiser tout comme nous le ferions pour nos machines virtuelles, mais pour cela, nous devons avoir une bonne compréhension de ce que nous automatisons.
 
-I would argue that we should have our networking devices configured using infrastructure as code and have everything automated like we would our virtual machines, but to do that we have to have a good understanding of what we are automating.
+### Qu'est-ce que NetDevOps | Network DevOps ?
 
-### What is NetDevOps | Network DevOps?
+Vous avez peut-être également entendu parler des termes Network DevOps ou NetDevOps. Peut-être êtes-vous déjà ingénieur réseau et avez une bonne compréhension des composants réseau au sein de l'infrastructure. Vous comprenez les éléments utilisés autour du réseau tels que DHCP, DNS, NAT, etc. Vous aurez également une bonne compréhension des options de réseau définies par matériel ou logiciel, des commutateurs, des routeurs, etc.
 
-You may also hear the terms Network DevOps or NetDevOps. Maybe you are already a Network engineer and have a great grasp on the network components within the infrastructure you understand the elements used around networking such as DHCP, DNS, NAT etc. You will also have a good understanding of the hardware or software-defined networking options, switches, routers etc.
+Mais si vous n'êtes pas ingénieur réseau, nous devons probablement acquérir des connaissances de base dans certains de ces domaines afin de comprendre l'objectif final de Network DevOps.
 
-But if you are not a network engineer then we probably need to get foundational knowledge across the board in some of those areas so that we can understand the end goal of Network DevOps.
+Mais en ce qui concerne ces termes, nous pouvons considérer NetDevOps ou Network DevOps comme l'application des principes et pratiques DevOps au réseau, en appliquant des outils de contrôle de version et d'automatisation à la création, aux tests, à la surveillance et aux déploiements du réseau.
 
-But in regards to those terms, we can think of NetDevOps or Network DevOps as applying the DevOps Principles and Practices to the network, applying version control and automation tools to the network creation, testing, monitoring, and deployments.
+Si nous pensons que Network DevOps nécessite une automatisation, nous avons mentionné précédemment que DevOps brise les silos entre les équipes. Si les équipes réseau ne changent pas pour adopter un modèle et un processus similaires, elles deviennent le goulot d'étranglement ou même la cause de l'échec global.
 
-If we think of Network DevOps as having to require automation, we mentioned before about DevOps breaking down the silos between teams. If the networking teams do not change to a similar model and process then they become the bottleneck or even the failure overall.
+L'utilisation des principes d'automatisation autour de l'approvisionnement, de la configuration, des tests, du contrôle de version et du déploiement est un bon début. L'automatisation va globalement permettre une rapidité de déploiement, une stabilité de l'infrastructure réseau et une amélioration constante, ainsi que le partage du processus à travers plusieurs environnements une fois qu'ils ont été testés. Par exemple, une politique de réseau entièrement testée dans un environnement peut être rapidement utilisée dans un autre emplacement en raison de la nature de celle-ci étant en code par rapport à un processus rédigé manuellement comme cela aurait pu être le cas auparavant.
+Un très bon point de vue et une présentation de cette réflexion peuvent être trouvés ici : [Network DevOps](https://www.thousandeyes.com/learning/techtorials/network-devops).
 
-Using the automation principles around provisioning, configuration, testing, version control and deployment is a great start. Automation is overall going to enable speed of deployment, stability of the networking infrastructure and consistent improvement as well as the process being shared across multiple environments once they have been tested. Such as a fully tested Network Policy that has been fully tested on one environment can be used quickly in another location because of the nature of this being in code vs a manually authored process which it might have been before.
-A really good viewpoint and outline of this thinking can be found here. [Network DevOps](https://www.thousandeyes.com/learning/techtorials/network-devops)
+## Réseau : Les Bases
 
-## Networking The Basics
+Oublions d'abord l'aspect DevOps et examinons brièvement certains des fondamentaux du réseautage.
 
-Let's forget the DevOps side of things to begin with here and we now need to look very briefly into some of the Networking fundamentals.
+### Dispositifs Réseau
 
-### Network Devices
-
-If you prefer this content in video form, check out these videos from Practical Networking:
+Si vous préférez ce contenu sous forme de vidéo, consultez ces vidéos de Practical Networking :
 
 * [Network Devices - Hosts, IP Addresses, Networks - Networking Fundamentals - Lesson 1a](https://www.youtube.com/watch?v=bj-Yfakjllc&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&index=1)
-* [Network Devices - Hub, Bridge, Switch, Router - Networking Fundamentals - Lesson 1b
-](https://www.youtube.com/watch?v=H7-NR3Q3BeI&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&index=2)
+* [Network Devices - Hub, Bridge, Switch, Router - Networking Fundamentals - Lesson 1b](https://www.youtube.com/watch?v=H7-NR3Q3BeI&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&index=2)
 
-**Host** are any devices which send or receive traffic.
+**Hôte** : tout dispositif qui envoie ou reçoit du trafic.
 
 ![](Images/Day21_Networking1.png)
 
-**IP Address** the identity of each host.
+**Adresse IP** : l'identité de chaque hôte.
 
 ![](Images/Day21_Networking2.png)
 
-**Network** is what transports traffic between hosts. If we did not have networks there would be a lot of manual movement of data!
+**Réseau** : ce qui transporte le trafic entre les hôtes. Sans réseaux, il y aurait beaucoup de mouvements manuels de données !
 
-A logical group of hosts which require similar connectivity.
+Un groupe logique d'hôtes nécessitant une connectivité similaire.
 
 ![](Images/Day21_Networking3.png)
 
-**Switches** facilitate communication **_within_** a network. A switch forwards data packets between hosts. A switch sends packets directly to hosts.
+**Commutateurs** : facilitent la communication **au sein** d'un réseau. Un commutateur transmet des paquets de données entre les hôtes. Un commutateur envoie des paquets directement aux hôtes.
 
-- Network: A Grouping of hosts which require similar connectivity.
-- Hosts on a Network share the same IP address space.
+- Réseau : un groupement d'hôtes nécessitant une connectivité similaire.
+- Les hôtes sur un réseau partagent le même espace d'adresses IP.
 
 ![](Images/Day21_Networking4.png)
 
-**Router** facilitates communication between networks. As we said before that a switch looks after communication within a network a router allows us to join these networks together or at least give them access to each other if permitted.
+**Routeur** : facilite la communication entre les réseaux. Comme nous l'avons dit précédemment, un commutateur gère la communication au sein d'un réseau, un routeur nous permet de joindre ces réseaux ensemble ou au moins de leur donner accès les uns aux autres si cela est autorisé.
 
-A router can provide a traffic control point (security, filtering, redirecting) More and more switches also provide some of these functions now.
+Un routeur peut fournir un point de contrôle du trafic (sécurité, filtrage, redirection). De plus en plus de commutateurs fournissent également certaines de ces fonctions maintenant.
 
-Routers learn which networks they are attached to. These are known as routes, a routing table is all the networks a router knows about.
+Les routeurs apprennent à quels réseaux ils sont connectés. Ceux-ci sont connus sous le nom de routes, une table de routage est l'ensemble des réseaux qu'un routeur connaît.
 
-A router has an IP address in the networks they are attached to. This IP is also going to be each host's way out of their local network also known as a gateway.
+Un routeur a une adresse IP dans les réseaux auxquels il est connecté. Cette adresse IP sera également le moyen pour chaque hôte de sortir de son réseau local, également connu sous le nom de passerelle.
 
-Routers also create the hierarchy in networks I mentioned earlier.
+Les routeurs créent également la hiérarchie dans les réseaux dont j'ai parlé précédemment.
 
 ![](Images/Day21_Networking5.png)
 
-## Switches vs Routers
+## Commutateurs vs Routeurs
 
-**Routing** is the process of moving data between networks.
+**Routage** : le processus de déplacement des données entre les réseaux.
 
-- A router is a device whose primary purpose is Routing.
+- Un routeur est un dispositif dont le but principal est le routage.
 
-**Switching** is the process of moving data within networks.
+**Commutation** : le processus de déplacement des données au sein des réseaux.
 
-- A Switch is a device whose primary purpose is switching.
+- Un commutateur est un dispositif dont le but principal est la commutation.
 
-This is very much a foundational overview of devices as we know there are many different Network Devices such as:
+Ceci est vraiment une vue d'ensemble fondamentale des dispositifs car nous savons qu'il existe de nombreux dispositifs réseau différents tels que :
 
-- Access Points
-- Firewalls
-- Load Balancers
-- Layer 3 Switches
+- Points d'accès
+- Pare-feu
+- Équilibreurs de charge
+- Commutateurs de couche 3
 - IDS / IPS
-- Proxies
-- Virtual Switches
-- Virtual Routers
+- Proxys
+- Commutateurs virtuels
+- Routeurs virtuels
 
-Although all of these devices are going to perform Routing and/or Switching.
+Bien que tous ces dispositifs vont effectuer le routage et/ou la commutation.
 
-Over the next few days, we are going to get to know a little more about this list.
+Au cours des prochains jours, nous allons en apprendre davantage sur cette liste.
 
-- OSI Model
-- Network Protocols
+- Modèle OSI
+- Protocoles réseau
 - DNS (Domain Name System)
 - NAT
 - DHCP
-- Subnets
+- Sous-réseaux
 
-## Resources
+## Ressources
 
-* [Networking Fundamentals](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi)
+* [Fundamentals of Networking](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi)
 * [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
 
-See you on [Day22](day22.md)
+À demain pour le [Jour 22](day22.md)
