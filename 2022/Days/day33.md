@@ -1,8 +1,8 @@
-## Modèles de Réseautage de Microsoft Azure + Gestion d'Azure
+## Modèles de Réseau de Microsoft Azure + Gestion d'Azure
 
 Comme si aujourd'hui marquait l'anniversaire de Microsoft Azure et son 12ème anniversaire ! (1er février 2022) Quoi qu'il en soit, nous allons couvrir les modèles de réseautage au sein de Microsoft Azure et certaines des options de gestion pour Azure. Jusqu'à présent, nous n'avons utilisé que le portail Azure, mais nous avons mentionné d'autres domaines qui peuvent être utilisés pour piloter et créer nos ressources au sein de la plateforme.
 
-## Modèles de Réseautage Azure
+## Modèles de Réseau Azure
 
 ### Réseaux Virtuels
 
