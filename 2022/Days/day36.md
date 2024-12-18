@@ -1,72 +1,62 @@
----
-title: '#90DaysOfDevOps - Installing & Configuring Git - Day 36'
-published: false
-description: 90DaysOfDevOps - Installing & Configuring Git
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048738
----
+## Vue d'Ensemble : Installation et Configuration de Git
 
-## Installing & Configuring Git
+Git est un outil open-source et multiplateforme pour le contrôle de version. Si vous êtes comme moi, utilisant Ubuntu ou la plupart des environnements Linux, vous pourriez constater que Git est déjà installé sur votre système, mais nous allons passer par l'installation et la configuration.
 
-Git is an open source, cross-platform tool for version control. If you are like me, using Ubuntu or most Linux environments you might find that you already have git installed but we are going to run through the install and configuration.
+Même si vous avez déjà Git installé sur votre système, il est également bon de s'assurer que nous sommes à jour.
 
-Even if you already have git installed on your system it is also a good idea to make sure we are up to date.
+### Installation de Git
 
-### Installing Git
+Comme mentionné précédemment, Git est multiplateforme ; nous allons passer par Windows et Linux, mais vous pouvez également trouver macOS listé [ici](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-As already mentioned Git is cross-platform, we will be running through Windows and Linux but you can find macOS also listed [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+Pour [Windows](https://git-scm.com/download/win), nous pouvons obtenir nos installateurs à partir du site officiel.
 
-For [Windows](https://git-scm.com/download/win) we can grab our installers from the official site.
+Vous pourriez également utiliser `winget` sur votre machine Windows. Pensez à ceci comme votre gestionnaire de paquets d'applications Windows.
 
-You could also use `winget` on your Windows machine, think of this as your Windows Application Package Manager.
-
-Before we install anything let's see what version we have on our Windows Machine. Open a PowerShell window and run `git --version`
+Avant d'installer quoi que ce soit, voyons quelle version nous avons sur notre machine Windows. Ouvrez une fenêtre PowerShell et exécutez `git --version`.
 
 ![](Images/Day36_Git1.png)
 
-We can also check our WSL Ubuntu version of Git as well.
+Nous pouvons également vérifier notre version WSL Ubuntu de Git.
 
 ![](Images/Day36_Git2.png)
 
-At the time of writing the latest Windows release is `2.35.1` so we have some updating to do there which I will run through. I expect the same for Linux.
+Au moment de la rédaction, la dernière version Windows est `2.35.1`, donc nous avons quelques mises à jour à faire. Je m'attends à la même chose pour Linux.
 
-I went ahead and downloaded the latest installer and ran through the wizard and will document that here. The important thing to note is that git will uninstall previous versions before installing the latest.
+J'ai téléchargé le dernier installateur et j'ai parcouru l'assistant et je vais documenter cela ici. La chose importante à noter est que Git désinstallera les versions précédentes avant d'installer la dernière.
 
-Meaning that the process shown below is also the same process for the most part as if you were installing from no git.
+Cela signifie que le processus montré ci-dessous est également le même processus pour la plupart des installations à partir de zéro Git.
 
-It is a very simple installation. Once downloaded double click and get started. Read through the GNU license agreement. But remember this is free and open-source software.
+C'est une installation très simple. Une fois téléchargé, double-cliquez et commencez. Lisez l'accord de licence GNU. Mais rappelez-vous que ceci est un logiciel gratuit et open-source.
 
 ![](Images/Day36_Git3.png)
 
-Now we can choose additional components that we would like to also install but also associate with git. On Windows, I always make sure I install Git Bash as this allows us to run bash scripts on Windows.
+Nous pouvons ensuite choisir des composants supplémentaires que nous souhaitons également installer mais également associer à Git. Sur Windows, je m'assure toujours d'installer Git Bash car cela nous permet d'exécuter des scripts bash sur Windows.
 
 ![](Images/Day36_Git4.png)
 
-We can then choose which SSH Executable we wish to use. I leave this as the bundled OpenSSH that you might have seen in the Linux section.
+Nous pouvons ensuite choisir quel exécutable SSH nous souhaitons utiliser. Je le laisse comme l'OpenSSH empaqueté que vous pourriez avoir vu dans la section Linux.
 
 ![](Images/Day36_Git5.png)
 
-We then have experimental features that we may wish to enable, for me I don't need them so I don't enable them, you can always come back in through the installation and enable these later on.
+Nous avons ensuite des fonctionnalités expérimentales que nous pourrions souhaiter activer. Pour moi, je n'en ai pas besoin, donc je ne les active pas. Vous pouvez toujours revenir dans l'installation et activer celles-ci plus tard.
 
 ![](Images/Day36_Git6.png)
 
-Installation complete, we can now choose to open Git Bash and or the latest release notes.
+L'installation est terminée, nous pouvons maintenant choisir d'ouvrir Git Bash ou les dernières notes de version.
 
 ![](Images/Day36_Git7.png)
 
-The final check is to take a look in our PowerShell window at what version of git we have now.
+La vérification finale consiste à jeter un coup d'œil dans notre fenêtre PowerShell pour voir quelle version de Git nous avons maintenant.
 
 ![](Images/Day36_Git8.png)
 
-Super simple stuff and now we are on the latest version. On our Linux machine, we seemed to be a little behind so we can also walk through that update process.
+Très simple et maintenant nous sommes sur la dernière version. Sur notre machine Linux, nous semblions être un peu en retard, donc nous pouvons également parcourir ce processus de mise à jour.
 
-I simply run the `sudo apt-get install git` command.
+Je lance simplement la commande `sudo apt-get install git`.
 
 ![](Images/Day36_Git9.png)
 
-You could also run the following which will add the git repository for software installations.
+Vous pourriez également exécuter ce qui suit, qui ajoutera le dépôt pour les installations logicielles Git.
 
 ```
 sudo add-apt-repository ppa:git-core/ppa -y
@@ -75,80 +65,83 @@ sudo apt-get install git -y
 git --version
 ```
 
-### Configuring Git
+### Configuration de Git
 
-When we first use git we have to define some settings,
+Lorsque nous utilisons Git pour la première fois, nous devons définir certains paramètres :
 
-- Name
+- Nom
 - Email
-- Default Editor
-- Line Ending
+- Éditeur par défaut
+- Fin de ligne
 
-This can be done at three levels
+Cela peut être fait à trois niveaux :
 
-- System = All users
-- Global = All repositories of the current user
-- Local = The current repository
+- Système = Tous les utilisateurs
+- Global = Tous les dépôts de l'utilisateur actuel
+- Local = Le dépôt actuel
 
-Example:
+Exemple :
+
 `git config --global user.name "Michael Cade"`
-`git config --global user.email Michael.Cade@90DaysOfDevOPs.com"`
-Depending on your Operating System will determine the default text editor. In my Ubuntu machine without setting the next command is using nano. The below command will change this to visual studio code.
+
+`git config --global user.email Michael.Cade@90DaysOfDevOps.com`
+
+En fonction de votre système d'exploitation, cela déterminera l'éditeur de texte par défaut. Sur ma machine Ubuntu, sans définir la commande suivante, j'utilise nano. La commande suivante changera ceci en Visual Studio Code.
 
 `git config --global core.editor "code --wait"`
 
-now if we want to be able to see all git configurations then we can use the following command.
+Maintenant, si nous voulons pouvoir voir toutes les configurations Git, nous pouvons utiliser la commande suivante.
 
 `git config --global -e`
 
 ![](Images/Day36_Git10.png)
 
-On any machine this file will be named `.gitconfig` on my Windows machine you will find this in your user account directory.
+Sur n'importe quelle machine, ce fichier sera nommé `.gitconfig`. Sur ma machine Windows, vous le trouverez dans votre répertoire de compte utilisateur.
 
 ![](Images/Day36_Git11.png)
 
-### Git Theory
+### Théorie de Git
 
-I mentioned in the post yesterday that there were other version control types and we can split these down into two different types. One is Client Server and the other is Distributed.
+J'ai mentionné dans le post d'hier qu'il y avait d'autres types de contrôle de version et que nous pouvons les diviser en deux types différents. L'un est Client-Serveur et l'autre est Distribué.
 
-### Client-Server Version Control
+### Contrôle de Version Client-Serveur
 
-Before git was around Client-Server was the defacto method for version control. An example of this would be [Apache Subversion](https://subversion.apache.org/) which is an open source version control system founded in 2000.
+Avant Git, le modèle de contrôle de version Client-Serveur était la méthode par défaut pour le contrôle de version. Un exemple de ceci serait [Apache Subversion](https://subversion.apache.org/), qui est un système de contrôle de version open-source fondé en 2000.
 
-In this model of Client-Server version control, the first step the developer downloads the source code and the actual files from the server. This doesn't remove the conflicts but it does remove the complexity of the conflicts and how to resolve them.
+Dans ce modèle de contrôle de version Client-Serveur, la première étape que le développeur télécharge le code source et les fichiers réels du serveur. Cela n'élimine pas les conflits, mais cela élimine la complexité des conflits et comment les résoudre.
 
 ![](Images/Day36_Git12.png)
 
-Now for example let's say we have two developers working on the same files and one wins the race and commits or uploads their file back to the server first with their new changes. When the second developer goes to update they have a conflict.
+Par exemple, disons que nous avons deux développeurs travaillant sur les mêmes fichiers et que l'un gagne la course et commit ou télécharge son fichier en premier sur le serveur avec ses nouvelles modifications. Lorsque le deuxième développeur va mettre à jour, il a un conflit.
 
 ![](Images/Day36_Git13.png)
 
-So now the Dev needs to pull down the first devs code change next to their check and then commit once those conflicts have been settled.
+Donc maintenant, le développeur doit tirer le premier changement de code du développeur suivant pour vérifier et ensuite commettre une fois ces conflits réglés.
 
 ![](Images/Day36_Git15.png)
 
-### Distributed Version Control
+### Contrôle de Version Distribué
 
-Git is not the only distributed version control system. But it is very much the defacto.
+Git est loin d'être le seul système de contrôle de version distribué. Mais c'est vraiment le par défaut.
 
-Some of the major benefits of Git are:
+Certains des principaux avantages de Git sont :
 
-- Fast
-- Smart
+- Rapide
+- Intelligent
 - Flexible
-- Safe & Secure
+- Sûr et sécurisé
 
-Unlike the Client-Server version control model, each developer downloads the source repository meaning everything. History of commits, all the branches etc.
+Contrairement au modèle de contrôle de version Client-Serveur, chaque développeur télécharge le dépôt source, ce qui signifie tout. Historique des commits, toutes les branches, etc.
 
 ![](Images/Day36_Git16.png)
 
-## Resources
+## Ressources
 
-- [What is Version Control?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
-- [Types of Version Control System](https://www.youtube.com/watch?v=kr62e_n6QuQ)
-- [Git Tutorial for Beginners](https://www.youtube.com/watch?v=8JJ101D3knE&t=52s)
-- [Git for Professionals Tutorial](https://www.youtube.com/watch?v=Uszj_k0DGsg)
-- [Git and GitHub for Beginners - Crash Course](https://www.youtube.com/watch?v=RGOj5yH7evk&t=8s)
-- [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
+- [Qu'est-ce que le contrôle de version ?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
+- [Types de systèmes de contrôle de version](https://www.youtube.com/watch?v=kr62e_n6QuQ)
+- [Tutoriel Git pour débutants](https://www.youtube.com/watch?v=8JJ101D3knE&t=52s)
+- [Tutoriel Git pour professionnels](https://www.youtube.com/watch?v=Uszj_k0DGsg)
+- [Git et GitHub pour débutants - Cours complet](https://www.youtube.com/watch?v=RGOj5yH7evk&t=8s)
+- [Tutoriel complet sur Git et GitHub](https://www.youtube.com/watch?v=apGV9Kg7ics)
 
-See you on [Day 37](day37.md)
+À demain pour le [Jour 37](day37.md)
