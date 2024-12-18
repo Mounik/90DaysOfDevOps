@@ -1,171 +1,129 @@
----
-title: '#90DaysOfDevOps - Gitting to know Git - Day 37'
-published: false
-description: 90DaysOfDevOps - Gitting to know Git
-tags: 'DevOps, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048707
----
+## Vue d'Ensemble : Apprendre Git
 
-## Gitting to know Git
+Avant de nous plonger dans Git, nous devons comprendre ce qu'est le contrôle de version et pourquoi. Dans cette introduction à Git, nous allons examiner ce qu'est le contrôle de version et les bases de Git.
 
-Apologies for the terrible puns in the title and throughout. I am surely not the first person to turn Git into a dad joke!
+### Qu'est-ce que le Contrôle de Version ?
 
-In the last two posts we learnt about version control systems, and some of the fundamental workflows of git as a version control system [Day 35](day35.md) Then we got git installed on our system, updated and configured. We also went a little deeper into the theory between the Client-Server version control system and Git which is a distributed version control system [Day 36](day36.md).
+Git n'est pas le seul système de contrôle de version, donc ici, nous voulons couvrir les options disponibles et les méthodologies autour du contrôle de version.
 
-Now we are going to run through some of the commands and use cases that we will all commonly see with git.
+L'un des avantages les plus évidents et un grand avantage du contrôle de version est la capacité à suivre l'historique d'un projet. Nous pouvons examiner ce dépôt en utilisant `git log` et voir que nous avons de nombreux commits et de nombreux commentaires et ce qui s'est passé jusqu'à présent dans le projet. Ne vous inquiétez pas, nous allons nous plonger dans les commandes plus tard. Maintenant, imaginez que ceci est un véritable projet logiciel rempli de code source et que plusieurs personnes commettent à notre logiciel à différents moments, différents auteurs, et ensuite les réviseurs sont tous enregistrés ici afin que nous sachions ce qui s'est passé, quand, par qui et qui a révisé.
 
-### Where to git help with git?
+![](Images/Day35_Git1.png)
 
-There are going to be times when you just cannot remember or just don't know the command you need to get things done with git. You are going to need help.
+Le contrôle de version avant qu'il soit cool aurait été quelque chose comme la création manuelle d'une copie de votre version avant de faire des modifications. Il se pourrait également que vous commentiez le vieux code inutile avec le "juste au cas où".
 
-Google or any search engine is likely to be your first port of call when searching for help.
+![](Images/Day35_Git2.png)
 
-Secondly, the next place is going to be the official git site and the documentation. [git-scm.com/docs](http://git-scm.com/docs) Here you will find not only a solid reference to all the commands available but also lots of different resources.
+J'ai commencé à utiliser le contrôle de version non seulement sur le code source, mais pratiquement sur tout. Cela parle de projets comme celui-ci (90DaysOfDevOps). Pourquoi ne pas accepter les fonctionnalités qui permettent de revenir en arrière et de journaliser tout ce qui s'est passé ?
 
-![](Images/Day37_Git1.png)
+Cependant, un grand avertissement **Le contrôle de version n'est pas une sauvegarde !**
 
-We can also access this same documentation which is super useful if you are without connectivity from the terminal. If we chose the `git add` command for example we can run `git add --help` and we see below the manual.
+Un autre avantage du contrôle de version est la capacité à gérer plusieurs versions d'un projet. Prenons un exemple : nous avons une application gratuite disponible sur tous les systèmes d'exploitation et une application payante également disponible sur tous les systèmes d'exploitation. La majorité du code est partagée entre les deux applications. Nous pourrions copier et coller notre code à chaque commit pour chaque application, mais cela serait très désordonné, surtout lorsque vous mettez à l'échelle votre développement à plus d'une personne, et des erreurs seront commises.
 
-![](Images/Day37_Git2.png)
+L'application premium est l'endroit où nous allons avoir des fonctionnalités supplémentaires, appelons-les commits premium.
 
-We can also in the shell use `git add -h` which is going to give us a summary of the options we have available.
+![](Images/Day35_Git3.png)
 
-![](Images/Day37_Git3.png)
+L'application gratuite est l'endroit où nous allons avoir des fonctionnalités supplémentaires, appelons-les commits premium.
 
-### Myths surrounding Git
+![](Images/Day35_Git4.png)
 
-"Git has no access control" - You can empower a leader to maintain source code.
+Maintenant, cela semble facile, mais la fusion peut être compliquée parce que vous pourriez avoir une équipe travaillant sur l'édition gratuite et une autre équipe travaillant sur la version payante premium, et que se passe-t-il si les deux modifient le code qui affecte des aspects du code global ? Peut-être qu'une variable est mise à jour et casse quelque chose. Ensuite, vous avez un conflit qui casse l'une des fonctionnalités. Le contrôle de version ne peut pas résoudre les conflits qui dépendent de vous. Mais le contrôle de version permet de gérer cela facilement.
 
-"Git is too heavy" - Git can provide shallow repositories which means a reduced amount of history if you have large projects.
+La raison principale, si vous n'avez pas encore compris le contrôle de version, en général, est la capacité à collaborer. La capacité à partager du code parmi les développeurs et, quand je dis code, comme je l'ai dit précédemment, de plus en plus nous voyons beaucoup plus de cas d'utilisation pour d'autres raisons d'utiliser le contrôle de source, peut-être est-ce une présentation conjointe sur laquelle vous travaillez avec un collègue ou un défi 90DaysOfDevOps où la communauté offre ses corrections et mises à jour tout au long du projet.
 
-### Real shortcomings
+Sans contrôle de version, comment les équipes de développeurs de logiciels géraient-elles cela ? Je trouve cela assez difficile quand je travaille sur mes projets pour garder une trace des choses. Je m'attends à ce qu'ils divisent le code en chaque module fonctionnel. Peut-être une petite partie du puzzle, puis rassembler les pièces et ensuite résoudre les problèmes et les problèmes avant que quoi que ce soit ne soit publié.
 
-Not ideal for Binary files. Great for source code but not great for executable files or videos for example.
+Avec le contrôle de version, nous avons une seule source de vérité. Nous pourrions toujours tous travailler sur différents modules, mais cela nous permet de mieux collaborer.
 
-Git is not user-friendly, the fact that we have to spend time talking about commands and functions of the tool is probably a key sign of that.
+![](Images/Day35_Git5.png)
 
-Overall though, git is hard to learn but easy to use.
+Une autre chose à mentionner ici est que ce ne sont pas seulement les développeurs qui peuvent bénéficier du contrôle de version, ce sont tous les membres de l'équipe qui ont de la visibilité, mais aussi des outils ayant conscience ou tirant parti, les outils de gestion de projet peuvent être liés ici, suivant le travail. Nous pourrions également avoir une machine de construction, par exemple Jenkins, dont nous parlerons dans un autre module. Un outil qui construit et emballe le système, automatisant les tests de déploiement et les métriques.
 
-### The git ecosystem
+### Qu'est-ce que Git ?
 
-I want to briefly cover the ecosystem around git but not deep dive into some of these areas but I think it's important to note these here at a high level.
+Git est un outil qui suit les modifications apportées au code source ou à n'importe quel fichier, ou nous pourrions également dire que Git est un système de contrôle de version distribué open-source.
 
-Almost all modern development tools support Git.
+Il existe de nombreuses façons d'utiliser Git sur nos systèmes, le plus couramment ou du moins pour moi, je l'ai vu sur la ligne de commande, mais nous avons également des interfaces utilisateur graphiques et des outils comme Visual Studio Code qui ont des opérations sensibles à Git dont nous pouvons tirer parti.
 
-- Developer tools - We have already mentioned visual studio code but you will find git plugins and integrations into sublime text and other text editors and IDEs.
-- Team tools - Also mentioned around tools like Jenkins from a CI/CD point of view, Slack from a messaging framework and Jira for project management and issue tracking.
+Maintenant, nous allons parcourir un aperçu de haut niveau avant même d'installer Git sur notre machine locale.
 
-- Cloud Providers - All the large cloud providers support git, Microsoft Azure, Amazon AWS, and Google Cloud Platform.
-- Git-Based services - Then we have GitHub, GitLab and BitBucket which we will cover in more detail later on. I have heard of these services as the social network for code!
+Prenons le dossier que nous avons créé précédemment.
 
-### The Git Cheatsheet
+![](Images/Day35_Git2.png)
 
-We have not covered most of these commands but having looked at some cheat sheets available online I wanted to document some of the git commands and what their purpose is. We don't need to remember these all, and with more hands-on practice and use you will pick at least the git basics.
+Pour utiliser ce dossier avec le contrôle de version, nous devons d'abord initialiser ce répertoire en utilisant la commande `git init`. Pour l'instant, pensez simplement que cette commande place notre répertoire en tant que dépôt dans une base de données quelque part sur notre ordinateur.
 
-I have taken these from [atlassian](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet) but writing them down and reading the description is a good way to get to know what the commands are as well as getting hands-on in everyday tasks.
+![](Images/Day35_Git6.png)
 
-### Git Basics
+Maintenant, nous pouvons créer quelques fichiers et dossiers et notre code source peut commencer ou peut-être qu'il existe déjà et que nous avons quelque chose ici. Nous pouvons utiliser la commande `git add .` qui place tous les fichiers et dossiers de notre répertoire dans un instantané, mais nous n'avons pas encore commis quoi que ce soit à cette base de données. Nous disons simplement que tous les fichiers avec le `.` sont prêts à être ajoutés.
 
-| Command       | Example                     | Description                                                                                                                 |
-| ------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| git init      | `git init <directory>`      | Create an empty git repository in the specified directory.                                                                  |
-| git clone     | `git clone <repo>`          | Clone repository located at \<repo> onto local machine.                                                                      |
-| git config    | `git config user.name`      | Define author name to be used for all commits in current repository `system`, `global`, `local` flag to set config options. |
-| git add       | `git add <directory>`       | Stage all changes in \<directory> for the next commit. We can also add \<files> and \<.> for everything.                       |
-| git commit -m | `git commit -m "<message>"` | Commit the staged snapshot, use \<message> to detail what is being committed.                                                |
-| git status    | `git status`                | List files that are staged, unstaged and untracked.                                                                         |
-| git log       | `git log`                   | Display all commit history using the default format. There are additional options with this command.                        |
-| git diff      | `git diff`                  | Show unstaged changes between your index and working directory.                                                             |
+![](Images/Day35_Git7.png)
 
-### Git Undoing Changes
+Ensuite, nous voulons continuer et commettre nos fichiers, nous faisons cela avec la commande `git commit -m "Mon premier commit"`. Nous pouvons donner une raison pour notre commit et cela est suggéré afin que nous sachions ce qui s'est passé pour chaque commit.
 
-| Command    | Example               | Description                                                                                                                           |
-| ---------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| git revert | `git revert <commit>` | Create a new commit that undoes all of the changes made in \<commit> then apply it to the current branch.                              |
-| git reset  | `git reset <file>`    | Remove \<file> from the staging area, but leave the working directory unchanged. This unstaged a file without overwriting any changes. |
-| git clean  | `git clean -n`        | Shows which files would be removed from the working directory. Use `-f` in place of `-n` to execute the clean.                        |
+![](Images/Day35_Git8.png)
 
-### Git Rewriting History
+Nous pouvons maintenant voir ce qui s'est passé dans l'historique du projet. En utilisant la commande `git log`.
 
-| Command    | Example              | Description                                                                                                                              |
-| ---------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| git commit | `git commit --amend` | Replace the last commit with the staged changes and the last commit combined. Use with nothing staged to edit the last commit’s message. |
-| git rebase | `git rebase <base>`  | Rebase the current branch onto \<base>. \<base> can be a commit ID, branch name, a tag, or a relative reference to HEAD.                   |
-| git reflog | `git reflog`         | Show a log of changes to the local repository’s HEAD. Add --relative-date flag to show date info or --all to show all refs.              |
+![](Images/Day35_Git9.png)
 
-### Git Branches
+Si nous créons un fichier supplémentaire appelé `samplecode.ps1`, l'état serait différent. Nous pouvons également vérifier l'état de notre dépôt en utilisant `git status`, cela montre que nous n'avons rien à commettre et que nous pouvons ajouter un nouveau fichier appelé samplecode.ps1. Si nous exécutons ensuite la même commande `git status`, vous verrez que nous avons le fichier à commettre.
 
-| Command      | Example                    | Description                                                                                                   |
-| ------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| git branch   | `git branch`               | List all of the branches in your repo. Add a \<branch> argument to create a new branch with the name \<branch>. |
-| git checkout | `git checkout -b <branch>` | Create and check out a new branch named \<branch>. Drop the -b flag to checkout an existing branch.            |
-| git merge    | `git merge <branch>`       | Merge \<branch> into the current branch.                                                                       |
+![](Images/Day35_Git10.png)
 
-### Git Remote Repositories
+Ajoutons notre nouveau fichier en utilisant la commande `git add samplecode.ps1`, puis nous pouvons réexécuter `git status` et voir que notre fichier est prêt à être commis.
 
-| Command        | Example                       | Description                                                                                                                         |
-| -------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| git remote add | `git remote add <name> <url>` | Create a new connection to a remote repo. After adding a remote, you can use \<name> as a shortcut for \<url> in other commands.      |
-| git fetch      | `git fetch <remote> <branch>` | Fetches a specific \<branch>, from the repo. Leave off \<branch> to fetch all remote refs.                                            |
-| git pull       | `git pull <remote>`           | Fetch the specified remote’s copy of current branch and immediately merge it into the local copy.                                   |
-| git push       | `git push <remote> <branch>`  | Push the branch to \<remote>, along with necessary commits and objects. Creates named branch in the remote repo if it doesn’t exist. |
+![](Images/Day35_Git11.png)
 
-### Git Diff
+Ensuite, émettez la commande `git commit -m "Mon deuxième commit"`.
 
-| Command           | Example             | Description                                                            |
-| ----------------- | ------------------- | ---------------------------------------------------------------------- |
-| git diff HEAD     | `git diff HEAD`     | Show the difference between the working directory and the last commit. |
-| git diff --cached | `git diff --cached` | Show difference between staged changes and last commit                 |
+![](Images/Day35_Git12.png)
 
-### Git Config
+Un autre `git status` montre maintenant que tout est à nouveau propre.
 
-| Command                                              | Example                                                | Description                                                                                                                                   |
-| ---------------------------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| git config --global user.name \<name>                 | `git config --global user.name <name>`                 | Define the author name to be used for all commits by the current user.                                                                        |
-| git config --global user.email \<email>               | `git config --global user.email <email>`               | Define author email to be used for all commits by the current user.                                                                           |
-| git config --global alias \<alias-name> \<git-command> | `git config --global alias <alias-name> <git-command>` | Create shortcut for a git command .                                                                                                           |
-| git config --system core.editor \<editor>             | `git config --system core.editor <editor>`             | Set the text editor to be used by commands for all users on the machine. \<editor> arg should be the comamnd that launches the desired editor. |
-| git config --global --edit                           | `git config --global --edit `                          | Open the global configuration file in a text editor for manual editing.                                                                       |
+![](Images/Day35_Git13.png)
 
-### Git Rebase
+Nous pouvons ensuite utiliser la commande `git log` qui montre les derniers changements et le premier commit.
 
-| Command              | Example                | Description                                                                                                                                 |
-| -------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| git rebase -i \<base> | `git rebase -i <base>` | Interactively rebase current branch onto \<base>. Launches editor to enter commands for how each commit will be transferred to the new base. |
+![](Images/Day35_Git14.png)
 
-### Git Pull
+Si nous voulions voir les changements entre nos commits, c'est-à-dire quels fichiers ont été ajoutés ou modifiés, nous pouvons utiliser la commande `git diff b8f8 709a`.
 
-| Command                    | Example                      | Description                                                                                                                                   |
-| -------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| git pull --rebase \<remote> | `git pull --rebase <remote>` | Fetch the remote’s copy of current branch and rebases it into the local copy. Uses git rebase instead of the merge to integrate the branches. |
+![](Images/Day35_Git15.png)
 
-### Git Reset
+Ce qui affiche ensuite ce qui a changé dans notre cas, nous avons ajouté un nouveau fichier.
 
-| Command                   | Example                     | Description                                                                                                                                   |
-| ------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| git reset                 | `git reset `                | Reset the staging area to match the most recent commit but leave the working directory unchanged.                                             |
-| git reset --hard          | `git reset --hard`          | Reset staging area and working directory to match most recent commit and overwrites all changes in the working directory                      |
-| git reset \<commit>        | `git reset <commit>`        | Move the current branch tip backwards to \<commit>, reset the staging area to match, but leave the working directory alone                     |
-| git reset --hard \<commit> | `git reset --hard <commit>` | Same as previous, but resets both the staging area & working directory to match. Deletes uncommitted changes, and all commits after \<commit>. |
+![](Images/Day35_Git16.png)
 
-### Git Push
+Nous allons approfondir cela plus tard, mais nous pouvons sauter dans le temps ! En utilisant notre numéro de commit, nous pouvons utiliser la commande `git checkout 709a` pour revenir en arrière dans le temps sans perdre notre nouveau fichier.
 
-| Command                   | Example                     | Description                                                                                                                                     |
-| ------------------------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| git push \<remote> --force | `git push <remote> --force` | Forces the git push even if it results in a non-fast-forward merge. Do not use the --force flag unless you’re sure you know what you’re doing.  |
-| git push \<remote> --all   | `git push <remote> --all`   | Push all of your local branches to the specified remote.                                                                                        |
-| git push \<remote> --tags  | `git push <remote> --tags`  | Tags aren’t automatically pushed when you push a branch or use the --all flag. The --tags flag sends all of your local tags to the remote repo. |
+![](Images/Day35_Git17.png)
 
-## Resources
+Mais ensuite, de manière égale, nous voudrons avancer également et nous pouvons le faire de la même manière avec le numéro de commit ou vous pouvez voir ici que nous utilisons la commande `git switch -` pour annuler notre opération.
 
-- [What is Version Control?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
-- [Types of Version Control System](https://www.youtube.com/watch?v=kr62e_n6QuQ)
-- [Git Tutorial for Beginners](https://www.youtube.com/watch?v=8JJ101D3knE&t=52s)
-- [Git for Professionals Tutorial](https://www.youtube.com/watch?v=Uszj_k0DGsg)
-- [Git and GitHub for Beginners - Crash Course](https://www.youtube.com/watch?v=RGOj5yH7evk&t=8s)
-- [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
-- [Git cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
+![](Images/Day35_Git18.png)
 
-See you on [Day 38](day38.md)
+Le TLDR;
+
+- Suivi de l'historique d'un projet
+- Gestion de plusieurs versions d'un projet
+- Partage de code parmi les développeurs et une portée plus large d'équipes et d'outils
+- Coordination du travail d'équipe
+- Oh et il y a un peu de voyage dans le temps !
+
+J'espère qu'avec les commandes utilisées, les capacités et la vue d'ensemble derrière le contrôle de version, vous pouvez voir sans vraiment connaître les commandes utilisées.
+
+Ensuite, nous allons installer Git sur votre machine locale et approfondir certains autres cas d'utilisation et commandes que nous pouvons réaliser dans Git.
+
+## Ressources
+
+- [Qu'est-ce que le contrôle de version ?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
+- [Types de systèmes de contrôle de version](https://www.youtube.com/watch?v=kr62e_n6QuQ)
+- [Tutoriel Git pour débutants](https://www.youtube.com/watch?v=8JJ101D3knE&t=52s)
+- [Tutoriel Git pour professionnels](https://www.youtube.com/watch?v=Uszj_k0DGsg)
+- [Git et GitHub pour débutants - Cours complet](https://www.youtube.com/watch?v=RGOj5yH7evk&t=8s)
+- [Tutoriel complet sur Git et GitHub](https://www.youtube.com/watch?v=apGV9Kg7ics)
+- [Feuille de triche Git](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
+
+À demain pour le [Jour 38](day38.md)
