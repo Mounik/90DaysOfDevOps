@@ -1,109 +1,99 @@
----
-title: '#90DaysOfDevOps - The OSI Model - The 7 Layers - Day 22'
-published: false
-description: 90DaysOfDevOps - The OSI Model - The 7 Layers
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1049037
----
-
-The content below comes mostly from Practical Networking's [Networking Fundamentals series](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi). If you prefer this content in video form, check out these two videos:
+Le contenu ci-dessous provient principalement de la série [Networking Fundamentals](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi) de Practical Networking. Si vous préférez ce contenu sous forme de vidéo, consultez ces deux vidéos :
 
 * [The OSI Model: A Practical Perspective - Layers 1 / 2 / 3](https://www.youtube.com/watch?v=LkolbURrtTs&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&index=3)
 * [The OSI Model: A Practical Perspective - Layers 4 / 5+](https://www.youtube.com/watch?v=0aGqGKrRE0g&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&index=4)
 
-## The OSI Model - The 7 Layers
+## Le Modèle OSI - Les 7 Couches
 
-The overall purpose of networking as an industry is to allow two hosts to share data. Before networking if I want to get data from this host to this host I'd have to plug something into this host walk it over to the other host and plug it into the other host.
+L'objectif global du réseau en tant qu'industrie est de permettre à deux hôtes de partager des données. Avant le réseau, si je voulais transférer des données d'un hôte à un autre, je devais brancher quelque chose dans cet hôte, le transporter jusqu'à l'autre hôte et le brancher sur l'autre hôte.
 
-Networking allows us to automate this by allowing the host to share data automatically across the wire for these hosts to do this they must follow a set of rules.
+Le réseau nous permet d'automatiser cela en permettant à l'hôte de partager des données automatiquement via le câble. Pour que ces hôtes puissent le faire, ils doivent suivre un ensemble de règles.
 
-This is no different than any language. English has a set of rules that two English speakers must follow. Spanish has its own set of rules. French has its own set of rules, while networking also has its own set of rules
+Cela n'est pas différent de toute autre langue. L'anglais a un ensemble de règles que deux locuteurs anglais doivent suivre. L'espagnol a son propre ensemble de règles. Le français a son propre ensemble de règles, tandis que le réseau a également son propre ensemble de règles.
 
-The rules for networking are divided into seven different layers and those layers are known as the OSI model.
+Les règles pour le réseau sont divisées en sept couches différentes, et ces couches sont connues sous le nom de modèle OSI.
 
-### Introduction to the OSI Model
+### Introduction au Modèle OSI
 
-The OSI Model (Open Systems Interconnection Model) is a framework used to describe the functions of a networking system. The OSI model characterises computing functions into a universal set of rules and requirements to support interoperability between different products and software. In the OSI reference model, the communications between a computing system are split into seven different abstraction layers: **Physical, Data Link, Network, Transport, Session, Presentation, and Application**.
+Le Modèle OSI (Open Systems Interconnection Model) est un cadre utilisé pour décrire les fonctions d'un système de réseau. Le modèle OSI caractérise les fonctions informatiques en un ensemble universel de règles et d'exigences pour soutenir l'interopérabilité entre différents produits et logiciels. Dans le modèle de référence OSI, les communications entre un système informatique sont divisées en sept couches d'abstraction différentes : **Physique, Liaison de Données, Réseau, Transport, Session, Présentation et Application**.
 
 ![](Images/Day22_Networking1.png)
 
-### Physical
+### Physique
 
-Layer 1 in the OSI model and this is known as physical, the premise of being able to get data from one host to another through a means be it physical cable or we could also consider Wi-Fi in this layer as well. We might also see some more legacy hardware seen here around hubs and repeaters to transport the data from one host to another.
+La couche 1 du modèle OSI est connue sous le nom de couche physique. Elle permet de transférer des données d'un hôte à un autre via un moyen, qu'il s'agisse d'un câble physique ou du Wi-Fi, qui peut également être considéré dans cette couche. Nous pourrions également voir certains matériels plus anciens ici, comme des concentrateurs et des répéteurs, pour transporter les données d'un hôte à un autre.
 
 ![](Images/Day22_Networking2.png)
 
-### Data Link
+### Liaison de Données
 
-Layer 2, the data link enables a node to node transfer where data is packaged into frames. There is also a level of error correcting that might have occurred at the physical layer. This is also where we introduce or first see MAC addresses.
+La couche 2, la liaison de données, permet un transfert de nœud à nœud où les données sont empaquetées en trames. Il y a également un niveau de correction d'erreurs qui pourrait avoir eu lieu au niveau de la couche physique. C'est également là que nous introduisons ou voyons pour la première fois les adresses MAC.
 
-This is where we see the first mention of switches that we covered on our first day of networking on [Day 21](day21.md)
+C'est ici que nous voyons la première mention des commutateurs que nous avons couverts lors de notre premier jour de réseau sur le [Jour 21](day21.md).
 
 ![](Images/Day22_Networking3.png)
 
-### Network
+### Réseau
 
-You have likely heard the term layer 3 switches or layer 2 switches. In our OSI model Layer 3, the Network has a goal of an end to end delivery, this is where we see our IP addresses also mentioned in the first-day overview.
+Vous avez probablement entendu parler des commutateurs de couche 3 ou des commutateurs de couche 2. Dans notre modèle OSI, la couche 3, le Réseau, a pour objectif une livraison de bout en bout. C'est ici que nous voyons également nos adresses IP mentionnées dans l'aperçu du premier jour.
 
-Routers and hosts exist at layer 3, remember the router is the ability to route between multiple networks. Anything with an IP could be considered Layer 3.
+Les routeurs et les hôtes existent à la couche 3 ; rappelez-vous que le routeur permet de router entre plusieurs réseaux. Tout ce qui a une adresse IP pourrait être considéré comme de la couche 3.
 
 ![](Images/Day22_Networking4.png)
 
-So why do we need addressing schemes on both Layers 2 and 3? (MAC Addresses vs IP Addresses)
+Pourquoi avons-nous besoin de schémas d'adressage à la fois sur les couches 2 et 3 ? (Adresses MAC vs Adresses IP)
 
-If we think about getting data from one host to another, each host has an IP address but there are several switches and routers in between. Each of the devices has that layer 2 MAC address.
+Si nous pensons à transférer des données d'un hôte à un autre, chaque hôte a une adresse IP, mais il y a plusieurs commutateurs et routeurs entre eux. Chacun de ces dispositifs a cette adresse MAC de couche 2.
 
-The layer 2 MAC address will go from host to switch/router only, it is focused on hops whereas the layer 3 IP addresses will stay with that packet of data until it reaches its end host. (End to End)
+L'adresse MAC de couche 2 ira de l'hôte au commutateur/routeur uniquement ; elle se concentre sur les sauts, tandis que les adresses IP de couche 3 resteront avec ce paquet de données jusqu'à ce qu'il atteigne son hôte de destination. (De bout en bout)
 
-IP Addresses - Layer 3 = End to End Delivery
+Adresses IP - Couche 3 = Livraison de bout en bout
 
-MAC Addresses - Layer 2 = Hop to Hop Delivery
+Adresses MAC - Couche 2 = Livraison de saut en saut
 
-Now there is a network protocol that we will get into but not today called ARP(Address Resolution Protocol) which links our Layer3 and Layer2 addresses.
+Il existe un protocole réseau que nous aborderons, mais pas aujourd'hui, appelé ARP (Address Resolution Protocol), qui lie nos adresses de couche 3 et de couche 2.
 
 ### Transport
 
-Service to Service delivery, Layer 4 is there to distinguish data streams. In the same way that Layer 3 and Layer 2 both had their addressing schemes, in Layer 4 we have ports.
+Livraison de service à service, la couche 4 est là pour distinguer les flux de données. De la même manière que les couches 3 et 2 avaient leurs schémas d'adressage, en couche 4, nous avons des ports.
 
 ![](Images/Day22_Networking5.png)
 
-### Session, Presentation, Application
+### Session, Présentation, Application
 
-The distinction between Layers 5,6,7 is or had become somewhat vague.
+La distinction entre les couches 5, 6 et 7 est ou est devenue quelque peu floue.
 
-It is worth looking at the [TCP IP Model](https://www.geeksforgeeks.org/tcp-ip-model/) to get a more recent understanding.
+Il vaut la peine de regarder le [Modèle TCP/IP](https://www.geeksforgeeks.org/tcp-ip-model/) pour obtenir une compréhension plus récente.
 
-Let's now try and explain what's happening when hosts are communicating with each other using this networking stack. This host has an application that's going to generate data that is meant to be sent to another host.
+Essayons maintenant d'expliquer ce qui se passe lorsque les hôtes communiquent entre eux en utilisant cette pile de réseau. Cet hôte a une application qui va générer des données destinées à être envoyées à un autre hôte.
 
-The source host is going to go through is what's known as the encapsulation process. That data will be first sent to layer 4.
+L'hôte source va passer par ce que l'on appelle le processus d'encapsulation. Ces données seront d'abord envoyées à la couche 4.
 
-Layer 4 is going to add a header to that data which can facilitate the goal of layer 4 which is service to service delivery. This is going to be a port using either TCP or UDP. It is also going to include the source port and destination port.
+La couche 4 va ajouter un en-tête à ces données, ce qui peut faciliter l'objectif de la couche 4, qui est la livraison de service à service. Il s'agira d'un port utilisant soit TCP, soit UDP. Il inclura également le port source et le port de destination.
 
-This may also be known as a segment (Data and Port)
+Cela peut également être connu sous le nom de segment (Données et Port).
 
-This segment is going to be passed down the OSI stack to layer 3, the network layer, and the network layer is going to add another header to this data.
-This header is going to facilitate the goal of layer 3 which is the end to end delivery meaning in this header you will have a source IP address and a destination IP, the header plus data may also be referred to as a packet.
+Ce segment sera transmis à la pile OSI vers la couche 3, la couche réseau, et la couche réseau ajoutera un autre en-tête à ces données.
+Cet en-tête facilitera l'objectif de la couche 3, qui est la livraison de bout en bout, ce qui signifie que dans cet en-tête, vous aurez une adresse IP source et une adresse IP de destination. L'en-tête plus les données peuvent également être appelés un paquet.
 
-Layer 3 will then take that packet and hand it off to layer 2, layer 2 will once again add another header to that data to accomplish layer 2's goal of hop to hop delivery meaning this header will include a source and destination mac address.
-This is known as a frame when you have the layer 2 header and data.
+La couche 3 prendra ensuite ce paquet et le transmettra à la couche 2. La couche 2 ajoutera à nouveau un autre en-tête à ces données pour accomplir l'objectif de la couche 2, qui est la livraison de saut en saut, ce qui signifie que cet en-tête inclura une adresse MAC source et de destination.
+Cela est connu sous le nom de trame lorsque vous avez l'en-tête de couche 2 et les données.
 
-That frame then gets converted into ones and zeros and sent over the Layer 1 Physical cable or wifi.
+Cette trame est ensuite convertie en uns et en zéros et envoyée sur le câble physique de couche 1 ou le Wi-Fi.
 
 ![](Images/Day22_Networking6.png)
 
-I did mention above the naming for each layer of header plus data but decided to draw this out as well.
+J'ai mentionné ci-dessus la dénomination de chaque couche d'en-tête plus les données, mais j'ai décidé de dessiner cela également.
 
 ![](Images/Day22_Networking7.png)
 
-The Application sending the data is being sent somewhere so the receiving is somewhat in reverse to get that back up the stack and into the receiving host.
+L'application envoyant les données est envoyée quelque part, donc la réception est quelque peu inversée pour remonter la pile et entrer dans l'hôte récepteur.
 
 ![](Images/Day22_Networking8.png)
 
-## Resources
+## Ressources
 
 * [Networking Fundamentals](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi)
-- [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
+* [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
 
-See you on [Day23](day23.md)
+À demain pour le [Jour 23](day23.md)
