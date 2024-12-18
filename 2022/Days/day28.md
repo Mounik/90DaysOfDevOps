@@ -1,105 +1,95 @@
----
-title: '#90DaysOfDevOps - The Big Picture: DevOps & The Cloud - Day 28'
-published: false
-description: 90DaysOfDevOps - The Big Picture DevOps & The Cloud
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1048737
----
+## Vue d'Ensemble : DevOps et le Cloud
 
-## The Big Picture: DevOps & The Cloud
+Lorsqu'il s'agit de l'informatique en cloud et de ce qui est offert, cela s'accorde très bien avec l'éthique et les processus DevOps. Nous pouvons considérer l'informatique en cloud comme apportant la technologie et les services, tandis que le DevOps, comme nous l'avons mentionné à plusieurs reprises, concerne le processus et l'amélioration des processus.
 
-When it comes to cloud computing and what is offered, it goes very nicely with the DevOps ethos and processes. We can think of Cloud Computing as bringing the technology and services whilst DevOps as we have mentioned many times before is about the process and process improvement.
-
-But to start with that cloud learning journey is a steep one and making sure you know and understand all elements or the best service to choose for the right price point is confusing.
+Cependant, commencer ce voyage d'apprentissage du cloud est une tâche ardue, et s'assurer que vous connaissez et comprenez tous les éléments ou le meilleur service à choisir pour le bon prix est déroutant.
 
 ![](Images/Day28_Cloud1.png)
 
-Does the public cloud require a DevOps mindset? My answer here is not, but to really take advantage of cloud computing and possibly avoid those large cloud bills that so many people have been hit with then it is important to think of Cloud Computing and DevOps together.
+Le cloud public nécessite-t-il un état d'esprit DevOps ? Ma réponse ici est non, mais pour vraiment tirer parti de l'informatique en nuage et éviter ces grosses factures de cloud que tant de personnes ont rencontrées, il est important de penser à l'informatique en nuage et à DevOps ensemble.
 
-If we look at what we mean by the Public Cloud at a 40,000ft view, it is about removing some responsibility to a managed service to enable you and your team to focus on more important aspects which name should be the application and the end-users. After all the Public Cloud is just someone else's computer.
+Si nous regardons ce que nous entendons par le cloud public à un niveau élevé, il s'agit de déléguer certaines responsabilités à un service géré pour vous permettre, à vous et à votre équipe, de vous concentrer sur des aspects plus importants, qui devraient être l'application et les utilisateurs finaux. Après tout, le cloud public n'est que l'ordinateur de quelqu'un d'autre.
 
 ![](Images/Day28_Cloud2.png)
 
-In this first section, I want to get into and describe a little more of what a Public Cloud is and some of the building blocks that get referred to as the Public Cloud overall.
+Dans cette première section, je veux entrer dans les détails et décrire un peu plus ce qu'est un cloud public et certains des blocs de construction qui sont désignés comme le cloud public dans son ensemble.
 
 ### SaaS
 
-The first area to cover is Software as a service, this service is removing almost all of the management overhead of a service that you may have once run on-premises. Let's think about Microsoft Exchange for our email, this used to be a physical box that lived in your data centre or maybe in the cupboard under the stairs. You would need to feed and water that server. By that I mean you would need to keep it updated and you would be responsible for buying the server hardware, most likely installing the operating system, installing the applications required and then keeping that patched, if anything went wrong you would have to troubleshoot and get things back up and running.
+La première zone à couvrir est le logiciel en tant que service (SaaS). Ce service élimine presque toute la charge administrative d'un service que vous auriez pu exécuter sur site. Prenons l'exemple de Microsoft Exchange pour nos emails. Cela était auparavant une boîte physique qui vivait dans votre centre de données ou peut-être dans le placard sous l'escalier. Vous deviez nourrir et abreuver ce serveur. Par cela, je veux dire que vous deviez le maintenir à jour et que vous étiez responsable de l'achat du matériel serveur, très probablement de l'installation du système d'exploitation, de l'installation des applications requises, puis de leur mise à jour. Si quelque chose tournait mal, vous deviez dépanner et remettre les choses en marche.
 
-Oh, and you would also have to make sure you were backing up your data, although this doesn't change with SaaS for the most part either.
+Oh, et vous deviez également vous assurer de sauvegarder vos données, bien que cela ne change pas non plus avec le SaaS pour la plupart.
 
-What SaaS does and in particular Microsoft 365, because I mentioned Exchange is removing that administration overhead and they provide a service that delivers your exchange functionality by way of mail but also much other productivity (Office 365) and storage options (OneDrive) that overall gives a great experience to the end-user.
+Ce que fait le SaaS, et en particulier Microsoft 365, puisque j'ai mentionné Exchange, c'est éliminer cette charge administrative, et ils fournissent un service qui livre votre fonctionnalité Exchange par le biais du courrier électronique, mais aussi de nombreuses autres options de productivité (Office 365) et de stockage (OneDrive) qui, dans l'ensemble, offrent une excellente expérience à l'utilisateur final.
 
-Other SaaS applications are widely adopted, such as Salesforce, SAP, Oracle, Google, and Apple. All removing that burden of having to manage more of the stack.
+D'autres applications SaaS sont largement adoptées, telles que Salesforce, SAP, Oracle, Google et Apple. Toutes éliminent le fardeau de la gestion de plus de la pile.
 
-I am sure there is a story with DevOps and SaaS-based applications but I am struggling to find out what they may be. I know Azure DevOps has some great integrations with Microsoft 365 that I might have a look into and report back to.
+Je suis sûr qu'il y a une histoire avec DevOps et les applications basées sur le SaaS, mais j'ai du mal à trouver ce qu'elles pourraient être. Je sais qu'Azure DevOps a d'excellentes intégrations avec Microsoft 365 que je pourrais examiner et signaler.
 
 ![](Images/Day28_Cloud3.png)
 
-### Public Cloud
+### Cloud Public
 
-Next up we have the public cloud, most people would think of this in a few different ways, some would see this as the hyper scalers only such as Microsoft Azure, Google Cloud Platform and AWS.
+Ensuite, nous avons le cloud public. La plupart des gens le verraient de différentes manières. Certains le verraient uniquement comme les hyper-scaleurs tels que Microsoft Azure, Google Cloud Platform et AWS.
 
 ![](Images/Day28_Cloud4.png)
 
-Some will also see the public cloud as a much wider offering that includes those hyper scalers but also the thousands of MSPs all over the world as well. For this post, we are going to consider Public Cloud including hyper scalers and MSPs, although later on, we will specifically dive into one or more of the hyper scalers to get that foundational knowledge.
+D'autres verront également le cloud public comme une offre beaucoup plus large qui inclut ces hyper-scaleurs ainsi que les milliers de MSP (Managed Service Providers) du monde entier. Pour ce post, nous allons considérer le cloud public comme incluant les hyper-scaleurs et les MSP, bien que plus tard, nous plongerons spécifiquement dans un ou plusieurs des hyper-scaleurs pour obtenir cette connaissance fondamentale.
 
 ![](Images/Day28_Cloud5.png)
-_thousands more companies could land on this, I am merely picking from local, regional, telco and global brands I have worked with and am aware of._
+_Des milliers d'autres entreprises pourraient figurer ici ; je ne fais que choisir parmi les marques locales, régionales, de télécommunications et mondiales avec lesquelles j'ai travaillé et dont j'ai connaissance._
 
-We mentioned in the SaaS section that Cloud removed the responsibility or the burden of having to administer parts of a system. If SaaS we see a lot of the abstraction layers removed i.e the physical systems, network, storage, operating system, and even application to some degree. When it comes to the cloud there are various levels of abstraction we can remove or keep depending on your requirements.
+Nous avons mentionné dans la section SaaS que le cloud élimine la responsabilité ou le fardeau de l'administration de certaines parties d'un système. Si avec le SaaS nous voyons beaucoup des couches d'abstraction supprimées, c'est-à-dire les systèmes physiques, le réseau, le stockage, le système d'exploitation et même l'application dans une certaine mesure. Lorsqu'il s'agit du cloud, il existe divers niveaux d'abstraction que nous pouvons supprimer ou conserver en fonction de vos besoins.
 
-We have already mentioned SaaS but there are at least two more to mention regarding the public cloud.
+Nous avons déjà mentionné le SaaS, mais il y en a au moins deux autres à mentionner concernant le cloud public.
 
-Infrastructure as a service - You can think of this layer as a virtual machine but whereas on-premises you will be having to look after the physical layer in the cloud this is not the case, the physical is the cloud provider's responsibility and you will manage and administer the Operating System, the data and the applications you wish to run.
+Infrastructure en tant que service (IaaS) : Vous pouvez considérer cette couche comme une machine virtuelle, mais alors que sur site vous devriez vous occuper de la couche physique, dans le cloud ce n'est pas le cas. Le physique est de la responsabilité du fournisseur de cloud, et vous gérerez et administrerez le système d'exploitation, les données et les applications que vous souhaitez exécuter.
 
-Platform as a service - This continues to remove the responsibility of layers and this is really about you taking control of the data and the application but not having to worry about the underpinning hardware or operating system.
+Plateforme en tant que service (PaaS) : Cela continue à éliminer la responsabilité des couches, et il s'agit vraiment de vous permettre de contrôler les données et l'application sans avoir à vous soucier du matériel sous-jacent ou du système d'exploitation.
 
-There are many other aaS offerings out there but these are the two fundamentals. You might see offerings around StaaS (Storage as a service) which provide you with your storage layer but without having to worry about the hardware underneath. Or you might have heard CaaS for Containers as a service which we will get onto, later on, another aaS we will look to cover over the next 7 days is FaaS (Functions as a Service) where maybe you do not need a running system up all the time and you just want a function to be executed as and when.
+Il existe de nombreuses autres offres aaS, mais ce sont les deux fondamentales. Vous pourriez voir des offres autour de StaaS (Storage as a Service) qui vous fournissent votre couche de stockage sans avoir à vous soucier du matériel sous-jacent. Ou vous pourriez avoir entendu parler de CaaS pour Containers as a Service, que nous aborderons plus tard. Une autre offre aaS que nous chercherons à couvrir au cours des 7 prochains jours est FaaS (Functions as a Service), où peut-être vous n'avez pas besoin d'un système en cours d'exécution tout le temps et vous voulez simplement qu'une fonction soit exécutée à la demande.
 
-There are many ways in which the public cloud can provide abstraction layers of control that you wish to pass up and pay for.
+Il existe de nombreuses façons dont le cloud public peut fournir des couches d'abstraction de contrôle que vous souhaitez transmettre et payer.
 
 ![](Images/Day28_Cloud6.png)
 
-### Private Cloud
+### Cloud Privé
 
-Having your own data centre is not a thing of the past I would think that this has become a resurgence among a lot of companies that have found the OPEX model difficult to manage as well as skill sets in just using the public cloud.
+Avoir son propre centre de données n'est pas une chose du passé. Je pense que cela est devenu une résurgence parmi de nombreuses entreprises qui ont trouvé le modèle OPEX difficile à gérer ainsi que les compétences nécessaires pour utiliser uniquement le cloud public.
 
-The important thing to note here is the public cloud is likely now going to be your responsibility and it is going to be on your premises.
+Il est important de noter ici que le cloud public est désormais probablement de votre responsabilité et qu'il sera sur vos locaux.
 
-We have some interesting things happening in this space not only with VMware that dominated the virtualisation era and on-premises infrastructure environments. We also have the hyper scalers offering an on-premises version of their public clouds.
+Nous avons des choses intéressantes qui se passent dans cet espace, non seulement avec VMware qui a dominé l'ère de la virtualisation et les environements d'infrastructure sur site. Nous avons également les hyper-scaleurs offrant une version sur site de leurs clouds publics.
 
 ![](Images/Day28_Cloud7.png)
 
-### Hybrid Cloud
+### Cloud Hybride
 
-To follow on from the Public and Private cloud mentions we also can span across both of these environments to provide flexibility between the two, maybe take advantage of services available in the public cloud but then also take advantage of features and functionality of being on-premises or it might be a regulation that dictates you having to store data locally.
+Pour suivre les mentions de cloud public et privé, nous pouvons également couvrir ces deux environnements pour offrir de la flexibilité entre eux, peut-être tirer parti des services disponibles dans le cloud public, puis également tirer parti des fonctionnalités et des fonctionnalités d'être sur site ou cela pourrait être une réglementation qui dicte que vous devez stocker des données localement.
 
 ![](Images/Day28_Cloud8.png)
 
-Putting this all together we have a lot of choices for where we store and run our workloads.
+En mettant tout cela ensemble, nous avons beaucoup de choix pour l'endroit où nous stockons et exécutons nos charges de travail.
 
 ![](Images/Day28_Cloud9.png)
 
-Before we get into a specific hyper-scale, I have asked the power of Twitter where we should go?
+Avant de nous plonger dans un hyper-scaleur spécifique, j'ai demandé à Twitter où nous devrions aller.
 
 ![](Images/Day28_Cloud10.png)
 
-[Link to Twitter Poll](https://twitter.com/MichaelCade1/status/1486814904510259208?s=20&t=x2n6QhyOXSUs7Pq0itdIIQ)
+[Lien vers le sondage Twitter](https://twitter.com/MichaelCade1/status/1486814904510259208?s=20&t=x2n6QhyOXSUs7Pq0itdIIQ)
 
-Whichever one gets the highest percentage we will take a deeper dive into the offerings, I think the important to mention though is that services from all of these are quite similar which is why I say to start with one because I have found that in knowing the foundation of one and how to create virtual machines, set up networking etc. I have been able to go to the others and quickly ramp up in those areas.
+Quel que soit celui qui obtient le pourcentage le plus élevé, nous plongerons plus profondément dans les offres. Je pense qu'il est important de mentionner que les services de tous ces fournisseurs sont assez similaires, c'est pourquoi je dis de commencer avec l'un d'eux, car j'ai constaté qu'en connaissant les bases de l'un d'eux et en sachant comment créer des machines virtuelles, configurer le réseau, etc., j'ai pu passer rapidement aux autres domaines.
 
-Either way, I am going to share some great **FREE** resources that cover all three of the hyper scalers.
+Quoi qu'il en soit, je vais partager quelques ressources **GRATUITES** qui couvrent les trois hyper-scaleurs.
 
-I am also going to build out a scenario as I have done in the other sections where we can build something as we move through the days.
+Je vais également élaborer un scénario comme je l'ai fait dans les autres sections où nous pouvons construire quelque chose au fur et à mesure que nous avançons dans les jours.
 
-## Resources
+## Ressources
 
 - [Hybrid Cloud and MultiCloud](https://www.youtube.com/watch?v=qkj5W98Xdvw)
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)
 - [Google Cloud Digital Leader Certification Course](https://www.youtube.com/watch?v=UGRDM86MBIQ&list=WL&index=131&t=10s)
 - [AWS Basics for Beginners - Full Course](https://youtu.be/k1RI5locZE4?si=0wPB2cdTY5hHgjl5)
 
-See you on [Day 29](day29.md)
+À demain pour le [Jour 29](day29.md)
