@@ -1,140 +1,129 @@
----
-title: '#90DaysOfDevOps - The Big Picture: Git - Version Control - Day 35'
-published: false
-description: 90DaysOfDevOps - The Big Picture Git - Version Control
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
-id: 1049041
----
+## Vue d'Ensemble : Git - Contrôle de Version
 
-## The Big Picture: Git - Version Control
+Avant de nous plonger dans Git, nous devons comprendre ce qu'est le contrôle de version et pourquoi. Dans cette introduction à Git, nous allons examiner ce qu'est le contrôle de version et les bases de Git.
 
-Before we get into git, we need to understand what version control is and why? In this opener for Git, we will take a look at what version control is, and the basics of git.
+### Qu'est-ce que le Contrôle de Version ?
 
-### What is Version Control?
+Git n'est pas le seul système de contrôle de version, donc ici, nous voulons couvrir les options disponibles et les méthodologies autour du contrôle de version.
 
-Git is not the only version control system so here we want to cover what options and what methodologies are available around version control.
-
-The most obvious and a big benefit of Version Control is the ability to track a project's history. We can look back over this repository using `git log` and see that we have many commits and many comments and what has happened so far in the project. Don't worry we will get into the commands later. Now think if this was an actual software project full of source code and multiple people are committing to our software at different times, different authors and then reviewers all are logged here so that we know what has happened, when, by whom and who reviewed.
+L'un des avantages les plus évidents et un grand avantage du contrôle de version est la capacité à suivre l'historique d'un projet. Nous pouvons examiner ce dépôt en utilisant `git log` et voir que nous avons de nombreux commits et de nombreux commentaires et ce qui s'est passé jusqu'à présent dans le projet. Ne vous inquiétez pas, nous allons nous plonger dans les commandes plus tard. Maintenant, imaginez que ceci soit un véritable projet logiciel rempli de code source et que plusieurs personnes commettent à notre logiciel à différents moments, différents auteurs, et ensuite les réviseurs sont tous enregistrés ici afin que nous sachions ce qui s'est passé, quand, par qui et qui a révisé.
 
 ![](Images/Day35_Git1.png)
 
-Version Control before it was cool, would have been something like manually creating a copy of your version before you made changes. It might be that you also comment out old useless code with the just-in-case mentality.
+Le contrôle de version avant qu'il soit cool aurait été quelque chose comme la création manuelle d'une copie de votre version avant de faire des modifications. Il se pourrait également que vous commentiez le vieux code inutile avec la mentalité "juste au cas où".
 
 ![](Images/Day35_Git2.png)
 
-I have started using version control over not just source code but pretty much anything, talks about projects like this (90DaysOfDevOps). Why not accept the features that rollback and log of everything that has gone on. 
+J'ai commencé à utiliser le contrôle de version non seulement sur le code source, mais aussi sur presque tout. Cela parle de projets comme celui-ci (90DaysOfDevOps). Pourquoi ne pas accepter les fonctionnalités qui permettent le retour en arrière et la journalisation de tout ce qui s'est passé ?
 
-However, a big disclaimer **Version Control is not a Backup!**
+Cependant, un grand avertissement **Le contrôle de version n'est pas une sauvegarde !**
 
-Another benefit of Version Control is the ability to manage multiple versions of a project, Let's create an example, we have a free app that is available on all operating systems and then we have a paid-for app also available on all operating systems. The majority of the code is shared between both applications. We could copy and paste our code each commit to each app but that is going to be very messy especially as you scale your development to more than just one person, also mistakes will be made.
+Un autre avantage du contrôle de version est la capacité à gérer plusieurs versions d'un projet. Prenons un exemple : nous avons une application gratuite disponible sur tous les systèmes d'exploitation et une application payante également disponible sur tous les systèmes d'exploitation. La majorité du code est partagée entre les deux applications. Nous pourrions copier et coller notre code à chaque commit pour chaque application, mais cela va être très désordonné, surtout lorsque vous mettez à l'échelle votre développement à plus d'une personne, et des erreurs seront commises.
 
-The premium app is where we are going to have additional features, let's call them premium commits, the free edition will just contain the normal commits.
+L'application premium est l'endroit où nous allons avoir des fonctionnalités supplémentaires, appelons-les commits premium, l'édition gratuite ne contiendra que les commits normaux.
 
-The way this is achieved in Version Control is through branching.
+La manière dont cela est réalisé dans le contrôle de version est par le biais des branches.
 
 ![](Images/Day35_Git3.png)
 
-Branching allows for two code streams for the same app as we stated above. But we will still want new features that land in our source code-free version to be in our premium and to achieve this we have something called merging.
+Les branches permettent deux flux de code pour la même application comme nous l'avons indiqué ci-dessus. Mais nous voudrons toujours de nouvelles fonctionnalités qui atterrissent dans notre version de code source gratuite pour être dans notre version premium, et pour y parvenir, nous avons quelque chose appelé fusion.
 
 ![](Images/Day35_Git4.png)
 
-Now, this seems easy but merging can be complicated because you could have a team working on the free edition and you could have another team working on the premium paid-for version and what if both change code that affects aspects of the overall code. Maybe a variable gets updated and breaks something. Then you have a conflict that breaks one of the features. Version Control cannot fix the conflicts that are down to you. But version control allows this to be easily managed.
+Maintenant, cela semble facile, mais la fusion peut être compliquée parce que vous pourriez avoir une équipe travaillant sur l'édition gratuite et une autre équipe travaillant sur la version payante premium, et que se passe-t-il si les deux modifient le code qui affecte des aspects du code global ? Peut-être qu'une variable est mise à jour et casse quelque chose. Ensuite, vous avez un conflit qui casse l'une des fonctionnalités. Le contrôle de version ne peut pas résoudre les conflits qui dépendent de vous. Mais le contrôle de version permet de gérer cela facilement.
 
-The primary reason if you have not picked up so far for version control, in general, is the ability to collaborate. The ability to share code amongst developers and when I say code as I said before more and more we are seeing much more use cases for other reasons to use source control, maybe its a joint presentation you are working on with a colleague or a 90DaysOfDevOps challenge where you have the community offering their corrections and updates throughout the project.
+La raison principale, si vous n'avez pas encore compris pour le contrôle de version, en général, est la capacité à collaborer. La capacité à partager du code parmi les développeurs et, quand je dis code, comme je l'ai dit avant, de plus en plus nous voyons beaucoup plus de cas d'utilisation pour d'autres raisons d'utiliser le contrôle de source, peut-être une présentation conjointe sur laquelle vous travaillez avec un collègue ou un défi 90DaysOfDevOps où la communauté offre ses corrections et mises à jour tout au long du projet.
 
-Without version control how did teams of software developers even handle this? I find it hard enough when I am working on my projects to keep track of things. I expect they would split out the code into each functional module. Maybe a little part of the puzzle then was bringing the pieces together and then problems and issues before anything would get released.
+Sans contrôle de version, comment les équipes de développeurs de logiciels géraient-elles cela ? Je trouve cela assez difficile quand je travaille sur mes projets pour garder une trace des choses. Je m'attends à ce qu'ils divisent le code en chaque module fonctionnel. Peut-être une petite partie du puzzle, puis rassembler les pièces et ensuite résoudre les problèmes et les problèmes avant que quoi que ce soit ne soit publié.
 
-With version control, we have a single source of truth. We might all still work on different modules but it enables us to collaborate better.
+Avec le contrôle de version, nous avons une seule source de vérité. Nous pourrions toujours tous travailler sur différents modules, mais cela nous permet de mieux collaborer.
 
 ![](Images/Day35_Git5.png)
 
-Another thing to mention here is that it's not just developers that can benefit from Version Control, it's all members of the team to have visibility but also tools all having awareness or leverage, Project Management tools can be linked here, tracking the work. We might also have a build machine for example Jenkins which we will talk about in another module. A tool that Builds and Packages the system, automating the deployment tests and metrics.
+Une autre chose à mentionner ici est que ce ne sont pas seulement les développeurs qui peuvent bénéficier du contrôle de version, ce sont tous les membres de l'équipe qui ont de la visibilité, mais aussi des outils ayant conscience ou tirant parti, les outils de gestion de projet peuvent être liés ici, suivant le travail. Nous pourrions également avoir une machine de construction, par exemple Jenkins, dont nous parlerons dans un autre module. Un outil qui construit et emballe le système, automatisant les tests de déploiement et les métriques.
 
-### What is Git?
+### Qu'est-ce que Git ?
 
-Git is a tool that tracks changes to source code or any file, or we could also say Git is an open-source distributed version control system.
+Git est un outil qui suit les modifications apportées au code source ou à n'importe quel fichier, ou nous pourrions également dire que Git est un système de contrôle de version distribué open-source.
 
-There are many ways in which git can be used on our systems, most commonly or at least for me I have seen it at the command line, but we also have graphical user interfaces and tools like Visual Studio Code that have git-aware operations we can take advantage of.
+Il existe de nombreuses façons d'utiliser Git sur nos systèmes, le plus couramment ou du moins pour moi, je l'ai vu sur la ligne de commande, mais nous avons également des interfaces utilisateur graphiques et des outils comme Visual Studio Code qui ont des opérations sensibles à Git dont nous pouvons tirer parti.
 
-Now we are going to run through a high-level overview before we even get Git installed on our local machine.
+Maintenant, nous allons parcourir un aperçu de haut niveau avant même d'installer Git sur notre machine locale.
 
-Let's take the folder we created earlier.
+Prenons le dossier que nous avons créé précédemment.
 
 ![](Images/Day35_Git2.png)
 
-To use this folder with version control we first need to initiate this directory using the `git init` command. For now, just think that this command puts our directory as a repository in a database somewhere on our computer. 
+Pour utiliser ce dossier avec le contrôle de version, nous devons d'abord initialiser ce répertoire en utilisant la commande `git init`. Pour l'instant, pensez simplement que cette commande place notre répertoire en tant que dépôt dans une base de données quelque part sur notre ordinateur.
 
 ![](Images/Day35_Git6.png)
 
-Now we can create some files and folders and our source code can begin or maybe it already has and we have something in here already. We can use the `git add .` command which puts all files and folders in our directory into a snapshot but we have not yet committed anything to that database. We are just saying all files with the `.` are ready to be added.
+Maintenant, nous pouvons créer quelques fichiers et dossiers et notre code source peut commencer ou peut-être qu'il en a déjà et que nous avons quelque chose ici déjà. Nous pouvons utiliser la commande `git add .` qui place tous les fichiers et dossiers dans notre répertoire dans un instantané, mais nous n'avons pas encore commis quoi que ce soit à cette base de données. Nous disons simplement que tous les fichiers avec le `.` sont prêts à être ajoutés.
 
 ![](Images/Day35_Git7.png)
 
-Then we want to go ahead and commit our files, we do this with the `git commit -m "My First Commit"` command. We can give a reason for our commit and this is suggested so we know what has happened for each commit.
+Ensuite, nous voulons continuer et commettre nos fichiers, nous faisons cela avec la commande `git commit -m "Mon premier commit"`. Nous pouvons donner une raison pour notre commit et cela est suggéré afin que nous sachions ce qui s'est passé pour chaque commit.
 
 ![](Images/Day35_Git8.png)
 
-We can now see what has happened within the history of the project. Using the `git log` command.
+Nous pouvons maintenant voir ce qui s'est passé dans l'historique du projet. En utilisant la commande `git log`.
 
 ![](Images/Day35_Git9.png)
 
-If we create an additional file called `samplecode.ps1`, the status would become different. We can also check the status of our repository by using `git status` this shows we have nothing to commit and we can add a new file called samplecode.ps1. If we then run the same `git status` you will see that we file to be committed. 
+Si nous créons un fichier supplémentaire appelé `samplecode.ps1`, l'état serait différent. Nous pouvons également vérifier l'état de notre dépôt en utilisant `git status`, cela montre que nous n'avons rien à commettre et que nous pouvons ajouter un nouveau fichier appelé samplecode.ps1. Si nous exécutons ensuite la même commande `git status`, vous verrez que nous avons le fichier à commettre.
 
 ![](Images/Day35_Git10.png)
 
-Add our new file using the `git add samplecode.ps1` command and then we can run `git status` again and see our file is ready to be committed.
+Ajoutons notre nouveau fichier en utilisant la commande `git add samplecode.ps1` puis nous pouvons réexécuter `git status` et voir que notre fichier est prêt à être commis.
 
 ![](Images/Day35_Git11.png)
 
-Then issue `git commit -m "My Second Commit"` command.
+Ensuite, émettez la commande `git commit -m "Mon deuxième commit"`.
 
 ![](Images/Day35_Git12.png)
 
-Another `git status` now shows everything is clean again.
+Un autre `git status` montre maintenant que tout est à nouveau propre.
 
 ![](Images/Day35_Git13.png)
 
-We can then use the `git log` command which shows the latest changes and first commit.
+Nous pouvons ensuite utiliser la commande `git log` qui montre les derniers changements et le premier commit.
 
 ![](Images/Day35_Git14.png)
 
-If we wanted to see the changes between our commits i.e what files have been added or modified we can use the `git diff b8f8 709a`
+Si nous voulions voir les changements entre nos commits, c'est-à-dire quels fichiers ont été ajoutés ou modifiés, nous pouvons utiliser la commande `git diff b8f8 709a`.
 
 ![](Images/Day35_Git15.png)
 
-Which then displays what has changed in our case we added a new file.
+Ce qui affiche ensuite ce qui a changé dans notre cas, nous avons ajouté un nouveau fichier.
 
 ![](Images/Day35_Git16.png)
 
-We will go deeper into this later on but we can jump around our commits i.e we can go time travelling! By using our commit number we can use the `git checkout 709a` command to jump back in time without losing our new file. 
+Nous allons approfondir cela plus tard, mais nous pouvons sauter dans le temps ! En utilisant notre numéro de commit, nous pouvons utiliser la commande `git checkout 709a` pour revenir en arrière dans le temps sans perdre notre nouveau fichier.
 
 ![](Images/Day35_Git17.png)
 
-But then equally we will want to move forward as well and we can do this the same way with the commit number or you can see here we are using the `git switch -` command to undo our operation.
+Mais ensuite, de manière égale, nous voudrons également avancer et nous pouvons le faire de la même manière avec le numéro de commit ou vous pouvez voir ici que nous utilisons la commande `git switch -` pour annuler notre opération.
 
 ![](Images/Day35_Git18.png)
 
-The TLDR;
+Le TLDR;
 
-- Tracking a project's history
-- Managing multiple versions of a project
-- Sharing code amongst developers and a wider scope of teams and tools
-- Coordinating teamwork
-- Oh and there is some time travel!
+- Suivi de l'historique d'un projet
+- Gestion de plusieurs versions d'un projet
+- Partage de code parmi les développeurs et une portée plus large d'équipes et d'outils
+- Coordination du travail d'équipe
+- Oh et il y a un peu de voyage dans le temps !
 
-This might have seemed a jump around but hopefully, you can see without really knowing the commands used the powers and the big picture behind Version Control.
+Cela pourrait avoir semblé un saut, mais espérons-le, vous pouvez voir sans vraiment connaître les commandes utilisées, les capacités et la vue d'ensemble derrière le contrôle de version.
 
-Next up we will be getting git installed and set up on your local machine and diving a little deeper into some other use cases and commands that we can achieve in Git.
+Ensuite, nous allons installer Git et le configurer sur votre machine locale et plonger un peu plus profondément dans certains autres cas d'utilisation et commandes que nous pouvons réaliser dans Git.
 
-## Resources
+## Ressources
 
-- [What is Version Control?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
-- [Types of Version Control System](https://www.youtube.com/watch?v=kr62e_n6QuQ)
-- [Git Tutorial for Beginners](https://www.youtube.com/watch?v=8JJ101D3knE&t=52s)
-- [Git for Professionals Tutorial](https://www.youtube.com/watch?v=Uszj_k0DGsg)
-- [Git and GitHub for Beginners - Crash Course](https://www.youtube.com/watch?v=RGOj5yH7evk&t=8s)
-- [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
+- [Qu'est-ce que le contrôle de version ?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
+- [Types de systèmes de contrôle de version](https://www.youtube.com/watch?v=kr62e_n6QuQ)
+- [Tutoriel Git pour débutants](https://www.youtube.com/watch?v=8JJ101D3knE&t=52s)
+- [Tutoriel Git pour professionnels](https://www.youtube.com/watch?v=Uszj_k0DGsg)
+- [Cours complet sur Git et GitHub](https://www.youtube.com/watch?v=apGV9Kg7ics)
 
-See you on [Day 36](day36.md)
+À demain pour le [Jour 36](day36.md)
